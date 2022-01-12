@@ -22,6 +22,7 @@ window.Vue = require('vue').default;
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('index-component', require('./components/IndexComponent.vue').default);
 Vue.component('centros-list', require('./components/ListCentros.vue').default);
+Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

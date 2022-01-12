@@ -24,6 +24,9 @@ Route::get('/index', function () {
 Route::get('/pakirrin', function () {
     return view('pakirrin');
 });
+Route::get('/informazioa', function () {
+    return view('informazioa');
+});
 
 
 
