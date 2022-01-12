@@ -10,9 +10,11 @@
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <p>Hola pepa</p>
+    <div id="app">
+        <index-component></index-component>
+    </div>
 
-
+    <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 
 </html>
