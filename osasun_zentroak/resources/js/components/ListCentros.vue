@@ -83,6 +83,7 @@ export default {
   methods: {
 
     getHoteles() {
+      delete axios.defaults.headers.common['X-Requested-With'];
       const URL = "https://opendata.euskadi.eus/contenidos/ds_recursos_turisticos/hoteles_de_euskadi/opendata/alojamientos.json";
       axios.get(URL).then((response) => {
         let data = new String(response.data).replace("jsonCallback(", "").replace(");", "");
