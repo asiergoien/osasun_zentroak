@@ -17,9 +17,12 @@
       <input id="filtro-nombre" type="text" class="form-control">
       <div class="d-flex gap-3 mt-3">
         <select id="filtro-provincia" class="form-select">
-          <option value="bizkaia">Bizkaia</option>
-          <option value="gipuzkoa">Gipuzkoa</option>
-          <option value="araba">Araba</option>
+          <option value="bizkaia">Ambulatorio</option>
+          <option value="gipuzkoa">Centro de salud</option>
+          <option value="araba">Centro de salud mental</option>
+          <option value="araba">Consultorio</option>
+          <option value="araba">Hospital</option>
+          <option value="araba">Otros</option>
         </select>
         <select id="filtro-tipo" class="form-select">
           <option value="bizkaia">Bizkaia</option>
@@ -61,7 +64,8 @@ export default {
     title: "Euskadiko osasun zentroak",
     centros: [],
     likes: [],
-    provincia: ""
+    provincia: "",
+    tipo_centro :""
   }),
 
   computed: {

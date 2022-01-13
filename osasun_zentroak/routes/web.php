@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('index');
 });
-Route::get('/osasunZentroak', function () {
+Route::get('/osasun-zentroak', function () {
     return view('osasunZentroak');
 });
 Route::get('/informazioa', function () {

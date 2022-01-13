@@ -5382,6 +5382,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -5393,7 +5396,8 @@ __webpack_require__.r(__webpack_exports__);
       title: "Euskadiko osasun zentroak",
       centros: [],
       likes: [],
-      provincia: ""
+      provincia: "",
+      tipo_centro: ""
     };
   },
   computed: {
@@ -28875,11 +28879,23 @@ var staticRenderFns = [
         "select",
         { staticClass: "form-select", attrs: { id: "filtro-provincia" } },
         [
-          _c("option", { attrs: { value: "bizkaia" } }, [_vm._v("Bizkaia")]),
+          _c("option", { attrs: { value: "bizkaia" } }, [
+            _vm._v("Ambulatorio"),
+          ]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "gipuzkoa" } }, [_vm._v("Gipuzkoa")]),
+          _c("option", { attrs: { value: "gipuzkoa" } }, [
+            _vm._v("Centro de salud"),
+          ]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "araba" } }, [_vm._v("Araba")]),
+          _c("option", { attrs: { value: "araba" } }, [
+            _vm._v("Centro de salud mental"),
+          ]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "araba" } }, [_vm._v("Consultorio")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "araba" } }, [_vm._v("Hospital")]),
+          _vm._v(" "),
+          _c("option", { attrs: { value: "araba" } }, [_vm._v("Otros")]),
         ]
       ),
       _vm._v(" "),
