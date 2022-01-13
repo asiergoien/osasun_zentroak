@@ -27,8 +27,9 @@ Route::get('/osasunZentroak', function () {
 Route::get('/informazioa', function () {
     return view('informazioa');
 });
-
-
+Route::get('/profila', function() {
+    return view('profila');
+});
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
