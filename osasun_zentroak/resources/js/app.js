@@ -26,6 +26,7 @@ window.Vue = require('vue').default;
 Vue.component('index-component', require('./components/IndexComponent.vue').default);
 Vue.component('centros-list', require('./components/osasunZentroak.vue').default);
 Vue.component('profila-component', require('./components/ProfilaComponent.vue').default);
+Vue.component('info-component', require('./components/InformazioaComponent.vue').default);
 
 // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
 
