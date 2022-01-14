@@ -5315,6 +5315,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getCentros();
@@ -28947,6 +28953,28 @@ var render = function () {
               _c("h1", { staticClass: "text-primary" }, [
                 _vm._v(_vm._s(centro.Izena)),
               ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "col-md", attrs: { id: "mapaCentro" } },
+                [
+                  _c("iframe", {
+                    staticStyle: { border: "0" },
+                    attrs: {
+                      src:
+                        "https://maps.google.com/?q=" +
+                        centro.LATWGS84 +
+                        "," +
+                        centro.LONWGS84 +
+                        "&output=embed",
+                      width: "600",
+                      height: "450",
+                      allowfullscreen: "",
+                      loading: "lazy",
+                    },
+                  }),
+                ]
+              ),
             ])
           : _vm._e(),
       ])
