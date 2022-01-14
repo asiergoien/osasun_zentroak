@@ -1,9 +1,11 @@
 <template>
-<div>
- <div v-for="(centro, index) in filteredCentros" v-bind:key="index" class="centro shadow-sm">
-    <h1 v-if="centro.Zentroarenkodea === 'ambulat_azpeitia'" class="text-primary">{{ centro.Izena }}</h1>
-  </div>
-</div>
+    <div>
+        <div v-for="(centro, index) in centros" v-bind:key="index" class="centro shadow-sm">
+        <div v-if="centro.Zentroarenkodea === getParams()">
+            <h1 class="text-primary">{{ centro.Izena }}</h1>
+        </div>
+        </div>
+    </div>
         <!-- <div>
             <h1>{{centro.Izena}}</h1>
             <h4>Tipo de centro</h4>
@@ -16,14 +18,14 @@
 <script>
     export default {
         mounted() {
+            this.getCentros();
             console.log('Component mounted.')
         },
         data: () => ({
             title: "Euskadiko osasun zentroak",
             centros: [],
             likes: [],
-            provincia: "",
-            tipo_centro :""
+            provincia: ""
         }),
         methods:{
             //url-an gordetako parametroa jasotzeko funtzioa
@@ -35,16 +37,17 @@
                 return value[1];
             },
             getCentros() {
-                delete axios.defaults.headers.common['X-Requested-With'];
-                const URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/osasun-zentroak.json";
-                axios.get(URL).then((response) => {
-                    let data = new String(response.data).replace("jsonCallback(", "").replace(");", "");
-                    this.centros = JSON.parse(data);
-                    for (let i = 0; i < this.centros.length; i++) {
-                    this.centros[i].id = i;
-                    }
-                });
-            },
+      delete axios.defaults.headers.common['X-Requested-With'];
+      // const URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/centros-salud.json";
+      const URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/osasun-zentroak.json";
+      axios.get(URL).then((response) => {
+        let data = new String(response.data).replace("jsonCallback(", "").replace(");", "");
+        this.centros = JSON.parse(data); 
+        for (let i = 0; i < this.centros.length; i++) {
+          this.centros[i].id = i;
+        }
+      });
+    },
             filteredCentros() {
                 if (this.provincia.length > 0) {
                     return this.centros.filter(centro => {

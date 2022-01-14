@@ -31,7 +31,6 @@
         </select>
       </div>
     </div>
-
     
 
     <div class="centros">
@@ -44,7 +43,7 @@
           <img class="card-img-top" v-else-if="centro.Zentromota === 'Osasun mentaleko zentroa'" src="centro-salud-mental.jpg" heigth="100px" width="100px">
           <img class="card-img-top" v-else-if="centro.Zentromota === 'Ospitalea'" src="hospital.jpg" heigth="100px" width="100px">
           <div class="card-body">
-            <h5 class="card-title">{{ centro.Izena }}</h5>
+            <h5 class="card-title text-primary">{{ centro.Izena }}</h5>
             <p class="card-text"><b>{{ centro.Zentromota }}</b><br>{{ centro.Udalerria }}, {{ centro.Probintzia }}</p>
             <a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centro.Zentroarenkodea" class="btn btn-primary">Ikusi</a>
           </div>
@@ -102,7 +101,14 @@ export default {
           this.centros[i].id = i;
         }
       });
-    }
+    },
+    getParams() {
+                var parser = document.createElement('a');
+                parser.href = window.location.href;
+                var query = parser.search.substring(1);
+                var value = query.split('=');
+                return value[1];
+            }
 
   }
 
