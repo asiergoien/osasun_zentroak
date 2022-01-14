@@ -1,0 +1,47 @@
+/* Index INI */
+
+.carousel {
+    height: 250px !important;
+    object-fit: cover !important;
+    overflow: hidden;
+}
+
+.carousel.home .carousel-item {
+    max-height: 250px;
+}
+
+.carousel-item img {
+    height: 297px !important;
+    /* width: 969px !important; */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: grey !important;
+    border-radius: 10px;
+}
+
+#desc {
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.zentroakTable {
+    margin-top: 5vh;
+    margin-left: 11vw;
+    border: solid black 2px;
+}
+
+.zentroakTable thead tr th {
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
+.zentroakTable tbody tr td {
+    padding-left: 15vw;
+    padding-right: 15vw;
+}
+
+
+/* Index FIN */
