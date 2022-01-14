@@ -17,12 +17,12 @@
       <input id="filtro-nombre" type="text" class="form-control">
       <div class="d-flex gap-3 mt-3">
         <select id="filtro-provincia" class="form-select">
-          <option value="bizkaia">Ambulatorio</option>
-          <option value="gipuzkoa">Centro de salud</option>
-          <option value="araba">Centro de salud mental</option>
-          <option value="araba">Consultorio</option>
-          <option value="araba">Hospital</option>
-          <option value="araba">Otros</option>
+          <option value="bizkaia">Anbulatorioa</option>
+          <option value="gipuzkoa">Osasun Zentroa</option>
+          <option value="araba">Osasun-zentroa</option>
+          <option value="araba">Osasun mentaleko zentroa</option>
+          <option value="araba">Ospitalea</option>
+          <option value="araba">Beste batzuk</option>
         </select>
         <select id="filtro-tipo" class="form-select">
           <option value="bizkaia">Bizkaia</option>
@@ -32,14 +32,21 @@
       </div>
     </div>
 
-    <div class="centro">
-      <div v-for="(centro, index) in filteredCentros" v-bind:key="index" class="hotel shadow-sm">
-        <div class="card">
-          <h5 class="card-header">{{ centro.Zentromota }}</h5>
+    
+
+    <div class="centros">
+      <div v-for="(centro, index) in filteredCentros" v-bind:key="index" class="centro shadow-sm">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top" v-if="centro.Zentromota === 'Anbulatorioa'" src="ambulatorio.jpg" heigth="100px" width="100px">
+          <img class="card-img-top" v-else-if="centro.Zentromota === 'Beste batzuk'" src="otros2.jpg" heigth="100px" width="100px">
+          <img class="card-img-top" v-else-if="centro.Zentromota === 'Kontsultategia'" src="consultorio.jpg" heigth="100px" width="100px">
+          <img class="card-img-top" v-else-if="centro.Zentromota === 'Osasun Zentroa' || centro.Zentromota === 'Osasun-zentroa'" src="centro-de-salud.png" heigth="100px" width="100px">
+          <img class="card-img-top" v-else-if="centro.Zentromota === 'Osasun mentaleko zentroa'" src="centro-salud-mental.jpg" heigth="100px" width="100px">
+          <img class="card-img-top" v-else-if="centro.Zentromota === 'Ospitalea'" src="hospital.jpg" heigth="100px" width="100px">
           <div class="card-body">
             <h5 class="card-title">{{ centro.Izena }}</h5>
-            <p class="card-text">{{ centro.Udalerria }}, {{ centro.Probintzia }}</p>
-            <a href="#" class="btn btn-primary">Ikusi</a>
+            <p class="card-text"><b>{{ centro.Zentromota }}</b><br>{{ centro.Udalerria }}, {{ centro.Probintzia }}</p>
+            <a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centro.Zentroarenkodea" class="btn btn-primary">Ikusi</a>
           </div>
         </div>
       </div>
@@ -64,8 +71,7 @@ export default {
     title: "Euskadiko osasun zentroak",
     centros: [],
     likes: [],
-    provincia: "",
-    tipo_centro :""
+    provincia: ""
   }),
 
   computed: {

@@ -5285,6 +5285,37 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InformazioaComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InformazioaComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    console.log('Component mounted.');
+  },
+  methods: {
+    //hay q poner un método para añadir el sitio a favoritos en la bbdd
+    prueba: function prueba() {
+      alert("olvidonaaa;)");
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProfilaComponent.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/ProfilaComponent.vue?vue&type=script&lang=js& ***!
@@ -5385,6 +5416,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -5396,8 +5434,7 @@ __webpack_require__.r(__webpack_exports__);
       title: "Euskadiko osasun zentroak",
       centros: [],
       likes: [],
-      provincia: "",
-      tipo_centro: ""
+      provincia: ""
     };
   },
   computed: {
@@ -5468,7 +5505,8 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 
 Vue.component('index-component', (__webpack_require__(/*! ./components/IndexComponent.vue */ "./resources/js/components/IndexComponent.vue")["default"]));
 Vue.component('centros-list', (__webpack_require__(/*! ./components/osasunZentroak.vue */ "./resources/js/components/osasunZentroak.vue")["default"]));
-Vue.component('profila-component', (__webpack_require__(/*! ./components/ProfilaComponent.vue */ "./resources/js/components/ProfilaComponent.vue")["default"])); // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
+Vue.component('profila-component', (__webpack_require__(/*! ./components/ProfilaComponent.vue */ "./resources/js/components/ProfilaComponent.vue")["default"]));
+Vue.component('info-component', (__webpack_require__(/*! ./components/InformazioaComponent.vue */ "./resources/js/components/InformazioaComponent.vue")["default"])); // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -28466,6 +28504,45 @@ component.options.__file = "resources/js/components/IndexComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/InformazioaComponent.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/InformazioaComponent.vue ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _InformazioaComponent_vue_vue_type_template_id_0f66408f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InformazioaComponent.vue?vue&type=template&id=0f66408f& */ "./resources/js/components/InformazioaComponent.vue?vue&type=template&id=0f66408f&");
+/* harmony import */ var _InformazioaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InformazioaComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/InformazioaComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InformazioaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InformazioaComponent_vue_vue_type_template_id_0f66408f___WEBPACK_IMPORTED_MODULE_0__.render,
+  _InformazioaComponent_vue_vue_type_template_id_0f66408f___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/InformazioaComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/ProfilaComponent.vue":
 /*!******************************************************!*\
   !*** ./resources/js/components/ProfilaComponent.vue ***!
@@ -28562,6 +28639,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/InformazioaComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/InformazioaComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InformazioaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./InformazioaComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InformazioaComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InformazioaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/ProfilaComponent.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************!*\
   !*** ./resources/js/components/ProfilaComponent.vue?vue&type=script&lang=js& ***!
@@ -28620,6 +28713,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_template_id_754b2df6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
 /* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_IndexComponent_vue_vue_type_template_id_754b2df6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./IndexComponent.vue?vue&type=template&id=754b2df6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/IndexComponent.vue?vue&type=template&id=754b2df6&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/InformazioaComponent.vue?vue&type=template&id=0f66408f&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/InformazioaComponent.vue?vue&type=template&id=0f66408f& ***!
+  \*****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InformazioaComponent_vue_vue_type_template_id_0f66408f___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InformazioaComponent_vue_vue_type_template_id_0f66408f___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InformazioaComponent_vue_vue_type_template_id_0f66408f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./InformazioaComponent.vue?vue&type=template&id=0f66408f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InformazioaComponent.vue?vue&type=template&id=0f66408f&");
 
 
 /***/ }),
@@ -28700,6 +28810,45 @@ var staticRenderFns = [
     ])
   },
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InformazioaComponent.vue?vue&type=template&id=0f66408f&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/InformazioaComponent.vue?vue&type=template&id=0f66408f& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _c(
+      "button",
+      {
+        staticClass: "btn btn-primary",
+        attrs: { type: "button" },
+        on: {
+          click: function ($event) {
+            return _vm.prueba()
+          },
+        },
+      },
+      [_vm._v("Gogoko dut")]
+    ),
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -28824,13 +28973,62 @@ var render = function () {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "centro" },
+      { staticClass: "centros" },
       _vm._l(_vm.filteredCentros, function (centro, index) {
-        return _c("div", { key: index, staticClass: "hotel shadow-sm" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("h5", { staticClass: "card-header" }, [
-              _vm._v(_vm._s(centro.Zentromota)),
-            ]),
+        return _c("div", { key: index, staticClass: "centro shadow-sm" }, [
+          _c("div", { staticClass: "card", staticStyle: { width: "18rem" } }, [
+            centro.Zentromota === "Anbulatorioa"
+              ? _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: "ambulatorio.jpg",
+                    heigth: "100px",
+                    width: "100px",
+                  },
+                })
+              : centro.Zentromota === "Beste batzuk"
+              ? _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: { src: "otros2.jpg", heigth: "100px", width: "100px" },
+                })
+              : centro.Zentromota === "Kontsultategia"
+              ? _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: "consultorio.jpg",
+                    heigth: "100px",
+                    width: "100px",
+                  },
+                })
+              : centro.Zentromota === "Osasun Zentroa" ||
+                centro.Zentromota === "Osasun-zentroa"
+              ? _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: "centro-de-salud.png",
+                    heigth: "100px",
+                    width: "100px",
+                  },
+                })
+              : centro.Zentromota === "Osasun mentaleko zentroa"
+              ? _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: "centro-salud-mental.jpg",
+                    heigth: "100px",
+                    width: "100px",
+                  },
+                })
+              : centro.Zentromota === "Ospitalea"
+              ? _c("img", {
+                  staticClass: "card-img-top",
+                  attrs: {
+                    src: "hospital.jpg",
+                    heigth: "100px",
+                    width: "100px",
+                  },
+                })
+              : _vm._e(),
             _vm._v(" "),
             _c("div", { staticClass: "card-body" }, [
               _c("h5", { staticClass: "card-title" }, [
@@ -28838,6 +29036,8 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("p", { staticClass: "card-text" }, [
+                _c("b", [_vm._v(_vm._s(centro.Zentromota))]),
+                _c("br"),
                 _vm._v(
                   _vm._s(centro.Udalerria) + ", " + _vm._s(centro.Probintzia)
                 ),
@@ -28845,7 +29045,14 @@ var render = function () {
               _vm._v(" "),
               _c(
                 "a",
-                { staticClass: "btn btn-primary", attrs: { href: "#" } },
+                {
+                  staticClass: "btn btn-primary",
+                  attrs: {
+                    href:
+                      "http://127.0.0.1:8000/informazioa?zentroa=" +
+                      centro.Zentroarenkodea,
+                  },
+                },
                 [_vm._v("Ikusi")]
               ),
             ]),
@@ -28880,22 +29087,24 @@ var staticRenderFns = [
         { staticClass: "form-select", attrs: { id: "filtro-provincia" } },
         [
           _c("option", { attrs: { value: "bizkaia" } }, [
-            _vm._v("Ambulatorio"),
+            _vm._v("Anbulatorioa"),
           ]),
           _vm._v(" "),
           _c("option", { attrs: { value: "gipuzkoa" } }, [
-            _vm._v("Centro de salud"),
+            _vm._v("Osasun Zentroa"),
           ]),
           _vm._v(" "),
           _c("option", { attrs: { value: "araba" } }, [
-            _vm._v("Centro de salud mental"),
+            _vm._v("Osasun-zentroa"),
           ]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "araba" } }, [_vm._v("Consultorio")]),
+          _c("option", { attrs: { value: "araba" } }, [
+            _vm._v("Osasun mentaleko zentroa"),
+          ]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "araba" } }, [_vm._v("Hospital")]),
+          _c("option", { attrs: { value: "araba" } }, [_vm._v("Ospitalea")]),
           _vm._v(" "),
-          _c("option", { attrs: { value: "araba" } }, [_vm._v("Otros")]),
+          _c("option", { attrs: { value: "araba" } }, [_vm._v("Beste batzuk")]),
         ]
       ),
       _vm._v(" "),
