@@ -17,31 +17,55 @@
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: grey !important;
+    background-color: rgba(128, 128, 128, 0.507) !important;
     border-radius: 10px;
 }
 
 #desc {
-    margin-top: 25px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin: 25px;
 }
 
-.zentroakTable {
-    margin-top: 5vh;
-    margin-left: 11vw;
+#zentroak{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: center;
+}
+
+#tab_zentro {
+    display: inline-table;
+    margin-left: 10vw;
+}
+
+#tab_zentro_gust {
+    display: inline-table;
+    margin-left: 10vw;
+}
+
+ #tab_zentro thead {
+    border: solid black 2px;
+    background-color: rgb(185, 185, 185);
+    padding: 3px !important;
+}
+
+#tab_zentro_gust thead {
+    border: solid black 2px;
+    background-color: rgb(185, 185, 185);
+    padding: 3px !important;
+}
+
+#tab_zentro tbody {
     border: solid black 2px;
 }
 
-.zentroakTable thead tr th {
-    padding-left: 15vw;
-    padding-right: 15vw;
-}
-
-.zentroakTable tbody tr td {
-    padding-left: 15vw;
-    padding-right: 15vw;
-}
+#tab_zentro_gust tbody {
+    border: solid black 2px;
+} 
+#zentroak th{
+    padding: 4px;
+} 
+#zentroak tbody tr{
+    border: solid grey 2px;
+} 
 
 
 /* Index FIN */
