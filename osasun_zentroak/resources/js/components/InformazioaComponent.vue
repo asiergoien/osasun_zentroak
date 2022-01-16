@@ -1,23 +1,20 @@
 <template>
     <div>
-        <div v-for="(centro, index) in centros" v-bind:key="index" class="centro shadow-sm">
-            <div v-if="centro.Zentroarenkodea === getParams()">
+        <div v-for="(centro, index) in centros" v-bind:key="index" v-if="centro.Zentroarenkodea === getParams()" class="row">
+            <div class="col-4">
                 <h1 class="text-primary">{{ centro.Izena }}</h1>
-            <div id="mapaCentro" class="col-md">
-                <!-- <iframe src="https://maps.google.com/?q=43.3127516,-1.899633&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
+                <h4 class="text-danger">{{centro.Zentromota}}</h4>
+                <h4>{{centro.Helbidea}}, {{centro.Udalerria}}</h4>
+                <h4>Tlf.: {{centro.Telefonoa}}<br>Email: {{centro.Postaelektronikoa}}</h4>
+            </div>
+            <div id="mapaCentro" class="col">
                 <iframe v-bind:src="'https://maps.google.com/?q='+centro.LATWGS84+','+centro.LONWGS84+'&output=embed'" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary">Gogoko dut</button>
             </div>
         </div>
-        <!-- Mapa del centro -->
-                
     </div>
-        <!-- <div>
-            <h1>{{centro.Izena}}</h1>
-            <h4>Tipo de centro</h4>
-            <h4>Direccion</h4>
-            <h4>Contacto</h4>
-        </div> -->
         
 </template>
 

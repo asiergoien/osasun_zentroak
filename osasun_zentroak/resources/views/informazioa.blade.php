@@ -13,7 +13,7 @@
             <!-- Row para la información sobre el centro, la foto y el botón de fav -->
             <div class="row">
                 <!-- Informacion sobre el centro -->
-                    <div id="app" class="col-md">
+                    <div id="app">
                         <info-component></info-component>
                     </div>
                 <!-- Mapa del centro -->
@@ -21,9 +21,9 @@
                     <iframe src="https://maps.google.com/?q=43.3127516,-1.899633&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div> -->
                 <!-- Botón de fav -->
-                <div id="btnFav" class="col-md">
+                <!-- <div id="btnFav">
                     <button type="button" class="btn btn-primary">Gogoko dut</button>
-                </div>
+                </div> -->
             </div>
             <!-- Row para los comentarios -->
             <div class="row my-5">
