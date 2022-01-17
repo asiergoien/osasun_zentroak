@@ -5400,6 +5400,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   components: {},
   mounted: function mounted() {
@@ -10689,7 +10692,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n@media (max-width: 400px) {\n.izena-gustokoenak[data-v-24752343] {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-around;\r\n    align-items: center;\n}\n.izena[data-v-24752343] {\n}\n.btn-gustokoenak[data-v-24752343] {\r\n    width: 40%;\r\n    height: 3rem;\r\n    border-radius: 3px;\r\n    border: orange solid 2px;\r\n    background-color: rgb(252, 199, 102);\n}\n.email-aldatu[data-v-24752343] {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-around;\r\n    align-items: center;\n}\n.email-text[data-v-24752343] {\r\n    /* margin-left: 8%; */\n}\n.email[data-v-24752343] {\r\n    border: lightgray solid 2px;\r\n    border-radius: 2px;\r\n    height: 40%;\r\n    width: 43%;\r\n    /* margin-left: 8%; */\n}\n.aldatu[data-v-24752343] {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: right;\n}\n.btn-aldatu[data-v-24752343] {\r\n    margin-right: 10%;\r\n    width: 30%;\r\n    height: 1.5rem;\r\n    border-radius: 3px;\r\n    border: rgb(126, 120, 120) solid 2px;\r\n    background-color: rgb(209, 200, 200);\n}\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*Mugikorra*/\n@media (max-width: 400px) {\n.izena-gustokoenak[data-v-24752343] {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    padding-left: 8%;\r\n    padding-right: 8%;\r\n    margin-top: 1rem;\n}\n.email-container[data-v-24752343] {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin-top: 2rem;\r\n    padding-left: 8%;\r\n    padding-right: 8%;\n}\n.email[data-v-24752343] {\r\n    border: lightgray solid 2px;\r\n    border-radius: 2px;\r\n    height: 40%;\r\n    width: auto;\n}\n.aldatu[data-v-24752343] {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: right;\r\n    margin-top: 1rem;\r\n    padding-right: 8%;\n}\n.irudia img[data-v-24752343]{\r\n    width: 50%;\n}\n}\r\n\r\n/*Tablet*/\n@media (min-width: 400px) {\n.izena-gustokoenak[data-v-24752343] {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    padding-left: 8%;\r\n    padding-right: 8%;\r\n    margin-top: 1rem;\n}\n.email-container[data-v-24752343] {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin-top: 2rem;\r\n    padding-left: 8%;\r\n    padding-right: 8%;\n}\n.email[data-v-24752343] {\r\n    border: lightgray solid 2px;\r\n    border-radius: 2px;\r\n    width: 80%;\n}\n.aldatu[data-v-24752343] {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: right;\r\n    margin-top: 1rem;\r\n    padding-right: 25%;\n}\n}\r\n\r\n/* Ordenagailua */\n@media (min-width: 950px) {\n.izena-gustokoenak[data-v-24752343] {\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: space-between;\r\n    padding-left: 30.5%;\r\n    padding-right: 8%;\r\n    margin-top: -13rem;\n}\n.email-container[data-v-24752343] {\r\n    display: flex;\r\n    flex-direction: column;\r\n    margin-top: 1rem;\r\n    padding-left: 30.5%;\r\n    padding-right: 8%;\n}\n.email[data-v-24752343] {\r\n    border: lightgray solid 2px;\r\n    border-radius: 2px;\r\n    height: 40%;\r\n    width: 60%;\n}\n.aldatu[data-v-24752343] {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: right;\r\n    margin-top: 1rem;\r\n    padding-right: 35%;\n}\n.irudia img[data-v-24752343] {\r\n    width: 30%;\r\n    padding-left: 5%;\n}\n.izena[data-v-24752343] {\r\n    font-size: xx-large;\n}\n}  \r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29036,18 +29039,26 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
+    return _c("div", { staticClass: "background" }, [
       _c("form", { staticClass: "form" }, [
+        _c("div", { staticClass: "irudia" }, [
+          _c("img", { attrs: { src: "persona.png" } }),
+        ]),
+        _vm._v(" "),
         _c("div", { staticClass: "izena-gustokoenak" }, [
           _c("h2", { staticClass: "izena" }, [_vm._v("SARAY")]),
           _vm._v(" "),
           _c("input", {
-            staticClass: "btn-gustokoenak",
-            attrs: { type: "button", value: "Gustokoenak" },
+            staticClass: "btn btn-warning btn-lg",
+            attrs: {
+              type: "button",
+              id: "btn-gustokoenak",
+              value: "Gustokoenak",
+            },
           }),
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "email-aldatu" }, [
+        _c("div", { staticClass: "email-container" }, [
           _c("h3", { staticClass: "email-text" }, [_vm._v("Email:")]),
           _vm._v(" "),
           _c("input", {
@@ -29058,8 +29069,12 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("div", { staticClass: "aldatu" }, [
           _c("input", {
-            staticClass: "btn-aldatu",
-            attrs: { type: "button", value: "Aldatu" },
+            staticClass: "btn btn-secondary btn-sm",
+            attrs: {
+              type: "button",
+              id: "btn-aldatu",
+              value: "Aldatu pasahitza",
+            },
           }),
         ]),
       ]),

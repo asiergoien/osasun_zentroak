@@ -1,0 +1,36 @@
+//izena-gustokoenak MOVIL
+$display_izena-gustokoenak_M: flex;
+$flex-dir_izena-gustokoenak_M: row;
+$jus-content_izena-gustokoenak_M: space-between;
+$padding-left_izena-gustokoenak_M: 8%;
+$padding-right_izena-gustokoenak_M: 8%;
+$margin-top_izena-gustokoenak_M: 1rem;
+
+//izena-gustokoenak TABLET
+$display_izena-gustokoenak_T: flex;
+$flex-dir_izena-gustokoenak_T: row;
+$jus-content_izena-gustokoenak_T: space-between;
+$padding-left_izena-gustokoenak_T: 8%;
+$padding-right_izena-gustokoenak_T: 8%;
+$margin-top_izena-gustokoenak_T: 1rem;
+
+//btn-gustokoenak
+$gustokoenak_width: 40%;
+$gustokoenak_height: 3rem;
+$gustokoenak_border-radius: 3px;
+$gustokoenak_border: orange solid 2px;
+$gustokoenak_background-color: rgb(252,199,102);
+
+//input-email
+$email_height: 40%;
+$email_width: 43%;
+$email_border-radius: 2px;
+$email_border: lightgray solid 2px;
+
+//btn-aldatu
+$aldatu_width: 30%;
+$aldatu_height: 1.5rem;
+$aldatu_border-radius: 3px;
+$aldatu_border: rgb(126,120,120) solid 2px;
+$aldatu_margin-right: 10%;
+$aldatu_bacground-color: rgb(209,200,200);
