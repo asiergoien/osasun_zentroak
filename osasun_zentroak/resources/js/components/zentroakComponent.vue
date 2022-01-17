@@ -25,7 +25,7 @@
           </div>
           <hr>
           <h5 class="text-primary">&nbsp;&nbsp;IZENA</h5>
-          <input type="text" id="txtBusqueda" name="txtBusqueda" placeholder="Zentroaren izena..." title="Izen bat idatzi" class="form-control mb-3">
+          <input v-model="sartutakoIzena" type="text" id="txtBusqueda" name="txtBusqueda" placeholder="Zentroaren izena..." title="Izen bat idatzi" class="form-control mb-3">
           <hr>
           <h5 class="text-primary">&nbsp;&nbsp;ZENTRO MOTA</h5>
           <select id="filtro-tipo" class="form-select">
@@ -85,20 +85,17 @@ export default {
     title: "Euskadiko osasun zentroak",
     centros: [],
     likes: [],
-    provincia: ""
+    provincia: "",    
+    mota: "",
+    sartutakoIzena: ""
   }),
 
   computed: {
 
     filteredCentros() {
-      if (this.provincia.length > 0) {
-        return this.centros.filter(centro => {
-          return centro.Udalerria.toLowerCase().includes(this.provincia)
-            || centro.Eskualdea.toLowerCase().includes(this.provincia);
-        });
-      } else {
-        return this.centros;
-      }
+
+      let bilaketarenEmaitza = this.bilatuIzenarenArabera();
+      return bilaketarenEmaitza;
     }
 
   },
@@ -116,6 +113,14 @@ export default {
           this.centros[i].id = i;
         }
       });
+    },
+    bilatuIzenarenArabera() {
+
+      if(this.sartutakoIzena.length > 0){
+        return this.centros.filter((centro) => centro.Izena.toLowerCase().includes(this.sartutakoIzena.toLowerCase()));
+      }else{
+        return this.centros;
+      }
     },
     getParams() {
                 var parser = document.createElement('a');

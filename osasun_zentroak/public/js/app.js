@@ -5519,37 +5519,43 @@ __webpack_require__.r(__webpack_exports__);
       title: "Euskadiko osasun zentroak",
       centros: [],
       likes: [],
-      provincia: ""
+      provincia: "",
+      mota: "",
+      sartutakoIzena: ""
     };
   },
   computed: {
     filteredCentros: function filteredCentros() {
-      var _this = this;
-
-      if (this.provincia.length > 0) {
-        return this.centros.filter(function (centro) {
-          return centro.Udalerria.toLowerCase().includes(_this.provincia) || centro.Eskualdea.toLowerCase().includes(_this.provincia);
-        });
-      } else {
-        return this.centros;
-      }
+      var bilaketarenEmaitza = this.bilatuIzenarenArabera();
+      return bilaketarenEmaitza;
     }
   },
   methods: {
     getCentros: function getCentros() {
-      var _this2 = this;
+      var _this = this;
 
       delete axios.defaults.headers.common['X-Requested-With']; // const URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/centros-salud.json";
 
       var URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/osasun-zentroak.json";
       axios.get(URL).then(function (response) {
         var data = new String(response.data).replace("jsonCallback(", "").replace(");", "");
-        _this2.centros = JSON.parse(data);
+        _this.centros = JSON.parse(data);
 
-        for (var i = 0; i < _this2.centros.length; i++) {
-          _this2.centros[i].id = i;
+        for (var i = 0; i < _this.centros.length; i++) {
+          _this.centros[i].id = i;
         }
       });
+    },
+    bilatuIzenarenArabera: function bilatuIzenarenArabera() {
+      var _this2 = this;
+
+      if (this.sartutakoIzena.length > 0) {
+        return this.centros.filter(function (centro) {
+          return centro.Izena.toLowerCase().includes(_this2.sartutakoIzena.toLowerCase());
+        });
+      } else {
+        return this.centros;
+      }
     },
     getParams: function getParams() {
       var parser = document.createElement('a');
@@ -29155,6 +29161,14 @@ var render = function () {
               _c("h5", { staticClass: "text-primary" }, [_vm._v("  IZENA")]),
               _vm._v(" "),
               _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.sartutakoIzena,
+                    expression: "sartutakoIzena",
+                  },
+                ],
                 staticClass: "form-control mb-3",
                 attrs: {
                   type: "text",
@@ -29162,6 +29176,15 @@ var render = function () {
                   name: "txtBusqueda",
                   placeholder: "Zentroaren izena...",
                   title: "Izen bat idatzi",
+                },
+                domProps: { value: _vm.sartutakoIzena },
+                on: {
+                  input: function ($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.sartutakoIzena = $event.target.value
+                  },
                 },
               }),
               _vm._v(" "),
