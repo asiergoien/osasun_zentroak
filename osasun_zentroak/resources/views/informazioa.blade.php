@@ -13,17 +13,17 @@
             <!-- Row para la información sobre el centro, la foto y el botón de fav -->
             <div class="row">
                 <!-- Informacion sobre el centro -->
-                    <div id="app">
+                    <div id="app" class="col-md">
                         <info-component></info-component>
                     </div>
                 <!-- Mapa del centro -->
-                <!-- <div id="mapaCentro" class="col-md">
-                    <iframe src="https://maps.google.com/?q=43.3127516,-1.899633&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div> -->
+                <div id="mapaCentro" class="col-md">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2852.7332712925977!2d-2.9045955845534825!3d43.257671279136886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4e4fac87437727%3A0x364f27e82def0130!2sCIFP%20Txurdinaga%20LHII!5e1!3m2!1ses!2ses!4v1641906920417!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
                 <!-- Botón de fav -->
-                <!-- <div id="btnFav">
+                <div id="btnFav" class="col-md">
                     <button type="button" class="btn btn-primary">Gogoko dut</button>
-                </div> -->
+                </div>
             </div>
             <!-- Row para los comentarios -->
             <div class="row my-5">

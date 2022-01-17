@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">  
-            <img src="img/Logo.png" alt="" width="200" height="200">
+            <img src="img/Logo.png" alt="" width="250" height="30">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,8 +26,8 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li>
-                            <a class="dropdown-item d-flex align-items-left gap-3" href="/profile">
-                                <span>Perfil</span>
+                            <a class="dropdown-item d-flex align-items-left gap-3" href="/">
+                                <span>Profila</span>
                             </a>
                         </li>
                         <li>
@@ -37,7 +37,7 @@
                         </li>
                         <li>
                             <a class="dropdown-item d-flex align-items-left gap-1" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                <span>Cerrar sesión</span>
+                                <span>Saioa itxi </span>
                             </a>
                         </li>
                         <li>

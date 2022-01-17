@@ -8,7 +8,6 @@
                 <div class="row justify-content-left">
                     <img src="img/Logo.png" alt="">
                 </div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -57,7 +56,6 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Logeatu') }}
                                 </button>
-
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('¿ahaztu duzu pasahitza?') }}
