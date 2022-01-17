@@ -1,6 +1,6 @@
 <template>
   <div class="d-flex justify-content-center">
-     <div class="container row">
+    <div class="container row">
       <div v-if="centros.length == 0" class="d-flex gap-3 justify-content-center align-items-center">
         <div class="spinner-border text-secondary" role="status">
           <span class="visually-hidden">Kargatzen...</span>
@@ -15,55 +15,36 @@
 
       <div v-if="centros.length > 0" class="mb-5">
         <div class="col-lg-10 col-md-5 rounded mt-5">
-            <br>
+          <br>
 
-            <div class="d-flex text-muted">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-              </svg>
-              <h5>&nbsp;&nbsp;IRAGAZKIAK</h5>
-            </div>
-            <hr>
-            <input type="text" id="txtBusqueda" name="txtBusqueda" placeholder="Zentroaren izena..." title="Izen bat idatzi" class="form-control mb-3">
-            <hr>
-            <h5>&nbsp;&nbsp;ZENTRO MOTA</h5>
-            <div class="form-check form-switch my-1">
-              <input class="form-check-input" type="checkbox" role="switch" id="anbulatorioa">
-              <label class="form-check-label" for="anbulatorioa">Anbulatorioa</label>
-            </div>
-            <div class="form-check form-switch my-1">
-              <input class="form-check-input" type="checkbox" role="switch" id="osas-zentroa">
-              <label class="form-check-label" for="osas-zentroa">Osasun zentroa</label>
-            </div>
-            <div class="form-check form-switch my-1">
-              <input class="form-check-input" type="checkbox" role="switch" id="osas-ment-zentroa">
-              <label class="form-check-label" for="osas-ment-zentroa">Osasun mentaleko zentroa</label>
-            </div>
-            <div class="form-check form-switch my-1">
-              <input class="form-check-input" type="checkbox" role="switch" id="ospitalea">
-              <label class="form-check-label" for="ospitalea">Osapitalea</label>
-            </div>
-            <div class="form-check form-switch my-1">
-              <input class="form-check-input" type="checkbox" role="switch" id="beste-batzuk">
-              <label class="form-check-label" for="beste-batzuk">Beste batzuk</label>
-            </div>
-            <hr>
-            <h5>&nbsp;&nbsp;PROBINTZIA</h5>
-            <div class="form-check form-switch my-1">
-              <input class="form-check-input" type="checkbox" role="switch" id="bizkaia">
-              <label class="form-check-label" for="bizkaia">Bizkaia</label>
-            </div>
-            <div class="form-check form-switch my-1">
-              <input class="form-check-input" type="checkbox" role="switch" id="gipuzkoa">
-              <label class="form-check-label" for="gipuzkoa">Gipuzkoa</label>
-            </div>
-            <div class="form-check form-switch my-1">
-              <input class="form-check-input" type="checkbox" role="switch" id="araba">
-              <label class="form-check-label" for="araba">Araba</label>
-            </div>
+          <div class="d-flex text-muted">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+            <h5>&nbsp;&nbsp;IRAGAZKIAK</h5>
           </div>
+          <hr>
+          <h5 class="text-primary">&nbsp;&nbsp;IZENA</h5>
+          <input type="text" id="txtBusqueda" name="txtBusqueda" placeholder="Zentroaren izena..." title="Izen bat idatzi" class="form-control mb-3">
+          <hr>
+          <h5 class="text-primary">&nbsp;&nbsp;ZENTRO MOTA</h5>
+          <select id="filtro-tipo" class="form-select">
+          <option value="anbulatorioa">Anbulatorioa</option>
+          <option value="osas_zentroa">Osasun zentroa</option>
+          <option value="osas_ment_zentroa">Osasun mentaleko zentroa</option>
+          <option value="ospitalea">Ospitalea</option>
+          <option value="beste_batzuk">Beste batzuk</option>
+        </select>
+          <hr>
+          <h5 class="text-primary">&nbsp;&nbsp;PROBINTZIA</h5>
+          <select id="filtro-provincia" class="form-select">
+          <option value="bizkaia">Bizkaia</option>
+          <option value="gipuzkoa">Gipuzkoa</option>
+          <option value="araba">Araba</option>
+        </select>
       </div>
     </div>
+  </div>
       
 
       <div id="centros" class="col-lg-9 col-md-8 d-flex flex-wrap rounded my-5 p-3">

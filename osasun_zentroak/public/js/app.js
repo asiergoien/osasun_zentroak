@@ -5505,25 +5505,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -29171,6 +29152,8 @@ var render = function () {
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
+              _c("h5", { staticClass: "text-primary" }, [_vm._v("  IZENA")]),
+              _vm._v(" "),
               _c("input", {
                 staticClass: "form-control mb-3",
                 attrs: {
@@ -29184,27 +29167,19 @@ var render = function () {
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
-              _c("h5", [_vm._v("  ZENTRO MOTA")]),
+              _c("h5", { staticClass: "text-primary" }, [
+                _vm._v("  ZENTRO MOTA"),
+              ]),
               _vm._v(" "),
               _vm._m(1),
               _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _vm._m(3),
-              _vm._v(" "),
-              _vm._m(4),
-              _vm._v(" "),
-              _vm._m(5),
-              _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
-              _c("h5", [_vm._v("  PROBINTZIA")]),
+              _c("h5", { staticClass: "text-primary" }, [
+                _vm._v("  PROBINTZIA"),
+              ]),
               _vm._v(" "),
-              _vm._m(6),
-              _vm._v(" "),
-              _vm._m(7),
-              _vm._v(" "),
-              _vm._m(8),
+              _vm._m(2),
             ]),
           ])
         : _vm._e(),
@@ -29323,140 +29298,45 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-check form-switch my-1" }, [
-      _c("input", {
-        staticClass: "form-check-input",
-        attrs: { type: "checkbox", role: "switch", id: "anbulatorioa" },
-      }),
-      _vm._v(" "),
-      _c(
-        "label",
-        { staticClass: "form-check-label", attrs: { for: "anbulatorioa" } },
-        [_vm._v("Anbulatorioa")]
-      ),
-    ])
+    return _c(
+      "select",
+      { staticClass: "form-select", attrs: { id: "filtro-tipo" } },
+      [
+        _c("option", { attrs: { value: "anbulatorioa" } }, [
+          _vm._v("Anbulatorioa"),
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "osas_zentroa" } }, [
+          _vm._v("Osasun zentroa"),
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "osas_ment_zentroa" } }, [
+          _vm._v("Osasun mentaleko zentroa"),
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "ospitalea" } }, [_vm._v("Ospitalea")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "beste_batzuk" } }, [
+          _vm._v("Beste batzuk"),
+        ]),
+      ]
+    )
   },
   function () {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-check form-switch my-1" }, [
-      _c("input", {
-        staticClass: "form-check-input",
-        attrs: { type: "checkbox", role: "switch", id: "osas-zentroa" },
-      }),
-      _vm._v(" "),
-      _c(
-        "label",
-        { staticClass: "form-check-label", attrs: { for: "osas-zentroa" } },
-        [_vm._v("Osasun zentroa")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-check form-switch my-1" }, [
-      _c("input", {
-        staticClass: "form-check-input",
-        attrs: { type: "checkbox", role: "switch", id: "osas-ment-zentroa" },
-      }),
-      _vm._v(" "),
-      _c(
-        "label",
-        {
-          staticClass: "form-check-label",
-          attrs: { for: "osas-ment-zentroa" },
-        },
-        [_vm._v("Osasun mentaleko zentroa")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-check form-switch my-1" }, [
-      _c("input", {
-        staticClass: "form-check-input",
-        attrs: { type: "checkbox", role: "switch", id: "ospitalea" },
-      }),
-      _vm._v(" "),
-      _c(
-        "label",
-        { staticClass: "form-check-label", attrs: { for: "ospitalea" } },
-        [_vm._v("Osapitalea")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-check form-switch my-1" }, [
-      _c("input", {
-        staticClass: "form-check-input",
-        attrs: { type: "checkbox", role: "switch", id: "beste-batzuk" },
-      }),
-      _vm._v(" "),
-      _c(
-        "label",
-        { staticClass: "form-check-label", attrs: { for: "beste-batzuk" } },
-        [_vm._v("Beste batzuk")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-check form-switch my-1" }, [
-      _c("input", {
-        staticClass: "form-check-input",
-        attrs: { type: "checkbox", role: "switch", id: "bizkaia" },
-      }),
-      _vm._v(" "),
-      _c(
-        "label",
-        { staticClass: "form-check-label", attrs: { for: "bizkaia" } },
-        [_vm._v("Bizkaia")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-check form-switch my-1" }, [
-      _c("input", {
-        staticClass: "form-check-input",
-        attrs: { type: "checkbox", role: "switch", id: "gipuzkoa" },
-      }),
-      _vm._v(" "),
-      _c(
-        "label",
-        { staticClass: "form-check-label", attrs: { for: "gipuzkoa" } },
-        [_vm._v("Gipuzkoa")]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-check form-switch my-1" }, [
-      _c("input", {
-        staticClass: "form-check-input",
-        attrs: { type: "checkbox", role: "switch", id: "araba" },
-      }),
-      _vm._v(" "),
-      _c(
-        "label",
-        { staticClass: "form-check-label", attrs: { for: "araba" } },
-        [_vm._v("Araba")]
-      ),
-    ])
+    return _c(
+      "select",
+      { staticClass: "form-select", attrs: { id: "filtro-provincia" } },
+      [
+        _c("option", { attrs: { value: "bizkaia" } }, [_vm._v("Bizkaia")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "gipuzkoa" } }, [_vm._v("Gipuzkoa")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "araba" } }, [_vm._v("Araba")]),
+      ]
+    )
   },
 ]
 render._withStripped = true
