@@ -5571,6 +5571,12 @@ __webpack_require__.r(__webpack_exports__);
     searchByMota: function searchByMota(arrayDeResultadosRecibidos) {
       var _this3 = this;
 
+      // let emaitza = [];
+      // emaitza = arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
+      // if(this.tipodecentro == "Osasun-zentroa"){
+      //   emaitza.concat(arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes("osasun zentroa")));
+      // }
+      // return emaizta;
       return arrayDeResultadosRecibidos.filter(function (centro) {
         return centro.Zentromota.toLowerCase().includes(_this3.tipodecentro.toLowerCase());
       });
