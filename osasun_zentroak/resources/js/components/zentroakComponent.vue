@@ -23,13 +23,14 @@
           <input v-model="sartutakoIzena" type="text" id="txtBusqueda" name="txtBusqueda" placeholder="Zentroaren izena..." title="Izen bat idatzi" class="form-control mb-3">
           <hr>
           <h5 class="text-primary">&nbsp;&nbsp;ZENTRO MOTA</h5>
-          <select id="filtro-tipo" class="form-select">
-          <option value="anbulatorioa">Anbulatorioa</option>
-          <option value="osas_zentroa">Osasun zentroa</option>
-          <option value="osas_ment_zentroa">Osasun mentaleko zentroa</option>
-          <option value="ospitalea">Ospitalea</option>
-          <option value="beste_batzuk">Beste batzuk</option>
-        </select>
+          <select v-model="tipodecentro" id="filtro-tipo" class="form-select">
+            <option default selected value=""> -- Aukeratu mota -- </option>
+            <option value="Anbulatorioa">Anbulatorioa</option>
+            <option value="Osasun-zentroa">Osasun zentroa</option>
+            <option value="Osasun mentaleko zentroa">Osasun mentaleko zentroa</option>
+            <option value="Ospitalea">Ospitalea</option>
+            <option value="Beste batzuk">Beste batzuk</option>
+          </select>
           <hr>
           <h5 class="text-primary">&nbsp;&nbsp;PROBINTZIA</h5>
           <select v-model="provincia" id="filtro-provincia" class="form-select">
@@ -82,7 +83,7 @@ export default {
     centros: [],
     likes: [],
     provincia: "",    
-    mota: "",
+    tipodecentro: "",
     sartutakoIzena: ""
   }),
 
@@ -93,6 +94,9 @@ export default {
 
       if (this.provincia.length > 0) {
         arrEmaitza = this.searchByProbintzia(arrEmaitza);
+      }
+      if (this.tipodecentro.length > 0) {
+        arrEmaitza = this.searchByMota(arrEmaitza);
       }
 
       return arrEmaitza;
@@ -120,6 +124,9 @@ export default {
       }else{
         return this.centros;
       }
+    },
+    searchByMota(arrayDeResultadosRecibidos) {
+      return arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
     },
     searchByProbintzia(arrayDeResultadosRecibidos) {
       return arrayDeResultadosRecibidos.filter((centro) => centro.Probintzia.toLowerCase().includes(this.provincia.toLowerCase()));

@@ -5509,6 +5509,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -5521,7 +5522,7 @@ __webpack_require__.r(__webpack_exports__);
       centros: [],
       likes: [],
       provincia: "",
-      mota: "",
+      tipodecentro: "",
       sartutakoIzena: ""
     };
   },
@@ -5531,6 +5532,10 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.provincia.length > 0) {
         arrEmaitza = this.searchByProbintzia(arrEmaitza);
+      }
+
+      if (this.tipodecentro.length > 0) {
+        arrEmaitza = this.searchByMota(arrEmaitza);
       }
 
       return arrEmaitza;
@@ -5563,11 +5568,18 @@ __webpack_require__.r(__webpack_exports__);
         return this.centros;
       }
     },
-    searchByProbintzia: function searchByProbintzia(arrayDeResultadosRecibidos) {
+    searchByMota: function searchByMota(arrayDeResultadosRecibidos) {
       var _this3 = this;
 
       return arrayDeResultadosRecibidos.filter(function (centro) {
-        return centro.Probintzia.toLowerCase().includes(_this3.provincia.toLowerCase());
+        return centro.Zentromota.toLowerCase().includes(_this3.tipodecentro.toLowerCase());
+      });
+    },
+    searchByProbintzia: function searchByProbintzia(arrayDeResultadosRecibidos) {
+      var _this4 = this;
+
+      return arrayDeResultadosRecibidos.filter(function (centro) {
+        return centro.Probintzia.toLowerCase().includes(_this4.provincia.toLowerCase());
       });
     },
     getParams: function getParams() {
@@ -29201,7 +29213,65 @@ var render = function () {
                 _vm._v("  ZENTRO MOTA"),
               ]),
               _vm._v(" "),
-              _vm._m(1),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.tipodecentro,
+                      expression: "tipodecentro",
+                    },
+                  ],
+                  staticClass: "form-select",
+                  attrs: { id: "filtro-tipo" },
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.tipodecentro = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
+                  },
+                },
+                [
+                  _c(
+                    "option",
+                    { attrs: { default: "", selected: "", value: "" } },
+                    [_vm._v(" -- Aukeratu mota -- ")]
+                  ),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Anbulatorioa" } }, [
+                    _vm._v("Anbulatorioa"),
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Osasun-zentroa" } }, [
+                    _vm._v("Osasun zentroa"),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "option",
+                    { attrs: { value: "Osasun mentaleko zentroa" } },
+                    [_vm._v("Osasun mentaleko zentroa")]
+                  ),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Ospitalea" } }, [
+                    _vm._v("Ospitalea"),
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Beste batzuk" } }, [
+                    _vm._v("Beste batzuk"),
+                  ]),
+                ]
+              ),
               _vm._v(" "),
               _c("hr"),
               _vm._v(" "),
@@ -29370,34 +29440,6 @@ var staticRenderFns = [
         attrs: { role: "status" },
       },
       [_c("span", { staticClass: "visually-hidden" }, [_vm._v("Kargatzen...")])]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      { staticClass: "form-select", attrs: { id: "filtro-tipo" } },
-      [
-        _c("option", { attrs: { value: "anbulatorioa" } }, [
-          _vm._v("Anbulatorioa"),
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "osas_zentroa" } }, [
-          _vm._v("Osasun zentroa"),
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "osas_ment_zentroa" } }, [
-          _vm._v("Osasun mentaleko zentroa"),
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "ospitalea" } }, [_vm._v("Ospitalea")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "beste_batzuk" } }, [
-          _vm._v("Beste batzuk"),
-        ]),
-      ]
     )
   },
 ]
