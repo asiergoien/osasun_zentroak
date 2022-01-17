@@ -33,6 +33,7 @@
           <hr>
           <h5 class="text-primary">&nbsp;&nbsp;PROBINTZIA</h5>
           <select v-model="provincia" id="filtro-provincia" class="form-select">
+            <option default selected value=""> -- Aukeratu probintzia -- </option>
             <option value="Bizkaia">Bizkaia</option>
             <option value="Gipuzkoa">Gipuzkoa</option>
             <option value="Araba">Araba</option>

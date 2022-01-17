@@ -5503,6 +5503,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -29225,6 +29226,12 @@ var render = function () {
                   },
                 },
                 [
+                  _c(
+                    "option",
+                    { attrs: { default: "", selected: "", value: "" } },
+                    [_vm._v(" -- Aukeratu probintzia -- ")]
+                  ),
+                  _vm._v(" "),
                   _c("option", { attrs: { value: "Bizkaia" } }, [
                     _vm._v("Bizkaia"),
                   ]),
