@@ -5318,6 +5318,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getCentros();
@@ -28944,51 +28946,49 @@ var render = function () {
   return _c(
     "div",
     _vm._l(_vm.centros, function (centro, index) {
-      return centro.Zentroarenkodea === _vm.getParams()
-        ? _c("div", { key: index, staticClass: "row" }, [
-            _c("div", { staticClass: "col-4" }, [
-              _c("h1", { staticClass: "text-primary" }, [
-                _vm._v(_vm._s(centro.Izena)),
+      return _c("div", { key: index }, [
+        centro.Zentroarenkodea === _vm.getParams()
+          ? _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-4" }, [
+                _c("h1", { staticClass: "text-primary" }, [
+                  _vm._v(_vm._s(centro.Izena)),
+                ]),
+                _vm._v(" "),
+                _c("h4", { staticClass: "text-danger" }, [
+                  _vm._v(_vm._s(centro.Zentromota)),
+                ]),
+                _vm._v(" "),
+                _c("h4", [
+                  _vm._v(
+                    _vm._s(centro.Helbidea) + ", " + _vm._s(centro.Udalerria)
+                  ),
+                ]),
+                _vm._v(" "),
+                _c("h4", [_vm._v("Tlf.: " + _vm._s(centro.Telefonoa))]),
               ]),
               _vm._v(" "),
-              _c("h4", { staticClass: "text-danger" }, [
-                _vm._v(_vm._s(centro.Zentromota)),
+              _c("div", { staticClass: "col", attrs: { id: "mapaCentro" } }, [
+                _c("iframe", {
+                  staticStyle: { border: "0" },
+                  attrs: {
+                    src:
+                      "https://maps.google.com/?q=" +
+                      centro.LATWGS84 +
+                      "," +
+                      centro.LONWGS84 +
+                      "&output=embed",
+                    width: "600",
+                    height: "450",
+                    allowfullscreen: "",
+                    loading: "lazy",
+                  },
+                }),
               ]),
               _vm._v(" "),
-              _c("h4", [
-                _vm._v(
-                  _vm._s(centro.Helbidea) + ", " + _vm._s(centro.Udalerria)
-                ),
-              ]),
-              _vm._v(" "),
-              _c("h4", [
-                _vm._v("Tlf.: " + _vm._s(centro.Telefonoa)),
-                _c("br"),
-                _vm._v("Email: " + _vm._s(centro.Postaelektronikoa)),
-              ]),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "col", attrs: { id: "mapaCentro" } }, [
-              _c("iframe", {
-                staticStyle: { border: "0" },
-                attrs: {
-                  src:
-                    "https://maps.google.com/?q=" +
-                    centro.LATWGS84 +
-                    "," +
-                    centro.LONWGS84 +
-                    "&output=embed",
-                  width: "600",
-                  height: "450",
-                  allowfullscreen: "",
-                  loading: "lazy",
-                },
-              }),
-            ]),
-            _vm._v(" "),
-            _vm._m(0, true),
-          ])
-        : _vm._e()
+              _vm._m(0, true),
+            ])
+          : _vm._e(),
+      ])
     }),
     0
   )
