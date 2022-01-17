@@ -5503,11 +5503,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -5526,8 +5521,13 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     filteredCentros: function filteredCentros() {
-      var bilaketarenEmaitza = this.bilatuIzenarenArabera();
-      return bilaketarenEmaitza;
+      var arrEmaitza = this.searchByName();
+
+      if (this.provincia.length > 0) {
+        arrEmaitza = this.searchByProbintzia(arrEmaitza);
+      }
+
+      return arrEmaitza;
     }
   },
   methods: {
@@ -5546,7 +5546,7 @@ __webpack_require__.r(__webpack_exports__);
         }
       });
     },
-    bilatuIzenarenArabera: function bilatuIzenarenArabera() {
+    searchByName: function searchByName() {
       var _this2 = this;
 
       if (this.sartutakoIzena.length > 0) {
@@ -5556,6 +5556,13 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return this.centros;
       }
+    },
+    searchByProbintzia: function searchByProbintzia(arrayDeResultadosRecibidos) {
+      var _this3 = this;
+
+      return arrayDeResultadosRecibidos.filter(function (centro) {
+        return centro.Probintzia.toLowerCase().includes(_this3.provincia.toLowerCase());
+      });
     },
     getParams: function getParams() {
       var parser = document.createElement('a');
@@ -29112,20 +29119,6 @@ var render = function () {
           )
         : _vm._e(),
       _vm._v(" "),
-      _vm.provincia.length > 0
-        ? _c("div", [
-            _c("h4", [
-              _vm._v("'" + _vm._s(_vm.provincia) + "' -ko osasun zentroak"),
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "text-muted" }, [
-              _vm._v(
-                _vm._s(_vm.filteredCentros.length) + " centros encontrados"
-              ),
-            ]),
-          ])
-        : _vm._e(),
-      _vm._v(" "),
       _vm.centros.length > 0
         ? _c("div", { staticClass: "mb-5" }, [
             _c("div", { staticClass: "col-lg-10 col-md-5 rounded mt-5" }, [
@@ -29202,7 +29195,49 @@ var render = function () {
                 _vm._v("  PROBINTZIA"),
               ]),
               _vm._v(" "),
-              _vm._m(2),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.provincia,
+                      expression: "provincia",
+                    },
+                  ],
+                  staticClass: "form-select",
+                  attrs: { id: "filtro-provincia" },
+                  on: {
+                    change: function ($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function (o) {
+                          return o.selected
+                        })
+                        .map(function (o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.provincia = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    },
+                  },
+                },
+                [
+                  _c("option", { attrs: { value: "Bizkaia" } }, [
+                    _vm._v("Bizkaia"),
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Gipuzkoa" } }, [
+                    _vm._v("Gipuzkoa"),
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "Araba" } }, [
+                    _vm._v("Araba"),
+                  ]),
+                ]
+              ),
             ]),
           ])
         : _vm._e(),
@@ -29342,22 +29377,6 @@ var staticRenderFns = [
         _c("option", { attrs: { value: "beste_batzuk" } }, [
           _vm._v("Beste batzuk"),
         ]),
-      ]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "select",
-      { staticClass: "form-select", attrs: { id: "filtro-provincia" } },
-      [
-        _c("option", { attrs: { value: "bizkaia" } }, [_vm._v("Bizkaia")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "gipuzkoa" } }, [_vm._v("Gipuzkoa")]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "araba" } }, [_vm._v("Araba")]),
       ]
     )
   },

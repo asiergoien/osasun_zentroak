@@ -8,11 +8,6 @@
         <span class="text-muted">Osasun zentroak bilatzen</span>
       </div>
 
-      <div v-if="provincia.length > 0">
-        <h4>'{{ provincia }}' -ko osasun zentroak</h4>
-        <p class="text-muted">{{ filteredCentros.length }} centros encontrados</p>
-      </div>
-
       <div v-if="centros.length > 0" class="mb-5">
         <div class="col-lg-10 col-md-5 rounded mt-5">
           <br>
@@ -37,11 +32,11 @@
         </select>
           <hr>
           <h5 class="text-primary">&nbsp;&nbsp;PROBINTZIA</h5>
-          <select id="filtro-provincia" class="form-select">
-          <option value="bizkaia">Bizkaia</option>
-          <option value="gipuzkoa">Gipuzkoa</option>
-          <option value="araba">Araba</option>
-        </select>
+          <select v-model="provincia" id="filtro-provincia" class="form-select">
+            <option value="Bizkaia">Bizkaia</option>
+            <option value="Gipuzkoa">Gipuzkoa</option>
+            <option value="Araba">Araba</option>
+          </select>
       </div>
     </div>
   </div>
@@ -93,9 +88,13 @@ export default {
   computed: {
 
     filteredCentros() {
+      let arrEmaitza = this.searchByName();
 
-      let bilaketarenEmaitza = this.bilatuIzenarenArabera();
-      return bilaketarenEmaitza;
+      if (this.provincia.length > 0) {
+        arrEmaitza = this.searchByProbintzia(arrEmaitza);
+      }
+
+      return arrEmaitza;
     }
 
   },
@@ -114,21 +113,23 @@ export default {
         }
       });
     },
-    bilatuIzenarenArabera() {
-
+    searchByName() {
       if(this.sartutakoIzena.length > 0){
         return this.centros.filter((centro) => centro.Izena.toLowerCase().includes(this.sartutakoIzena.toLowerCase()));
       }else{
         return this.centros;
       }
     },
+    searchByProbintzia(arrayDeResultadosRecibidos) {
+      return arrayDeResultadosRecibidos.filter((centro) => centro.Probintzia.toLowerCase().includes(this.provincia.toLowerCase()));
+    },
     getParams() {
-                var parser = document.createElement('a');
-                parser.href = window.location.href;
-                var query = parser.search.substring(1);
-                var value = query.split('=');
-                return value[1];
-            }
+      var parser = document.createElement('a');
+      parser.href = window.location.href;
+      var query = parser.search.substring(1);
+      var value = query.split('=');
+      return value[1];
+    }
 
   }
 
