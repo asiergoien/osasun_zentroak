@@ -1,11 +1,12 @@
 <template>
-    <div>
-        <div v-for="(centro, index) in centros" v-bind:key="index" v-if="centro.Zentroarenkodea === getParams()" class="row">
+<div>
+    <div v-for="(centro, index) in centros" v-bind:key="index">
+        <div v-if="centro.Zentroarenkodea === getParams()" class="row">
             <div class="col-4">
                 <h1 class="text-primary">{{ centro.Izena }}</h1>
                 <h4 class="text-danger">{{centro.Zentromota}}</h4>
                 <h4>{{centro.Helbidea}}, {{centro.Udalerria}}</h4>
-                <h4>Tlf.: {{centro.Telefonoa}}<br>Email: {{centro.Postaelektronikoa}}</h4>
+                <h4>Tlf.: {{centro.Telefonoa}}</h4>
             </div>
             <div id="mapaCentro" class="col">
                 <iframe v-bind:src="'https://maps.google.com/?q='+centro.LATWGS84+','+centro.LONWGS84+'&output=embed'" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -15,6 +16,7 @@
             </div>
         </div>
     </div>
+</div>
         
 </template>
 
