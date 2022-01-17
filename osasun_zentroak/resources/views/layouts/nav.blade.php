@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-white">
+<nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">  
+        <a class="navbar-brand fw-bold" href="/index">
             <img src="img/Logo.png" alt="" width="250" height="30">
+        </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -24,7 +26,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Illuminate\Support\Facades\Auth::user()->name }}
                     </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu">
                         <li>
                             <a class="dropdown-item d-flex align-items-left gap-3" href="/">
                                 <span>Profila</span>
@@ -48,7 +50,6 @@
                     </ul>
                 </div>
                 @endguest
-                
             </div>
         </div>
     </div>

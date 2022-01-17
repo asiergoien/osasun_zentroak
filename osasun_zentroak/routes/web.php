@@ -15,7 +15,7 @@ use App\Http\Controllers\IndexController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
 Route::get('/index', function () {
