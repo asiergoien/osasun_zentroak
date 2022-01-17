@@ -5279,6 +5279,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -28843,51 +28846,48 @@ var render = function () {
         ),
         _vm._v(" "),
         _c("span", { staticClass: "text-muted" }, [
-          _vm._v("© 2021 Company, Inc"),
+          _vm._v("Copyright © 2022 Osazun Zentroak "),
         ]),
       ]),
       _vm._v(" "),
-      _c(
-        "ul",
-        {
-          staticClass: "nav col-md-4 justify-content-end list-unstyled d-flex",
-        },
-        [
-          _c("li", { staticClass: "ms-3" }, [
-            _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-              _c(
-                "svg",
-                { staticClass: "bi", attrs: { width: "24", height: "24" } },
-                [_c("use", { attrs: { "xlink:href": "#twitter" } })]
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "ms-3" }, [
-            _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-              _c(
-                "svg",
-                { staticClass: "bi", attrs: { width: "24", height: "24" } },
-                [_c("use", { attrs: { "xlink:href": "#instagram" } })]
-              ),
-            ]),
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "ms-3" }, [
-            _c("a", { staticClass: "text-muted", attrs: { href: "#" } }, [
-              _c(
-                "svg",
-                { staticClass: "bi", attrs: { width: "24", height: "24" } },
-                [_c("use", { attrs: { "xlink:href": "#facebook" } })]
-              ),
-            ]),
-          ]),
-        ]
-      ),
+      _vm._m(0),
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { attrs: { id: "RedesSociales" } }, [
+      _c("ul", [
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fab fa-facebook" }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fa fa-lg fa-twitter" }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fa fa-lg fa-instagram" }),
+          ]),
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("a", { attrs: { href: "#" } }, [
+            _c("i", { staticClass: "fa fa-lg fa-youtube" }),
+          ]),
+        ]),
+      ]),
+    ])
+  },
+]
 render._withStripped = true
 
 
