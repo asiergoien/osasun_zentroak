@@ -5320,6 +5320,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getCentros();
@@ -5367,6 +5370,12 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         return this.centros;
       }
+    },
+    arreglarLatitud: function arreglarLatitud(str) {
+      return str.substring(0, 2) + "." + str.substring(2);
+    },
+    arreglarTelefono: function arreglarTelefono(str) {
+      return str.replaceAll('.', '').substring(0, 9);
     }
   }
 });
@@ -28921,7 +28930,7 @@ var render = function () {
                   _vm._v(_vm._s(centro.Izena)),
                 ]),
                 _vm._v(" "),
-                _c("h4", { staticClass: "text-danger" }, [
+                _c("h4", { staticClass: "text-secondary" }, [
                   _vm._v(_vm._s(centro.Zentromota)),
                 ]),
                 _vm._v(" "),
@@ -28931,25 +28940,55 @@ var render = function () {
                   ),
                 ]),
                 _vm._v(" "),
-                _c("h4", [_vm._v("Tlf.: " + _vm._s(centro.Telefonoa))]),
+                centro.Telefonoa.includes(".")
+                  ? _c("h4", [
+                      _vm._v(
+                        "Tlf.: " +
+                          _vm._s(_vm.arreglarTelefono(centro.Telefonoa))
+                      ),
+                    ])
+                  : _c("h4", [_vm._v("Tlf.: " + _vm._s(centro.Telefonoa))]),
+                _vm._v(" "),
+                _c("p", [
+                  _c("b", [_vm._v("Ordutegia:")]),
+                  _vm._v(
+                    " " + _vm._s(centro.Herritarrentzakozerbitzuarenordutegia)
+                  ),
+                ]),
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col", attrs: { id: "mapaCentro" } }, [
-                _c("iframe", {
-                  staticStyle: { border: "0" },
-                  attrs: {
-                    src:
-                      "https://maps.google.com/?q=" +
-                      centro.LATWGS84 +
-                      "," +
-                      centro.LONWGS84 +
-                      "&output=embed",
-                    width: "600",
-                    height: "450",
-                    allowfullscreen: "",
-                    loading: "lazy",
-                  },
-                }),
+                centro.LATWGS84.includes(".")
+                  ? _c("iframe", {
+                      staticStyle: { border: "0" },
+                      attrs: {
+                        src:
+                          "https://maps.google.com/?q=" +
+                          centro.LATWGS84 +
+                          "," +
+                          centro.LONWGS84 +
+                          "&output=embed",
+                        width: "600",
+                        height: "450",
+                        allowfullscreen: "",
+                        loading: "lazy",
+                      },
+                    })
+                  : _c("iframe", {
+                      staticStyle: { border: "0" },
+                      attrs: {
+                        src:
+                          "https://maps.google.com/?q=" +
+                          _vm.arreglarLatitud(centro.LATWGS84) +
+                          "," +
+                          centro.LONWGS84 +
+                          "&output=embed",
+                        width: "600",
+                        height: "450",
+                        allowfullscreen: "",
+                        loading: "lazy",
+                      },
+                    }),
               ]),
               _vm._v(" "),
               _vm._m(0, true),
