@@ -182,3 +182,13 @@
   }
 
   /* profila FIN */
+
+  /* zentroak FIN */
+  #centros{
+    padding: 0 !important;
+    display: inline-grid;
+    column-gap: 1em;
+    row-gap: 1em;
+    grid-template-columns: auto auto auto auto;
+  }
+  /* zentroak FIN */

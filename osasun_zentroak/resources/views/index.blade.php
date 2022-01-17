@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-
+ 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <div id="app">
@@ -37,35 +37,61 @@
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, suscipit unde accusantium nesciunt dicta sapiente, at corporis, expedita excepturi quia ducimus iste nemo fugit eos dolor repellendus nostrum? Doloribus odit veritatis numquam sint magni. Magnam rem, aliquid iste reprehenderit tempora eveniet illum temporibus quod aliquam quia expedita tenetur dolorum libero laborum? Tempora deserunt dolores quis commodi odit sunt in sapiente ipsam sed, laborum distinctio atque. Aperiam totam qui debitis nobis, molestias doloribus cupiditate, sapiente voluptatum reiciendis in similique, iste vero voluptas soluta illo ea. Officia, sequi amet maxime repellat voluptates saepe facilis dolor quia tenetur illum delectus porro ex, culpa omnis hic corrupti quasi. Dicta, laboriosam. Repellendus nisi culpa, ipsum iste, ipsam repellat autem ab impedit voluptatibus molestias voluptate dolores provident, eos esse aliquid nihil veniam reiciendis. Inventore quibusdam fugiat itaque quae quia nesciunt beatae officiis maiores nobis quam cumque, asperiores explicabo ratione odit. Ex iure magnam assumenda aut laudantium.
         </div>
         <div id="zentroak">
-            <table class="zentroakTable">
-                <thead>
-                <tr>
-                    <th>pepe goterads</th>
-                    <th>Zentro gustokoenak</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Zentro1</td>
-                    <td>Zentro2</td>
-                </tr>
-                <tr>
-                    <td>Zentro3</td>
-                    <td>Zentro4</td>
-                </tr>
-                <tr>
-                    <td>Zentro5</td>
-                    <td>Zentro6</td>
-                </tr>
-                </tbody>
-            </table>
+             <!-- class="zentroakTable" -->
+             <div id="tab_zentro">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zentroak</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tab_zentro_gust">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zentro gustokoenak</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
+                        </tr>
+                        <tr>
+                            <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+ 
+            </div>
         </div>
-
+ 
     </div>
     <div id="footer">
         <footer-component></footer-component>
     </div>
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>
-
+ 
 </html>

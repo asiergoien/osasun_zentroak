@@ -1,56 +1,90 @@
 <template>
-  <div>
-
-    <div v-if="centros.length == 0" class="d-flex gap-3 justify-content-center align-items-center">
-      <div class="spinner-border text-secondary" role="status">
-        <span class="visually-hidden">Kargatzen...</span>
+  <div class="d-flex justify-content-center">
+     <div class="container row">
+      <div v-if="centros.length == 0" class="d-flex gap-3 justify-content-center align-items-center">
+        <div class="spinner-border text-secondary" role="status">
+          <span class="visually-hidden">Kargatzen...</span>
+        </div>
+        <span class="text-muted">Osasun zentroak bilatzen</span>
       </div>
-      <span class="text-muted">Osasun zentroak bilatzen</span>
-    </div>
 
-    <div v-if="provincia.length > 0">
-      <h4>'{{ provincia }}' -ko osasun zentroak</h4>
-      <p class="text-muted">{{ filteredCentros.length }} centros encontrados</p>
-    </div>
+      <div v-if="provincia.length > 0">
+        <h4>'{{ provincia }}' -ko osasun zentroak</h4>
+        <p class="text-muted">{{ filteredCentros.length }} centros encontrados</p>
+      </div>
 
-    <div v-if="centros.length > 0" class="mb-5">
-      <input id="filtro-nombre" type="text" class="form-control">
-      <div class="d-flex gap-3 mt-3">
-        <select id="filtro-provincia" class="form-select">
-          <option value="bizkaia">Anbulatorioa</option>
-          <option value="gipuzkoa">Osasun Zentroa</option>
-          <option value="araba">Osasun-zentroa</option>
-          <option value="araba">Osasun mentaleko zentroa</option>
-          <option value="araba">Ospitalea</option>
-          <option value="araba">Beste batzuk</option>
-        </select>
-        <select id="filtro-tipo" class="form-select">
-          <option value="bizkaia">Bizkaia</option>
-          <option value="gipuzkoa">Gipuzkoa</option>
-          <option value="araba">Araba</option>
-        </select>
+      <div v-if="centros.length > 0" class="mb-5">
+        <div class="col-lg-10 col-md-5 rounded mt-5">
+            <br>
+
+            <div class="d-flex text-muted">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+              </svg>
+              <h5>&nbsp;&nbsp;IRAGAZKIAK</h5>
+            </div>
+            <hr>
+            <input type="text" id="txtBusqueda" name="txtBusqueda" placeholder="Zentroaren izena..." title="Izen bat idatzi" class="form-control mb-3">
+            <hr>
+            <h5>&nbsp;&nbsp;ZENTRO MOTA</h5>
+            <div class="form-check form-switch my-1">
+              <input class="form-check-input" type="checkbox" role="switch" id="anbulatorioa">
+              <label class="form-check-label" for="anbulatorioa">Anbulatorioa</label>
+            </div>
+            <div class="form-check form-switch my-1">
+              <input class="form-check-input" type="checkbox" role="switch" id="osas-zentroa">
+              <label class="form-check-label" for="osas-zentroa">Osasun zentroa</label>
+            </div>
+            <div class="form-check form-switch my-1">
+              <input class="form-check-input" type="checkbox" role="switch" id="osas-ment-zentroa">
+              <label class="form-check-label" for="osas-ment-zentroa">Osasun mentaleko zentroa</label>
+            </div>
+            <div class="form-check form-switch my-1">
+              <input class="form-check-input" type="checkbox" role="switch" id="ospitalea">
+              <label class="form-check-label" for="ospitalea">Osapitalea</label>
+            </div>
+            <div class="form-check form-switch my-1">
+              <input class="form-check-input" type="checkbox" role="switch" id="beste-batzuk">
+              <label class="form-check-label" for="beste-batzuk">Beste batzuk</label>
+            </div>
+            <hr>
+            <h5>&nbsp;&nbsp;PROBINTZIA</h5>
+            <div class="form-check form-switch my-1">
+              <input class="form-check-input" type="checkbox" role="switch" id="bizkaia">
+              <label class="form-check-label" for="bizkaia">Bizkaia</label>
+            </div>
+            <div class="form-check form-switch my-1">
+              <input class="form-check-input" type="checkbox" role="switch" id="gipuzkoa">
+              <label class="form-check-label" for="gipuzkoa">Gipuzkoa</label>
+            </div>
+            <div class="form-check form-switch my-1">
+              <input class="form-check-input" type="checkbox" role="switch" id="araba">
+              <label class="form-check-label" for="araba">Araba</label>
+            </div>
+          </div>
       </div>
     </div>
-    
+      
 
-    <div class="centros">
-      <div v-for="(centro, index) in filteredCentros" v-bind:key="index" class="centro shadow-sm">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" v-if="centro.Zentromota === 'Anbulatorioa'" src="ambulatorio.jpg" heigth="100px" width="100px">
-          <img class="card-img-top" v-else-if="centro.Zentromota === 'Beste batzuk'" src="otros2.jpg" heigth="100px" width="100px">
-          <img class="card-img-top" v-else-if="centro.Zentromota === 'Kontsultategia'" src="consultorio.jpg" heigth="100px" width="100px">
-          <img class="card-img-top" v-else-if="centro.Zentromota === 'Osasun Zentroa' || centro.Zentromota === 'Osasun-zentroa'" src="centro-de-salud.png" heigth="100px" width="100px">
-          <img class="card-img-top" v-else-if="centro.Zentromota === 'Osasun mentaleko zentroa'" src="centro-salud-mental.jpg" heigth="100px" width="100px">
-          <img class="card-img-top" v-else-if="centro.Zentromota === 'Ospitalea'" src="hospital.jpg" heigth="100px" width="100px">
-          <div class="card-body">
-            <h5 class="card-title text-primary">{{ centro.Izena }}</h5>
-            <p class="card-text"><b>{{ centro.Zentromota }}</b><br>{{ centro.Udalerria }}, {{ centro.Probintzia }}</p>
-            <a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centro.Zentroarenkodea" class="btn btn-primary">Ikusi</a>
+      <div id="centros" class="col-lg-9 col-md-8 d-flex flex-wrap rounded my-5 p-3">
+        <div v-for="(centro, index) in filteredCentros" v-bind:key="index" class="centro shadow-sm">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" v-if="centro.Zentromota === 'Anbulatorioa'" src="ambulatorio.jpg" heigth="100px" width="100px">
+            <img class="card-img-top" v-else-if="centro.Zentromota === 'Beste batzuk'" src="otros2.jpg" heigth="100px" width="100px">
+            <img class="card-img-top" v-else-if="centro.Zentromota === 'Kontsultategia'" src="consultorio.jpg" heigth="100px" width="100px">
+            <img class="card-img-top" v-else-if="centro.Zentromota === 'Osasun Zentroa' || centro.Zentromota === 'Osasun-zentroa'" src="centro-de-salud.png" heigth="100px" width="100px">
+            <img class="card-img-top" v-else-if="centro.Zentromota === 'Osasun mentaleko zentroa'" src="centro-salud-mental.jpg" heigth="100px" width="100px">
+            <img class="card-img-top" v-else-if="centro.Zentromota === 'Ospitalea'" src="hospital.jpg" heigth="100px" width="100px">
+            <div class="card-body">
+              <h5 class="card-title text-primary">{{ centro.Izena }}</h5>
+              <p class="card-text"><b>{{ centro.Zentromota }}</b><br>{{ centro.Udalerria }}, {{ centro.Probintzia }}</p>
+              <a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centro.Zentroarenkodea" class="btn btn-primary">Ikusi</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
+    </div>
   </div>
 
 </template>
