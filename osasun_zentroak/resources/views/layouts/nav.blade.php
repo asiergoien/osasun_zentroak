@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+</head>
+
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container-fluid">  
         <a class="navbar-brand fw-bold" href="/index">
@@ -54,3 +58,7 @@
         </div>
     </div>
   </nav>
+
+    <main id="app">
+        @yield('content')
+    </main>
