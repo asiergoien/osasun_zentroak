@@ -5280,8 +5280,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -28852,7 +28850,7 @@ var render = function () {
     "footer",
     {
       staticClass:
-        "d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top",
+        "myfooter d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top",
     },
     [
       _c("div", { staticClass: "col-md-4 d-flex align-items-center" }, [
@@ -28887,30 +28885,20 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { attrs: { id: "RedesSociales" } }, [
-      _c("ul", [
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fab fa-facebook" }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fa fa-lg fa-twitter" }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fa fa-lg fa-instagram" }),
-          ]),
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("a", { attrs: { href: "#" } }, [
-            _c("i", { staticClass: "fa fa-lg fa-youtube" }),
-          ]),
-        ]),
+      _c("a", { attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fab fa-facebook-square" }),
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fab fa-twitter" }),
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fab fa-instagram" }),
+      ]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "#" } }, [
+        _c("i", { staticClass: "fab fa-linkedin-in" }),
       ]),
     ])
   },
