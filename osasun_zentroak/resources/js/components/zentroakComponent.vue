@@ -56,6 +56,7 @@
             <div class="card-body">
               <h5 class="card-title text-primary">{{ centro.Izena }}</h5>
               <p class="card-text"><b>{{ centro.Zentromota }}</b><br>{{ centro.Udalerria }}, {{ centro.Probintzia }}</p>
+              <br v-if="centro.Izena.length < 25">
               <a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centro.Zentroarenkodea" class="btn btn-primary">Ikusi</a>
             </div>
           </div>

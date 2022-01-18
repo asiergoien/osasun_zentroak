@@ -5508,6 +5508,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -29421,6 +29422,8 @@ var render = function () {
                   _vm._s(centro.Udalerria) + ", " + _vm._s(centro.Probintzia)
                 ),
               ]),
+              _vm._v(" "),
+              centro.Izena.length < 25 ? _c("br") : _vm._e(),
               _vm._v(" "),
               _c(
                 "a",
