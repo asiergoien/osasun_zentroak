@@ -5569,12 +5569,6 @@ __webpack_require__.r(__webpack_exports__);
     searchByMota: function searchByMota(arrayDeResultadosRecibidos) {
       var _this3 = this;
 
-      // let emaitza = [];
-      // emaitza = arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
-      // if(this.tipodecentro == "Osasun-zentroa"){
-      //   emaitza.concat(arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.includes("Osasun Zentroa")));
-      // }
-      // return emaitza;
       return arrayDeResultadosRecibidos.filter(function (centro) {
         return centro.Zentromota.toLowerCase().includes(_this3.tipodecentro.toLowerCase());
       }).concat(arrayDeResultadosRecibidos.filter(function (centro) {
@@ -28852,7 +28846,7 @@ var render = function () {
     "footer",
     {
       staticClass:
-        "myfooter d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top",
+        "myfooter d-flex flex-wrap justify-content-between align-items-center py-3 mt-3 border-top",
     },
     [
       _c("div", { staticClass: "col-md-4 d-flex align-items-center" }, [
@@ -28887,21 +28881,29 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { attrs: { id: "RedesSociales" } }, [
-      _c("a", { attrs: { href: "#" } }, [
+      _c("a", { attrs: { href: "https://www.facebook.com/Osakidetza/" } }, [
         _c("i", { staticClass: "fab fa-facebook-square" }),
       ]),
       _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [
+      _c("a", { attrs: { href: "https://twitter.com/osakidetzaEJGV" } }, [
         _c("i", { staticClass: "fab fa-twitter" }),
       ]),
       _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fab fa-instagram" }),
-      ]),
+      _c(
+        "a",
+        { attrs: { href: "https://www.instagram.com/osakidetzaejgv/" } },
+        [_c("i", { staticClass: "fab fa-instagram" })]
+      ),
       _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "fab fa-linkedin-in" }),
-      ]),
+      _c(
+        "a",
+        {
+          attrs: {
+            href: "https://www.youtube.com/channel/UC7uEj276GdnwRtXtt2-NwFQ",
+          },
+        },
+        [_c("i", { staticClass: "fab fa-youtube" })]
+      ),
     ])
   },
 ]

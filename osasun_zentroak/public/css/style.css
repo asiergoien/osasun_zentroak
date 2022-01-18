@@ -22,13 +22,16 @@
 }
 
 #desc {
-    margin: 25px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 10px;
 }
 
 #zentroak {
     display: grid;
     grid-template-columns: 50% 50%;
-    text-align: center;
+    text-align: center !important;
 }
 
 #tab_zentro {
@@ -45,12 +48,14 @@
     border: solid black 2px;
     background-color: rgb(185, 185, 185);
     padding: 3px !important;
+    text-align: center;
 }
 
 #tab_zentro_gust thead {
     border: solid black 2px;
     background-color: rgb(185, 185, 185);
     padding: 3px !important;
+    text-align: center;
 }
 
 #tab_zentro tbody {
@@ -70,7 +75,17 @@
 }
 
 .myfooter {
-    background-color: grey;
+    background-color: black;
+    width: 100%;
+}
+
+#RedesSociales {
+    font-size: 25px;
+    margin-right: 3vw;
+}
+
+#app {
+    min-height: 100vh;
 }
 
 
