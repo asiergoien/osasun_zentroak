@@ -28846,7 +28846,7 @@ var render = function () {
     "footer",
     {
       staticClass:
-        "myfooter d-flex flex-wrap justify-content-between align-items-center py-3 mt-3 border-top",
+        "myfooter d-flex flex-wrap justify-content-between align-items-center py-3 mt-3 border-top bg-primary",
     },
     [
       _c("div", { staticClass: "col-md-4 d-flex align-items-center" }, [
@@ -28866,7 +28866,7 @@ var render = function () {
           ]
         ),
         _vm._v(" "),
-        _c("span", { staticClass: "text-muted" }, [
+        _c("span", { staticClass: "text-light" }, [
           _vm._v("Copyright © 2022 Osazun Zentroak "),
         ]),
       ]),
@@ -28882,17 +28882,28 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { attrs: { id: "RedesSociales" } }, [
       _c("a", { attrs: { href: "https://www.facebook.com/Osakidetza/" } }, [
-        _c("i", { staticClass: "fab fa-facebook-square" }),
+        _c("i", {
+          staticClass: "fab fa-facebook-square",
+          staticStyle: { color: "white" },
+        }),
       ]),
       _vm._v(" "),
       _c("a", { attrs: { href: "https://twitter.com/osakidetzaEJGV" } }, [
-        _c("i", { staticClass: "fab fa-twitter" }),
+        _c("i", {
+          staticClass: "fab fa-twitter",
+          staticStyle: { color: "white" },
+        }),
       ]),
       _vm._v(" "),
       _c(
         "a",
         { attrs: { href: "https://www.instagram.com/osakidetzaejgv/" } },
-        [_c("i", { staticClass: "fab fa-instagram" })]
+        [
+          _c("i", {
+            staticClass: "fab fa-instagram",
+            staticStyle: { color: "white" },
+          }),
+        ]
       ),
       _vm._v(" "),
       _c(
@@ -28902,7 +28913,12 @@ var staticRenderFns = [
             href: "https://www.youtube.com/channel/UC7uEj276GdnwRtXtt2-NwFQ",
           },
         },
-        [_c("i", { staticClass: "fab fa-youtube" })]
+        [
+          _c("i", {
+            staticClass: "fab fa-youtube",
+            staticStyle: { color: "white" },
+          }),
+        ]
       ),
     ])
   },
