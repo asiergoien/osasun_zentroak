@@ -5574,12 +5574,14 @@ __webpack_require__.r(__webpack_exports__);
       // let emaitza = [];
       // emaitza = arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
       // if(this.tipodecentro == "Osasun-zentroa"){
-      //   emaitza.concat(arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes("osasun zentroa")));
+      //   emaitza.concat(arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.includes("Osasun Zentroa")));
       // }
-      // return emaizta;
+      // return emaitza;
       return arrayDeResultadosRecibidos.filter(function (centro) {
         return centro.Zentromota.toLowerCase().includes(_this3.tipodecentro.toLowerCase());
-      });
+      }).concat(arrayDeResultadosRecibidos.filter(function (centro) {
+        return centro.Zentromota.includes("Osasun Zentroa");
+      })); // return arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
     },
     searchByProbintzia: function searchByProbintzia(arrayDeResultadosRecibidos) {
       var _this4 = this;
