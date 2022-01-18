@@ -17,11 +17,13 @@
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-    <h1>OSASUN ZENTROAK</h1>
     <div id="app">
         <centros-list></centros-list>
     </div>
 
+    <div id="footer">
+        <footer-component></footer-component>
+    </div>
     <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 
