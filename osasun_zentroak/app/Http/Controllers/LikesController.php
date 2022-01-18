@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Likes;
 
-class CrudController extends Controller
+class LikesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,9 @@ class CrudController extends Controller
      */
     public function index()
     {
-        //
+        $likes=Likes::all();
+
+        return view('likes.index', compact('likes'));
     }
 
     /**
@@ -23,7 +26,7 @@ class CrudController extends Controller
      */
     public function create()
     {
-        //
+        return view('likes.create');
     }
 
     /**
@@ -34,7 +37,15 @@ class CrudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'userId' => 'required',
+            'zentroarenKodea' => 'required',
+        ]);
+  
+        Likes::create($request->all());
+  
+        return redirect()->route('likes.index')->with('success','Like created successfully.');
+ 
     }
 
     /**
@@ -43,9 +54,10 @@ class CrudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Likes $likes)
     {
-        //
+        return view('likes.show',compact('likes'));
+
     }
 
     /**
@@ -54,9 +66,9 @@ class CrudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Likes $likes)
     {
-        //
+        return view('likes.edit', compact('likes'));
     }
 
     /**
@@ -66,9 +78,17 @@ class CrudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Likes $likes)
     {
-        //
+        $request->validate([
+            'userId' => 'required',
+            'zentroarenKodea' => 'required',
+        ]);
+  
+        $likes->update($request->all());
+  
+        return redirect()->route('likes.index')->with('success','Like updated successfully');
+ 
     }
 
     /**
@@ -77,8 +97,12 @@ class CrudController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Likes $likes)
     {
-        //
+        $likes->delete();
+
+        return redirect()->route('likes.index')
+                        ->with('success','like deleted successfully');
+
     }
 }

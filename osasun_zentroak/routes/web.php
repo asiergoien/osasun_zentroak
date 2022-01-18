@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CrudController;
+use App\Http\Controllers\LikesController;
+use App\Http\Controllers\CommentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +33,8 @@ Route::get('/profila', function() {
 });
 
 
-Route::resource('crud', CrudController::class);
+Route::resource('likes', LikesController::class);
+Route::resource('comments', CommentsController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

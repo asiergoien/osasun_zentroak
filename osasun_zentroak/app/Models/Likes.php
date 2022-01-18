@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class OsasunZentroak_crud extends Model
+class Likes extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'userId', 'zentroarenKodea', 'mensaje'
+    protected $fillable =[
+        'userId','zentroarenKodea'
     ];
 }
