@@ -1,4 +1,4 @@
-<template>
+          --<template>
     <div>
         <div v-for="(centro, index) in centros" v-bind:key="index">
             <div v-if="centro.Zentroarenkodea === getParams()" class="row">

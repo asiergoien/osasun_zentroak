@@ -19,7 +19,7 @@
             <div class="d-flex">
                 @guest
                 @if (Route::has('login'))
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Logeatu') }}</a>
+                <a class="nav-link" href="{{ route('login') }}">{{ __('Saio hazi') }}</a>
                 @endif
   
                 @if (Route::has('register'))
@@ -27,18 +27,13 @@
                 @endif
                 @else
                 <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown- toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         {{ Illuminate\Support\Facades\Auth::user()->name }}
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a class="dropdown-item d-flex align-items-left gap-3" href="/">
+                            <a class="dropdown-item d-flex align-items-left gap-2" href="/profila">
                                 <span>Profila</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item d-flex align-items-left gap-2" href="/">
-                                <span>Gustokoenak</span>
                             </a>
                         </li>
                         <li>

@@ -27,7 +27,7 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Emaila</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Posta elektronikoa</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
@@ -96,6 +96,9 @@
             </div>
         </div>
     </div>
+</div>
+<div id="footer">
+    <footer-component></footer-component>
 </div>
 @endsection
 
