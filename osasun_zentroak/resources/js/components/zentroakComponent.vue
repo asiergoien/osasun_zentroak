@@ -126,13 +126,9 @@ export default {
       }
     },
     searchByMota(arrayDeResultadosRecibidos) {
-      // let emaitza = [];
-      // emaitza = arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
-      // if(this.tipodecentro == "Osasun-zentroa"){
-      //   emaitza.concat(arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes("osasun zentroa")));
-      // }
-      // return emaizta;
-      return arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
+      return arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase())).concat(arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.includes("Osasun Zentroa")));
+
+      // return arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
 
     },
     searchByProbintzia(arrayDeResultadosRecibidos) {
