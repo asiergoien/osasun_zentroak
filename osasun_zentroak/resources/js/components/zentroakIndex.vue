@@ -6,8 +6,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td v-for="(centro, index) in filteredCentros" v-bind:key="index">{{ centro.Izena }}</td>
+            <tr v-for="n in 7" >
+                <td><a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centros[n-1].Zentroarenkodea">{{ centros[n-1].Izena }}</a></td>
             </tr>
         </tbody>
     </table>
@@ -31,24 +31,6 @@ export default {
         tipodecentro: "",
         sartutakoIzena: ""
     }),
-
-    computed: {
-
-        filteredCentros() {
-            let arrEmaitza = this.searchByName();
-
-            if (this.provincia.length > 0) {
-                arrEmaitza = this.searchByProbintzia(arrEmaitza);
-            }
-            if (this.tipodecentro.length > 0) {
-                arrEmaitza = this.searchByMota(arrEmaitza);
-            }
-
-            return arrEmaitza;
-        }
-
-    },
-
     methods: {
 
         getCentros() {
@@ -62,29 +44,6 @@ export default {
                     this.centros[i].id = i;
                 }
             });
-        },
-        searchByName() {
-            if (this.sartutakoIzena.length > 0) {
-                return this.centros.filter((centro) => centro.Izena.toLowerCase().includes(this.sartutakoIzena.toLowerCase()));
-            } else {
-                return this.centros;
-            }
-        },
-        searchByMota(arrayDeResultadosRecibidos) {
-            return arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase())).concat(arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.includes("Osasun Zentroa")));
-
-            // return arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
-
-        },
-        searchByProbintzia(arrayDeResultadosRecibidos) {
-            return arrayDeResultadosRecibidos.filter((centro) => centro.Probintzia.toLowerCase().includes(this.provincia.toLowerCase()));
-        },
-        getParams() {
-            var parser = document.createElement('a');
-            parser.href = window.location.href;
-            var query = parser.search.substring(1);
-            var value = query.split('=');
-            return value[1];
         }
 
     }
