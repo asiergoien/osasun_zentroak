@@ -28,6 +28,7 @@ Vue.component('centros-list', require('./components/zentroakComponent.vue').defa
 // Vue.component('profila-component', require('./components/ProfilaComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('info-component', require('./components/InformazioaComponent.vue').default);
+Vue.component('zentroak-index', require('./components/zentroakIndex.vue').default);
 
 // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
 

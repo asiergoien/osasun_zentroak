@@ -9,13 +9,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/
-    libs/font-awesome/5.15.1/css/all.min.css">
         <title>Document</title>
     </head>
 
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
         <div id="app">
             <div id="carouselExampleControls" class="carousel home slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
@@ -41,42 +38,12 @@
                 </button>
             </div>
             <div id="desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, suscipit unde accusantium nesciunt dicta
-                sapiente, at corporis, expedita excepturi quia ducimus iste nemo fugit eos dolor repellendus nostrum?
-                Doloribus odit veritatis numquam sint magni. Magnam rem, aliquid iste reprehenderit tempora eveniet illum
-                temporibus quod aliquam quia expedita tenetur dolorum libero laborum? Tempora deserunt dolores quis commodi
-                odit sunt in sapiente ipsam sed, laborum distinctio atque. Aperiam totam qui debitis nobis, molestias
-                doloribus cupiditate, sapiente voluptatum reiciendis in similique, iste vero voluptas soluta illo ea.
-                Officia, sequi amet maxime repellat voluptates saepe facilis dolor quia tenetur illum delectus porro ex,
-                culpa omnis hic corrupti quasi. Dicta, laboriosam. Repellendus nisi culpa, ipsum iste, ipsam repellat autem
-                ab impedit voluptatibus molestias voluptate dolores provident, eos esse aliquid nihil veniam reiciendis.
-                Inventore quibusdam fugiat itaque quae quia nesciunt beatae officiis maiores nobis quam cumque, asperiores
-                explicabo ratione odit. Ex iure magnam assumenda aut laudantium.
+                Osasuna da ondasunik preziatuena, eta guri dagokigu Euskadin bizi diren guztien osasuna zaintzea. Eta, horretarako, osasun-arlo askotan dihardugu lanean egunero: osasun publikoa; pertsonen zerbitzura egiten den ikerketa eta berrikuntza sanitarioa; farmazia; plangintza eta ebaluazio sanitarioa. Lanean dihardugu, halaber, Osakidetza guztientzako kalitatezko osasun-sistema publiko bat izan dadin.
             </div>
             <div id="zentroak">
                 <!-- class="zentroakTable" -->
                 <div id="tab_zentro">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Zentroak</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
-                            </tr>
-                            <tr>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, amet.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                   <zentroak-index></zentroak-index>
                 </div>
                 <div id="tab_zentro_gust">
                     <table>
@@ -100,10 +67,8 @@
                             </tr>
                         </tbody>
                     </table>
-
                 </div>
             </div>
-
         </div>
         <div id="footer">
             <footer-component></footer-component>
