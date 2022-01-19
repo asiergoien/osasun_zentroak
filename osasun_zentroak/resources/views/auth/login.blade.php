@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="row justify-content-left">
-                    <img src="img/Logo.png" alt="">
+                    <img src="img/logo_black.png" alt="">
                 </div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
