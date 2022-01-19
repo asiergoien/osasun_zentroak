@@ -9,7 +9,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="css/style.css">
-        <title>Document</title>
+        <title>{{ config('app.name', 'Osasun Zentroak') }}</title>
+        <!-- Icon -->
+        <link rel = "icon" href = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Osakidetza-Logo.svg/1200px-Osakidetza-Logo.svg.png" type = "image/x-icon">    
     </head>
 
     <body>
@@ -45,7 +47,7 @@
                 <div id="tab_zentro">
                    <zentroak-index></zentroak-index>
                 </div>
-                <div id="tab_zentro_gust">
+                <div id="tab_zentro_gust" class="table table-borderless">
                     <table>
                         <thead>
                             <tr>

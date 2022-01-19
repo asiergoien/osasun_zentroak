@@ -45,33 +45,35 @@
 }
 
 #tab_zentro thead {
-    border: solid black 2px;
-    background-color: rgb(185, 185, 185);
+    /* border: solid black 2px; */
+    background-color: #0d6efd;
+    color: white;
     padding: 3px !important;
     text-align: center;
 }
 
 #tab_zentro_gust thead {
-    border: solid black 2px;
-    background-color: rgb(185, 185, 185);
+    /* border: solid black 2px; */
+    background-color: #0d6efd;
+    color: white;
     padding: 3px !important;
     text-align: center;
 }
 
 #tab_zentro tbody {
-    border: solid black 2px;
+    /* border: solid black 2px; */
 }
 
 #tab_zentro_gust tbody {
-    border: solid black 2px;
+    /* border: solid black 2px; */
 }
 
 #zentroak th {
     padding: 4px;
 }
 
-#zentroak tbody tr {
-    border: solid grey 2px;
+#zentroak tbody tr td {
+    text-align: center;
 }
 
 .myfooter {
@@ -86,7 +88,6 @@
 #app {
     min-height: 100vh;
 }
-
 
 /* Index FIN */
 

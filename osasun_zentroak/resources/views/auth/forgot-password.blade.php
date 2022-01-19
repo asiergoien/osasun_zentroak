@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <div class="row justify-content-left">
-            <img src="img/logo_blue.png" alt="">
+            <img src="img/logo_blue.png" alt="" height="50%" width="50%">
         </div>
         <div class="mb-4 text-sm text-gray-600">
             {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}

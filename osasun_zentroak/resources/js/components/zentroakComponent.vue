@@ -81,7 +81,6 @@ export default {
   data: () => ({
     title: "Euskadiko osasun zentroak",
     centros: [],
-    likes: [],
     provincia: "",    
     tipodecentro: "",
     sartutakoIzena: ""

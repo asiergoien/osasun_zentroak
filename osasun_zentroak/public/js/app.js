@@ -5478,7 +5478,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       title: "Euskadiko osasun zentroak",
       centros: [],
-      likes: [],
       provincia: "",
       tipodecentro: "",
       sartutakoIzena: ""
@@ -5582,15 +5581,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
-    var urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("provincia")) this.provincia = urlParams.get("provincia").toLowerCase();
     this.getCentros();
   },
   data: function data() {
     return {
       title: "Euskadiko osasun zentroak",
       centros: [],
-      likes: [],
       provincia: "",
       tipodecentro: "",
       sartutakoIzena: ""
