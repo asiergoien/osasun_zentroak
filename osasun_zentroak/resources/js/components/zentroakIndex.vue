@@ -6,7 +6,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="n in 7" >
+            <tr v-for="n in 7">
                 <td><a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centros[n-1].Zentroarenkodea">{{ centros[n-1].Izena }}</a></td>
             </tr>
         </tbody>
@@ -17,9 +17,6 @@
 export default {
 
     mounted() {
-        const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.get("provincia"))
-            this.provincia = urlParams.get("provincia").toLowerCase();
         this.getCentros();
     },
 
