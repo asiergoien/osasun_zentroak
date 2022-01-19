@@ -105,4 +105,18 @@ class LikesController extends Controller
                         ->with('success','like deleted successfully');
 
     }
+
+    public function addLike(Request $request){
+        $like = new Likes;
+        $like->userId = $request->userId;
+        $like->zentroarenKodea = $request->zentroarenKodea;
+        $like->save();
+        return response()->json(['message'=>'New post created']);
+    }
+    public function __construct()
+{
+    $user = auth()->user();
+
+    view()->share('user', $user);
+}
 }

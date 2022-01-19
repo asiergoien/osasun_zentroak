@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Likes extends Model
 {
     use HasFactory;
+    public $timestamps = false;
+    protected $guarded = [];
 
     protected $fillable =[
         'userId','zentroarenKodea'

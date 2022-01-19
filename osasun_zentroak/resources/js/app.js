@@ -31,7 +31,7 @@ Vue.component('info-component', require('./components/InformazioaComponent.vue')
 Vue.component('zentroak-index', require('./components/zentroakIndex.vue').default);
 
 // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
-
+// Vue.prototype.$userId = document.querySelector("meta[name='user_id']").getAttribute('content');
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

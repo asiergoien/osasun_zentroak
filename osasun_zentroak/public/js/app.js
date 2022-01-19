@@ -5330,6 +5330,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['userId'],
   mounted: function mounted() {
     this.getCentros();
     console.log('Component mounted.');
@@ -5382,6 +5383,14 @@ __webpack_require__.r(__webpack_exports__);
     },
     arreglarTelefono: function arreglarTelefono(str) {
       return str.replaceAll('.', '').substring(0, 9);
+    },
+    like: function like() {
+      axios.post('/like', {
+        userId: this.$props.userId,
+        zentroarenKodea: this.getParams()
+      }).then(function (response) {
+        $('#success').html(response.data.message);
+      });
     }
   }
 });
@@ -5651,6 +5660,7 @@ Vue.component('centros-list', (__webpack_require__(/*! ./components/zentroakComp
 Vue.component('footer-component', (__webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]));
 Vue.component('info-component', (__webpack_require__(/*! ./components/InformazioaComponent.vue */ "./resources/js/components/InformazioaComponent.vue")["default"]));
 Vue.component('zentroak-index', (__webpack_require__(/*! ./components/zentroakIndex.vue */ "./resources/js/components/zentroakIndex.vue")["default"])); // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
+// Vue.prototype.$userId = document.querySelector("meta[name='user_id']").getAttribute('content');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29048,6 +29058,11 @@ var render = function () {
                       height: "45",
                       fill: "currentColor",
                       viewBox: "0 0 16 16",
+                    },
+                    on: {
+                      click: function ($event) {
+                        return _vm.like()
+                      },
                     },
                   },
                   [

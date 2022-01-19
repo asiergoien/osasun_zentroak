@@ -1,3 +1,6 @@
+@extends('layouts.nav')
+
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,7 +19,7 @@
             <div class="row">
                 <!-- Informacion sobre el centro -->
                     <div id="app" class="col-md">
-                        <info-component></info-component>
+                            <info-component v-bind:userId="'{{ \Auth::user()->id }}'" ></info-component>
                     </div>
                 <!-- Mapa del centro -->
                 <!-- <div id="mapaCentro" class="col-md">
@@ -38,3 +41,4 @@
         <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>
+@endsection

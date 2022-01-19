@@ -35,6 +35,7 @@ Route::get('/profila', function() {
 
 Route::resource('likes', LikesController::class);
 Route::resource('comments', CommentsController::class);
+Route::post('like', [LikesController::class, 'addLike']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
