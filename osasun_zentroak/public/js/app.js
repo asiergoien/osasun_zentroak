@@ -28891,7 +28891,7 @@ var render = function () {
         ),
         _vm._v(" "),
         _c("span", { staticClass: "text-light" }, [
-          _vm._v("Copyright © 2022 Osazun Zentroak "),
+          _vm._v("Copyright © 2022 Osasun Zentroak "),
         ]),
       ]),
       _vm._v(" "),
