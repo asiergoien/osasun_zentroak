@@ -1,36 +1,185 @@
-//izena-gustokoenak MOVIL
-$display_izena-gustokoenak_M: flex;
-$flex-dir_izena-gustokoenak_M: row;
-$jus-content_izena-gustokoenak_M: space-between;
-$padding-left_izena-gustokoenak_M: 8%;
-$padding-right_izena-gustokoenak_M: 8%;
-$margin-top_izena-gustokoenak_M: 1rem;
+//DISPLAY OROKORRA
+$mydisplay: flex;
 
-//izena-gustokoenak TABLET
-$display_izena-gustokoenak_T: flex;
-$flex-dir_izena-gustokoenak_T: row;
-$jus-content_izena-gustokoenak_T: space-between;
-$padding-left_izena-gustokoenak_T: 8%;
-$padding-right_izena-gustokoenak_T: 8%;
-$margin-top_izena-gustokoenak_T: 1rem;
 
-//btn-gustokoenak
-$gustokoenak_width: 40%;
-$gustokoenak_height: 3rem;
-$gustokoenak_border-radius: 3px;
-$gustokoenak_border: orange solid 2px;
-$gustokoenak_background-color: rgb(252,199,102);
+//NOMBRE Y BOTON FAV
+//caracteristicas comunes para movil, tablet y ordenador
+$flex-dir_izena-gustokoenak: row;
+$jus-content_izena-gustokoenak: space-between;
+$padding-right_izena-gustokoenak: 8%;
 
-//input-email
-$email_height: 40%;
-$email_width: 43%;
-$email_border-radius: 2px;
-$email_border: lightgray solid 2px;
+//movil - tablet
+$padding-left_izena-gustokoenak_M-T: 8%;
+$margin-top_izena-gustokoenak_M-T: 1rem;
 
-//btn-aldatu
-$aldatu_width: 30%;
-$aldatu_height: 1.5rem;
-$aldatu_border-radius: 3px;
-$aldatu_border: rgb(126,120,120) solid 2px;
-$aldatu_margin-right: 10%;
-$aldatu_bacground-color: rgb(209,200,200);
+//ordenador
+$padding-left_izena-gustokoenak_O: 30.5%;
+$margin-top_izena-gustokoenak_O: -17rem;
+
+
+//EMAIL CONTAINER
+//caracteristicas comunes para movil, tablet y ordenador
+$flex-dir_email-container: column;
+$padding-right_email-container: 8%;
+
+//movil - tablet
+$margin-top_email-container_M-T: 2rem;
+$padding-left_email-container_M-T: 8%;
+//ordenador
+$margin-top_email-container_O: 1rem;
+$padding-left_email-container_O: 30.5%;
+
+
+//INPUT EMAIL
+//caracteristicas comunes para movil, tablet y ordenador
+$border_email: lightgray solid 2px;
+$border-radius_email: 2px;
+
+//movil 
+$height_email_M: 40%;
+$widht_email_M: auto;
+//tablet
+$widht_email_T: 80%;
+//ordenador
+$height_email_O: 40%;
+$widht_email_O: 60%;
+
+
+// BTN-ALDATU CONTAINER
+//caracteristicas comunes para movil, tablet y ordenador
+$align-items_aldatu-container: center;
+$justify-content_aldatu-container: right;
+$margin-top_aldatu-container: 1rem;
+
+//movil
+$padding-right_aldatu-container_M: 8%;
+//tablet
+$padding-right_aldatu-container_T: 25%;
+//ordenador
+$padding-right_aldatu-container_O: 35%;
+
+
+//IRUDIA IMG
+//movil
+$width_img_M: 50%;
+//ordenador
+$width_img_O: 30%;
+$padding-left_img_O: 5%;
+
+//TEXTO IZENA
+//ordenador
+$font-size_izena: xx-large;
+
+
+
+/* profila INI */
+
+/*Mugikorra*/
+@media (max-width: 400px) {
+
+    .izena-gustokoenak {
+      display: $mydisplay;
+      flex-direction: $flex-dir_izena-gustokoenak;
+      justify-content: $jus-content_izena-gustokoenak;
+      padding-left: $padding-left_izena-gustokoenak_M-T;
+      padding-right: $padding-right_izena-gustokoenak;
+      margin-top: $margin-top_izena-gustokoenak_M-T;
+      }
+    .email-container {
+      display: $mydisplay;
+      flex-direction: $flex-dir_email-container;
+      margin-top: $margin-top_email-container_M-T;
+      padding-left: $padding-left_email-container_M-T;
+      padding-right: $padding-right_email-container;
+    }
+    .email {
+      border: $border_email;
+      border-radius: $border-radius_email;
+      height: $height_email_M;
+      width: $widht_email_M;
+    }
+    .aldatu {
+      display: $mydisplay;
+      align-items: $align-items_aldatu-container;
+      justify-content: $justify-content_aldatu-container;
+      margin-top: $margin-top_aldatu-container;
+      padding-right: $padding-right_aldatu-container_M;
+    }
+    .irudia img{
+      width: $width_img_M;
+    }
+  }
+  
+  /*Tablet*/
+  @media (min-width: 400px) {
+    .izena-gustokoenak {
+      display: $mydisplay;
+      flex-direction: $flex-dir_izena-gustokoenak;
+      justify-content: $jus-content_izena-gustokoenak;
+      padding-left: $padding-left_izena-gustokoenak_M-T;
+      padding-right: $padding-right_izena-gustokoenak;
+      margin-top: $margin-top_izena-gustokoenak_M-T;
+    }
+    .email-container {
+      display: $mydisplay;
+      flex-direction: $flex-dir_email-container;
+      margin-top: $margin-top_email-container_M-T;
+      padding-left: $padding-left_email-container_M-T;
+      padding-right: $padding-right_email-container;
+    }
+    .email {
+      border: $border_email;
+      border-radius: $border-radius_email;
+      width: $widht_email_T;
+    }
+    .aldatu {
+      display: $mydisplay;
+      align-items: $align-items_aldatu-container;
+      justify-content: $justify-content_aldatu-container;
+      margin-top: $margin-top_aldatu-container;
+      padding-right: $padding-right_aldatu-container_T;
+    }
+  }
+  
+  /* Ordenagailua */
+  @media (min-width: 950px) {
+  
+    .izena-gustokoenak {
+      display: $mydisplay;
+      flex-direction: $flex-dir_izena-gustokoenak;
+      justify-content: $jus-content_izena-gustokoenak;
+      padding-left: $padding-left_izena-gustokoenak_O;
+      padding-right: $padding-right_izena-gustokoenak;
+      margin-top: $margin-top_izena-gustokoenak_O;
+      }
+    .email-container {
+      display: $mydisplay;
+      flex-direction: $flex-dir_email-container;
+      margin-top: $margin-top_email-container_O;
+      padding-left: $padding-left_email-container_O;
+      padding-right: $padding-right_email-container;
+    }
+    .email {
+      border: $border_email;
+      border-radius: $border-radius_email;
+      height: $height_email_O;
+      width: $widht_email_O;
+    }
+    .aldatu {
+      display: $mydisplay;
+      align-items: $align-items_aldatu-container;
+      justify-content: $justify-content_aldatu-container;
+      margin-top: $margin-top_aldatu-container;
+      padding-right: $padding-right_aldatu-container_O;
+    }
+    .irudia img {
+      width: $width_img_O;
+      padding-left: $padding-left_img_O;
+    }
+    .izena {
+      font-size: $font-size_izena;
+    }
+  }
+
+  /* profila FIN */
+  

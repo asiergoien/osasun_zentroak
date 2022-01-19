@@ -25,7 +25,7 @@ window.Vue = require('vue').default;
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 // Vue.component('index-component', require('./components/IndexComponent.vue').default);
 Vue.component('centros-list', require('./components/zentroakComponent.vue').default);
-Vue.component('profila-component', require('./components/ProfilaComponent.vue').default);
+// Vue.component('profila-component', require('./components/ProfilaComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('info-component', require('./components/InformazioaComponent.vue').default);
 

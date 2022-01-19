@@ -94,7 +94,7 @@
 /* profila INI */
 
 
-/*Mugikorra*/
+/*Mugikorra
 
 @media (max-width: 400px) {
     .izena-gustokoenak {
@@ -135,7 +135,7 @@
 }
 
 
-/*Tablet*/
+Tablet
 
 @media (min-width: 400px) {
     .izena-gustokoenak {
@@ -171,7 +171,7 @@
 }
 
 
-/* Ordenagailua */
+Ordenagailua 
 
 @media (min-width: 950px) {
     .izena-gustokoenak {
@@ -214,7 +214,7 @@
     .izena {
         font-size: xx-large;
     }
-}
+} */
 
 
 /* profila FIN */
