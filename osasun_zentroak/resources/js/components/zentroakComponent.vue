@@ -9,7 +9,7 @@
       </div>
 
       <div v-if="centros.length > 0" class="mb-5">
-        <div class="col-lg-10 col-md-5 rounded mt-5">
+        <div class="col-lg-10 col-md-5 rounded mt-5 shadow-lg p-3">
           <br>
 
           <div class="d-flex text-muted">
@@ -45,7 +45,7 @@
       
 
       <div id="centros" class="col-lg-9 col-md-8 d-flex flex-wrap rounded my-5 p-3">
-        <div v-for="(centro, index) in filteredCentros" v-bind:key="index" class="centro shadow-sm">
+        <div v-for="(centro, index) in filteredCentros" v-bind:key="index" class="centro">
           <div class="card" style="width: 18rem;">
             <img class="card-img-top" v-if="centro.Zentromota === 'Anbulatorioa'" src="ambulatorio.jpg" heigth="100px" width="100px">
             <img class="card-img-top" v-else-if="centro.Zentromota === 'Beste batzuk'" src="otros2.jpg" heigth="100px" width="100px">
@@ -56,7 +56,6 @@
             <div class="card-body">
               <h5 class="card-title text-primary">{{ centro.Izena }}</h5>
               <p class="card-text"><b>{{ centro.Zentromota }}</b><br>{{ centro.Udalerria }}, {{ centro.Probintzia }}</p>
-              <br v-if="centro.Izena.length < 25">
               <a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centro.Zentroarenkodea" class="btn btn-primary">Ikusi</a>
             </div>
           </div>
