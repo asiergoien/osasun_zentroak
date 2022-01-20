@@ -113,10 +113,13 @@ class LikesController extends Controller
         $like->save();
         return response()->json(['message'=>'New post created']);
     }
+    public function unLike(Request $request){
+        
+    }
     public function __construct()
-{
-    $user = auth()->user();
+    {
+        $user = auth()->user();
 
-    view()->share('user', $user);
-}
+        view()->share('user', $user);
+    }
 }

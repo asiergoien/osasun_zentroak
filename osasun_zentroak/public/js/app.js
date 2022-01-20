@@ -5386,7 +5386,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     like: function like() {
       axios.post('/like', {
-        userId: this.$props.userId,
+        userId: this.userId,
         zentroarenKodea: this.getParams()
       }).then(function (response) {
         $('#success').html(response.data.message);
@@ -29059,11 +29059,7 @@ var render = function () {
                       fill: "currentColor",
                       viewBox: "0 0 16 16",
                     },
-                    on: {
-                      click: function ($event) {
-                        return _vm.like()
-                      },
-                    },
+                    on: { click: _vm.like },
                   },
                   [
                     _c("path", {
