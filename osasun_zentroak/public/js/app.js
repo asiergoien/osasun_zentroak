@@ -5329,6 +5329,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['userId'],
   mounted: function mounted() {
@@ -5384,6 +5385,20 @@ __webpack_require__.r(__webpack_exports__);
     arreglarTelefono: function arreglarTelefono(str) {
       return str.replaceAll('.', '').substring(0, 9);
     },
+    isLiked: function isLiked() {
+      axios.get('/viewLike', {
+        params: {
+          userId: this.userId,
+          zentroarenKodea: this.getParams()
+        }
+      }).then(function (res) {
+        if (res.data.exists == 'true') {
+          return true;
+        } else {
+          return false;
+        }
+      });
+    },
     like: function like() {
       axios.post('/like', {
         userId: this.userId,
@@ -5399,6 +5414,13 @@ __webpack_require__.r(__webpack_exports__);
         $('#success').html(response.data.message);
       });
     }
+     // unLike(){
+    //     axios.delete('/disLike', {zentroarenKodea: this.getParams()})
+    //         .then((response)=>{
+    //             $('#success').html(response.data.message);
+    //         })
+    // }
+
   }
 });
 
@@ -29055,27 +29077,49 @@ var render = function () {
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "col" }, [
-                _c(
-                  "svg",
-                  {
-                    staticClass: "bi bi-heart",
-                    attrs: {
-                      xmlns: "http://www.w3.org/2000/svg",
-                      width: "45",
-                      height: "45",
-                      fill: "currentColor",
-                      viewBox: "0 0 16 16",
-                    },
-                    on: { click: _vm.like },
-                  },
-                  [
-                    _c("path", {
-                      attrs: {
-                        d: "m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z",
+                _vm.isLiked()
+                  ? _c(
+                      "svg",
+                      {
+                        staticClass: "bi bi-heart-fill",
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          width: "45",
+                          height: "45",
+                          fill: "currentColor",
+                          viewBox: "0 0 16 16",
+                        },
                       },
-                    }),
-                  ]
-                ),
+                      [
+                        _c("path", {
+                          attrs: {
+                            "fill-rule": "evenodd",
+                            d: "M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z",
+                          },
+                        }),
+                      ]
+                    )
+                  : _c(
+                      "svg",
+                      {
+                        staticClass: "bi bi-heart",
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          width: "45",
+                          height: "45",
+                          fill: "currentColor",
+                          viewBox: "0 0 16 16",
+                        },
+                        on: { click: _vm.like },
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d: "m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z",
+                          },
+                        }),
+                      ]
+                    ),
               ]),
             ])
           : _vm._e(),
