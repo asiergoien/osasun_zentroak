@@ -5391,6 +5391,13 @@ __webpack_require__.r(__webpack_exports__);
       }).then(function (response) {
         $('#success').html(response.data.message);
       });
+    },
+    unLike: function unLike() {
+      axios["delete"]('/like', {
+        zentroarenKodea: this.getParams()
+      }).then(function (response) {
+        $('#success').html(response.data.message);
+      });
     }
   }
 });
@@ -5480,7 +5487,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("provincia")) this.provincia = urlParams.get("provincia").toLowerCase();
+    if (urlParams.get("probintzia")) this.provincia = urlParams.get("probintzia");
     this.getCentros();
   },
   data: function data() {
@@ -29457,10 +29464,10 @@ var render = function () {
                 attrs: {
                   href:
                     "http://127.0.0.1:8000/informazioa?zentroa=" +
-                    _vm.centros[n - 1].Zentroarenkodea,
+                    _vm.centros[n].Zentroarenkodea,
                 },
               },
-              [_vm._v(_vm._s(_vm.centros[n - 1].Izena))]
+              [_vm._v(_vm._s(_vm.centros[n].Izena))]
             ),
           ]),
         ])

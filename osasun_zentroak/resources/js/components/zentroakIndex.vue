@@ -7,7 +7,7 @@
         </thead>
         <tbody>
             <tr v-for="n in 7">
-                <td><a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centros[n-1].Zentroarenkodea">{{ centros[n-1].Izena }}</a></td>
+                <td><a v-bind:href="'http://127.0.0.1:8000/informazioa?zentroa=' + centros[n].Zentroarenkodea">{{ centros[n].Izena }}</a></td>
             </tr>
         </tbody>
     </table>

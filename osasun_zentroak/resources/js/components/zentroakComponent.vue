@@ -73,8 +73,8 @@ export default {
 
   mounted() {
     const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("provincia"))
-      this.provincia = urlParams.get("provincia").toLowerCase();
+    if (urlParams.get("probintzia"))
+      this.provincia = urlParams.get("probintzia");
     this.getCentros();
   },
 
