@@ -45,7 +45,7 @@
 }
 
 #tab_zentro thead {
-    /* border: solid black 2px; */
+    border: solid black 2px;
     background-color: #0d6efd;
     color: white;
     padding: 3px !important;
@@ -53,7 +53,7 @@
 }
 
 #tab_zentro_gust thead {
-    /* border: solid black 2px; */
+    border: solid black 2px;
     background-color: #0d6efd;
     color: white;
     padding: 3px !important;
@@ -61,11 +61,21 @@
 }
 
 #tab_zentro tbody {
-    /* border: solid black 2px; */
+    border: solid rgba(110, 110, 110, 0.651) 2px;
+}
+
+#tab_zentro tbody tr td {
+    border: solid rgba(110, 110, 110, 0.651) 2px;
+    background-color: rgb(224, 224, 224);
 }
 
 #tab_zentro_gust tbody {
-    /* border: solid black 2px; */
+    border: solid rgba(110, 110, 110, 0.651) 2px;
+}
+
+#tab_zentro_gust tbody tr td {
+    border: solid rgba(110, 110, 110, 0.651) 2px;
+    background-color: rgb(224, 224, 224);
 }
 
 #zentroak th {
@@ -88,6 +98,11 @@
 #app {
     min-height: 100vh;
 }
+
+tbody tr td a {
+    text-decoration: none;
+}
+
 
 /* Index FIN */
 
@@ -172,7 +187,7 @@ Tablet
 }
 
 
-Ordenagailua 
+Ordenagailua
 
 @media (min-width: 950px) {
     .izena-gustokoenak {
