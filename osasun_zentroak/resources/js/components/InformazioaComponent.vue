@@ -1,4 +1,6 @@
+
 <template>
+
     <div>
         <div v-for="(centro, index) in centros" v-bind:key="index">
             <div v-if="centro.Zentroarenkodea === getParams()" class="row">
@@ -37,6 +39,7 @@
     export default {
         props: ['userId'] ,
         mounted() {
+            
             this.getCentros();
             this.isLiked();
             this.liked = this.liked ? true : false;
@@ -103,16 +106,19 @@
                     axios.post('/like', {userId: this.userId, zentroarenKodea: this.getParams()})
                         .then(()=>{
                             this.liked = true;
-                            vm.$forceUpdate();
+                            // vm.$forceUpdate();
                         })    
                 }
             },
             unLike(){
-                axios.delete('/disLike', {zentroarenKodea: this.getParams()})
+                axios.delete('/disLike', { data: {userId: this.userId, zentroarenKodea: this.getParams()}})
                     .then((response)=>{
+                        this.liked=false;
                         $('#success').html(response.data.message);
                     })
             }
+            
         }
     }
+    
 </script>

@@ -5334,6 +5334,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['userId'],
   mounted: function mounted() {
@@ -5418,17 +5420,23 @@ __webpack_require__.r(__webpack_exports__);
           userId: this.userId,
           zentroarenKodea: this.getParams()
         }).then(function () {
-          _this4.liked = true;
-          vm.$forceUpdate();
+          _this4.liked = true; // vm.$forceUpdate();
         });
       }
-    } // unLike(){
-    //     axios.delete('/disLike', {zentroarenKodea: this.getParams()})
-    //         .then((response)=>{
-    //             $('#success').html(response.data.message);
-    //         })
-    // }
+    },
+    unLike: function unLike() {
+      var _this5 = this;
 
+      axios["delete"]('/disLike', {
+        data: {
+          userId: this.userId,
+          zentroarenKodea: this.getParams()
+        }
+      }).then(function (response) {
+        _this5.liked = false;
+        $('#success').html(response.data.message);
+      });
+    }
   }
 });
 
@@ -29086,29 +29094,40 @@ var render = function () {
               _vm._v(" "),
               _c("div", { staticClass: "col" }, [
                 _vm.liked
-                  ? _c("div", [
-                      _c(
-                        "svg",
-                        {
-                          staticClass: "bi bi-heart-fill",
-                          attrs: {
-                            xmlns: "http://www.w3.org/2000/svg",
-                            width: "45",
-                            height: "45",
-                            fill: "currentColor",
-                            viewBox: "0 0 16 16",
+                  ? _c(
+                      "div",
+                      {
+                        on: {
+                          click: function ($event) {
+                            $event.preventDefault()
+                            return _vm.unLike()
                           },
                         },
-                        [
-                          _c("path", {
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "bi bi-heart-fill",
                             attrs: {
-                              "fill-rule": "evenodd",
-                              d: "M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z",
+                              xmlns: "http://www.w3.org/2000/svg",
+                              width: "45",
+                              height: "45",
+                              fill: "currentColor",
+                              viewBox: "0 0 16 16",
                             },
-                          }),
-                        ]
-                      ),
-                    ])
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                "fill-rule": "evenodd",
+                                d: "M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z",
+                              },
+                            }),
+                          ]
+                        ),
+                      ]
+                    )
                   : _c(
                       "div",
                       {

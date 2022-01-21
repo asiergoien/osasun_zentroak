@@ -125,8 +125,9 @@ class LikesController extends Controller
         $like->save();
         return response()->json(['message'=>'New post created']);
     }
-    public function unLike(Request $request){
-        
+    public function disLike(Request $request){
+        Likes::where('userId', '=', $request->userId)->where('zentroarenKodea', '=', $request->zentroarenKodea)->delete();
+        return response()->json('se ha borrado el like');
     }
     public function __construct()
     {
