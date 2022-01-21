@@ -5348,11 +5348,7 @@ __webpack_require__.r(__webpack_exports__);
       centros: [],
       likes: [],
       provincia: "",
-      "function": function _function() {
-        return {
-          liked: ""
-        };
-      }
+      liked: ""
     };
   },
   methods: {
@@ -5409,7 +5405,6 @@ __webpack_require__.r(__webpack_exports__);
           _this3.liked = true;
           return true;
         } else {
-          alert("su puta madre no funciona ni esto");
           _this3.liked = false;
           return false;
         }
@@ -5425,8 +5420,6 @@ __webpack_require__.r(__webpack_exports__);
         }).then(function () {
           _this4.liked = true;
           vm.$forceUpdate();
-
-          _this4.isLiked();
         });
       }
     } // unLike(){
