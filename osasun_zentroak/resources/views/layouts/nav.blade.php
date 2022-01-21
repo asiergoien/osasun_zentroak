@@ -77,10 +77,12 @@
                     </div>
                 @endguest
 
+                {{-- ANIMACION CORAZON --}}
                 <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>
                 <lord-icon src="https://cdn.lordicon.com/hdiorcun.json" trigger="loop"
                     colors="primary:#121331,secondary:#ffffff" style="width:40px;height:40px">
                 </lord-icon>
+
             </div>
         </div>
     </div>
