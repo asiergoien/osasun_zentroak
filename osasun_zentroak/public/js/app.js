@@ -5420,7 +5420,7 @@ __webpack_require__.r(__webpack_exports__);
           userId: this.userId,
           zentroarenKodea: this.getParams()
         }).then(function () {
-          _this4.liked = true; // vm.$forceUpdate();
+          _this4.liked = true;
         });
       }
     },
@@ -5432,9 +5432,8 @@ __webpack_require__.r(__webpack_exports__);
           userId: this.userId,
           zentroarenKodea: this.getParams()
         }
-      }).then(function (response) {
+      }).then(function () {
         _this5.liked = false;
-        $('#success').html(response.data.message);
       });
     }
   }

@@ -106,15 +106,13 @@
                     axios.post('/like', {userId: this.userId, zentroarenKodea: this.getParams()})
                         .then(()=>{
                             this.liked = true;
-                            // vm.$forceUpdate();
                         })    
                 }
             },
             unLike(){
                 axios.delete('/disLike', { data: {userId: this.userId, zentroarenKodea: this.getParams()}})
-                    .then((response)=>{
+                    .then(()=>{
                         this.liked=false;
-                        $('#success').html(response.data.message);
                     })
             }
             
