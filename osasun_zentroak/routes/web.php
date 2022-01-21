@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\ProfilaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,16 +29,20 @@ Route::get('/osasun-zentroak', function () {
 Route::get('/informazioa', function () {
     return view('informazioa');
 });
-Route::get('/profila', function() {
-    return view('profila');
-});
 
+
+Route::get('/profila', [ProfilaController::class, 'index'])->middleware('auth');
+Route::put('/profila/{id}', [ProfilaController::class, 'update'])->middleware('auth');
 
 Route::resource('likes', LikesController::class);
 Route::resource('comments', CommentsController::class);
+
 Route::post('like', [LikesController::class, 'addLike']);
 Route::delete('disLike', [LikesController::class, 'disLike']);
 Route::get('viewLike', [LikesController::class, 'isLiked']);
+
+
+
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
