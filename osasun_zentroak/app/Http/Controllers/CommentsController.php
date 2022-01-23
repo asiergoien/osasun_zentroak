@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comments;
+use App\Models\User;
 
 class CommentsController extends Controller
 {
@@ -17,22 +18,29 @@ class CommentsController extends Controller
     }
     public function viewComments(Request $request){
         if(Comments::where('zentroarenKodea', '=', $request->zentroarenKodea)->count()>0){
-            $comment = Comments::select('mensaje')->where('zentroarenKodea', '=', $request->zentroarenKodea)->get(['mensaje', 'userId']);
+            $comments = Comments::select('mensaje', 'userId')->where('zentroarenKodea', '=', $request->zentroarenKodea)->get(['mensaje', 'userId']);
             return response()->json([
-                'user'=> User::where('id', $comment['userId']->first()),
-                'mensaje' => $comment['mensaje'],
+                $comments,
                 'exists'=>'true'
             ], 200);
+            // foreach ($comments as $comment){
+            //     $user = User::where('id', $comments['userId'])->get();
+            //     return response()->json([
+            //         'user'=> $user->name,
+            //         'mensaje' => $comment['mensaje'],
+            //         'exists'=>'true'
+            //     ], 200);
+            // }
         }else{
             return response()->json([
                 'exists'=>'false'
             ], 200);
         }
     }
-    public function __construct()
-    {
-        $user = auth()->user();
+    // public function __construct()
+    // {
+    //     $user = auth()->user();
 
-        view()->share('user', $user);
-    }
+    //     view()->share('user', $user);
+    // }
 }

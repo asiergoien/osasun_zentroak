@@ -5486,9 +5486,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['userId'],
+  props: ['userIdC'],
   mounted: function mounted() {
-    console.log('Component mounted.');
+    this.viewComments();
+    this.hayComentarios = this.hayComentarios ? true : false;
   },
   data: function data() {
     return {
@@ -5511,23 +5512,26 @@ __webpack_require__.r(__webpack_exports__);
     },
     addComment: function addComment() {
       axios.post('/addComment', {
-        userId: this.userId,
+        userId: this.userIdC,
         zentroarenKodea: this.getParams(),
         mensaje: this.getMensaje()
       });
     },
     viewComments: function viewComments() {
+      var _this = this;
+
       axios.get('/viewComments', {
         params: {
           zentroarenKodea: this.getParams()
         }
-      }).then(function (res) {// if(res.data.exists == "true"){
-        //     this.hayComentarios = true;
-        //     return true;
-        // }else{
-        //     this.hayComentarios = false;
-        //     return false;
-        // }
+      }).then(function (res) {
+        if (res.data.exists == "true") {
+          _this.hayComentarios = true;
+          return true;
+        } else {
+          _this.hayComentarios = false;
+          return false;
+        }
       });
     }
   }
@@ -29529,9 +29533,13 @@ var render = function () {
           ),
         ]),
         _vm._v(" "),
-        _vm._m(1),
-        _vm._v(" "),
-        _vm._m(2),
+        _vm.hayComentarios
+          ? _c("div", { staticClass: "card p-3" }, [_vm._m(1)])
+          : _c("div", { staticClass: "card p-3" }, [
+              _c("p", [
+                _vm._v("Hau hutsik dago... Idatzi zuk lehenengo iruzkina!"),
+              ]),
+            ]),
       ]),
     ]),
   ])
@@ -29554,42 +29562,28 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card p-3" }, [
-      _c(
-        "div",
-        { staticClass: "d-flex justify-content-between align-items-center" },
-        [
-          _c(
-            "div",
-            { staticClass: "user d-flex flex-row align-items-center" },
-            [
-              _c("img", {
-                staticClass: "user-img rounded-circle mr-2",
-                attrs: { src: "https://i.imgur.com/hczKIze.jpg", width: "30" },
-              }),
-              _vm._v(" "),
-              _c("span", [
-                _c("small", { staticClass: "font-weight-bold text-primary" }, [
-                  _vm._v("AQUI VA EL NOMBRE DEL AUTOR"),
-                ]),
-                _vm._v(" "),
-                _c("small", { staticClass: "font-weight-bold" }, [
-                  _vm._v("AQUI VA EL MENSAJE"),
-                ]),
-              ]),
-            ]
-          ),
-        ]
-      ),
-    ])
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card p-3" }, [
-      _c("p", [_vm._v("Hau hutsik dago... Idatzi zuk lehenengo iruzkina!")]),
-    ])
+    return _c(
+      "div",
+      { staticClass: "d-flex justify-content-between align-items-center" },
+      [
+        _c("div", { staticClass: "user d-flex flex-row align-items-center" }, [
+          _c("img", {
+            staticClass: "user-img rounded-circle mr-2",
+            attrs: { src: "https://i.imgur.com/hczKIze.jpg", width: "30" },
+          }),
+          _vm._v(" "),
+          _c("span", [
+            _c("small", { staticClass: "font-weight-bold text-primary" }, [
+              _vm._v("AQUI VA EL NOMBRE DEL AUTOR"),
+            ]),
+            _vm._v(" "),
+            _c("small", { staticClass: "font-weight-bold" }, [
+              _vm._v("AQUI VA EL MENSAJE"),
+            ]),
+          ]),
+        ]),
+      ]
+    )
   },
 ]
 render._withStripped = true

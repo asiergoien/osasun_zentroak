@@ -39,7 +39,6 @@
     export default {
         props: ['userId'] ,
         mounted() {
-            
             this.getCentros();
             this.isLiked();
             this.liked = this.liked ? true : false;
