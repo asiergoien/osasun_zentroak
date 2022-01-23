@@ -247,3 +247,15 @@ Ordenagailua
 
 
 /* zentroak FIN */
+
+/*COMENTARIOS INICIO*/
+.card {
+    border: none;
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    border-radius: 4px
+}
+
+.user-img {
+    margin-top: 4px
+}
+/*COMENTARIOS FIN*/

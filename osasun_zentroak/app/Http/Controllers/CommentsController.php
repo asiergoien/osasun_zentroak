@@ -3,82 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comments;
 
 class CommentsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function addComment(Request $request){
+        $comment = new Comments;
+        $comment->userId = $request->userId;
+        $comment->zentroarenKodea = $request->zentroarenKodea;
+        $comment->mensaje = $request->mensaje;
+        $comment->save();
+        return response()->json('se ha creado el comentario');
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function viewComments(Request $request){
+        if(Comments::where('zentroarenKodea', '=', $request->zentroarenKodea)->count()>0){
+            $comment = Comments::select('mensaje')->where('zentroarenKodea', '=', $request->zentroarenKodea)->get(['mensaje', 'userId']);
+            return response()->json([
+                'user'=> User::where('id', $comment['userId']->first()),
+                'mensaje' => $comment['mensaje'],
+                'exists'=>'true'
+            ], 200);
+        }else{
+            return response()->json([
+                'exists'=>'false'
+            ], 200);
+        }
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function __construct()
     {
-        //
-    }
+        $user = auth()->user();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        view()->share('user', $user);
     }
 }

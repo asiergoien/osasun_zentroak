@@ -36,10 +36,13 @@ Route::put('/profila/{id}', [ProfilaController::class, 'update'])->middleware('a
 
 Route::resource('likes', LikesController::class);
 Route::resource('comments', CommentsController::class);
-
+// RUTAS PARA LOS LIKES
 Route::post('like', [LikesController::class, 'addLike']);
 Route::delete('disLike', [LikesController::class, 'disLike']);
 Route::get('viewLike', [LikesController::class, 'isLiked']);
+// RUTAS PARA LOS COMENTARIOS
+Route::post('addComment', [CommentsController::class, 'addComment']);
+Route::get('viewComments', [CommentsController::class, 'viewComments']);
 
 
 
