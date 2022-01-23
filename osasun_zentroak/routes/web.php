@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LikesController;
 use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\ProfilaController;
+use App\Http\Controllers\GrafikoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,10 @@ use App\Http\Controllers\ProfilaController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+// Route::get('/', function () { 
+//     return view('index');
+// });
+Route::get('/', [GrafikoController::class, 'index']);
 
 Route::get('/index', function () {
     return view('index');

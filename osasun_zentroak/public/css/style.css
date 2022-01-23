@@ -12,7 +12,7 @@
 
 .carousel-item img {
     height: 297px !important;
-    /* width: 969px !important; */
+    width: 969px !important;
 }
 
 .carousel-control-prev-icon,
@@ -28,64 +28,6 @@
     margin-bottom: 10px;
 }
 
-#zentroak {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    text-align: center !important;
-}
-
-#tab_zentro {
-    display: inline-table;
-    margin-left: 10vw;
-}
-
-#tab_zentro_gust {
-    display: inline-table;
-    margin-left: 10vw;
-}
-
-#tab_zentro thead {
-    border: solid black 2px;
-    background-color: #0d6efd;
-    color: white;
-    padding: 3px !important;
-    text-align: center;
-}
-
-#tab_zentro_gust thead {
-    border: solid black 2px;
-    background-color: #0d6efd;
-    color: white;
-    padding: 3px !important;
-    text-align: center;
-}
-
-#tab_zentro tbody {
-    border: solid rgba(110, 110, 110, 0.651) 2px;
-}
-
-#tab_zentro tbody tr td {
-    border: solid rgba(110, 110, 110, 0.651) 2px;
-    background-color: rgb(224, 224, 224);
-}
-
-#tab_zentro_gust tbody {
-    border: solid rgba(110, 110, 110, 0.651) 2px;
-}
-
-#tab_zentro_gust tbody tr td {
-    border: solid rgba(110, 110, 110, 0.651) 2px;
-    background-color: rgb(224, 224, 224);
-}
-
-#zentroak th {
-    padding: 4px;
-}
-
-#zentroak tbody tr td {
-    text-align: center;
-}
-
 .myfooter {
     width: 100%;
 }
@@ -99,9 +41,56 @@
     min-height: 100vh;
 }
 
-tbody tr td a {
-    text-decoration: none;
+
+.zentro-motak {
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 100px;
+    grid-row-gap: 0px;
 }
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.div3 {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.zentro-motak h1 {
+    text-align: center;
+    color: white;
+}
+
+.zentro-motak img {
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin: auto auto 21px;
+}
+
+.zentro-motak div {
+    background-color: #0d6efd;
+}
+
+/* Grafikoa Index  INI*/
+.grafikoa {
+    /* margin-left: 37vw; */
+    /* Arriba | Derecha | Abajo | Izquierda */
+    margin: 22px 37% 15px 37%;
+    font-size: large;
+    width: 500px;
+    height: 450px;
+}
+
+/* Grafikoa Index  FIN*/
+
+
 
 /* Index FIN */
 
