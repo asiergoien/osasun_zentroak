@@ -1,5 +1,7 @@
 <head>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
