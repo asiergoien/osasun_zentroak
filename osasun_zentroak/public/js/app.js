@@ -5494,7 +5494,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       mensaje: '',
-      hayComentarios: ''
+      hayComentarios: '',
+      comentarios: []
     };
   },
   methods: {
@@ -5520,17 +5521,16 @@ __webpack_require__.r(__webpack_exports__);
     viewComments: function viewComments() {
       var _this = this;
 
+      this.hayComentarios = true;
       axios.get('/viewComments', {
         params: {
           zentroarenKodea: this.getParams()
         }
       }).then(function (res) {
-        if (res.data.exists == "true") {
-          _this.hayComentarios = true;
-          return true;
-        } else {
-          _this.hayComentarios = false;
-          return false;
+        for (var i = 0; i < res.data.length; i++) {
+          _this.comentarios = res.data[i]; // estos dos alerts devuelven los datos bien
+          // alert(this.comentarios.mensaje);   
+          // alert(this.comentarios.usuario[0].name);   
         }
       });
     }
@@ -29539,7 +29539,50 @@ var render = function () {
         ]),
         _vm._v(" "),
         _vm.hayComentarios
-          ? _c("div", { staticClass: "card p-3" }, [_vm._m(1)])
+          ? _c(
+              "div",
+              { staticClass: "card p-3" },
+              _vm._l(_vm.comentarios, function (comentario, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass:
+                      "d-flex justify-content-between align-items-center",
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "user d-flex flex-row align-items-center",
+                      },
+                      [
+                        _c("img", {
+                          staticClass: "user-img rounded-circle mr-2",
+                          attrs: {
+                            src: "https://i.imgur.com/hczKIze.jpg",
+                            width: "30",
+                          },
+                        }),
+                        _vm._v(" "),
+                        _c("span", [
+                          _c(
+                            "small",
+                            { staticClass: "font-weight-bold text-primary" },
+                            [_vm._v(_vm._s(comentario.name))]
+                          ),
+                          _vm._v(" "),
+                          _c("small", { staticClass: "font-weight-bold" }, [
+                            _vm._v(_vm._s(comentario.mensaje)),
+                          ]),
+                        ]),
+                      ]
+                    ),
+                  ]
+                )
+              }),
+              0
+            )
           : _c("div", { staticClass: "card p-3" }, [
               _c("p", [
                 _vm._v("Hau hutsik dago... Idatzi zuk lehenengo iruzkina!"),
@@ -29561,33 +29604,6 @@ var staticRenderFns = [
           "headings d-flex justify-content-between align-items-center mb-3",
       },
       [_c("h5", [_vm._v("Iruzkinak")])]
-    )
-  },
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "d-flex justify-content-between align-items-center" },
-      [
-        _c("div", { staticClass: "user d-flex flex-row align-items-center" }, [
-          _c("img", {
-            staticClass: "user-img rounded-circle mr-2",
-            attrs: { src: "https://i.imgur.com/hczKIze.jpg", width: "30" },
-          }),
-          _vm._v(" "),
-          _c("span", [
-            _c("small", { staticClass: "font-weight-bold text-primary" }, [
-              _vm._v("AQUI VA EL NOMBRE DEL AUTOR"),
-            ]),
-            _vm._v(" "),
-            _c("small", { staticClass: "font-weight-bold" }, [
-              _vm._v("AQUI VA EL MENSAJE"),
-            ]),
-          ]),
-        ]),
-      ]
     )
   },
 ]

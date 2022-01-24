@@ -18,25 +18,16 @@ class CommentsController extends Controller
     }
     public function viewComments(Request $request){
         if(Comments::where('zentroarenKodea', '=', $request->zentroarenKodea)->count()>0){
-            $comments = Comments::select('mensaje', 'userId')->where('zentroarenKodea', '=', $request->zentroarenKodea)->get(['mensaje', 'userId']);
-            return response()->json([
-                $comments,
-                'exists'=>'true'
-            ], 200);
-            // foreach ($comments as $comment){
-            //     $user = User::where('id', $comments['userId'])->get();
-            //     return response()->json([
-            //         'user'=> $user->name,
-            //         'mensaje' => $comment['mensaje'],
-            //         'exists'=>'true'
-            //     ], 200);
-            // }
-        }else{
-            return response()->json([
-                'exists'=>'false'
-            ], 200);
-        }
+            $comments = Comments::select('mensaje', 'userId')->where('zentroarenKodea', '=', $request->zentroarenKodea)->select('mensaje', 'userId')->get();
+            $commentBox = [];
+            foreach ($comments as $comment){
+                $username = User::where('id', $comment['userId'])->get('name');
+                $comment=['mensaje' => $comment['mensaje'],'usuario' => $username];
+                array_push($commentBox, $comment);
+            }       
+            return response()->json($commentBox);           
     }
+}
     // public function __construct()
     // {
     //     $user = auth()->user();

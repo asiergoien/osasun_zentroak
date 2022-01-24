@@ -14,10 +14,10 @@
                 </div>
                 <!-- CADA COMENTARIO TIENE ESTE FORMATO O SEA QUE AQUI VA EL FOR -->
                 <div v-if="hayComentarios" class="card p-3">
-                    <div class="d-flex justify-content-between align-items-center">
+                    <div v-for="(comentario,index) in comentarios" :key="index" class="d-flex justify-content-between align-items-center">
                         <div class="user d-flex flex-row align-items-center"> 
                             <img src="https://i.imgur.com/hczKIze.jpg" width="30" class="user-img rounded-circle mr-2"> 
-                            <span><small class="font-weight-bold text-primary">AQUI VA EL NOMBRE DEL AUTOR</small> <small class="font-weight-bold">AQUI VA EL MENSAJE</small></span> 
+                            <span><small class="font-weight-bold text-primary">{{comentario.name}}</small> <small class="font-weight-bold">{{comentario.mensaje}}</small></span> 
                         </div>
                          <!--por ahora sin fecha jeje q hay q meter una columna en la bbdd y m da pereza ahora mismo pero si no aqui iria la fecha o desde hace cuanto se ha hecho el comment cn un if dependiendo de hace cuanto es  -->
                         <!-- <small>AQUI VA LA FECHA</small> -->
@@ -41,7 +41,8 @@
         data: () => ({
             mensaje:'',
             hayComentarios:'',
-        }),
+            comentarios: []
+            }),
         methods:{
             //url-an gordetako parametroa (zentroaren kodea) jasotzeko funtzioa
             getParams() {
@@ -59,14 +60,14 @@
                 axios.post('/addComment', {userId: this.userIdC, zentroarenKodea: this.getParams(), mensaje: this.getMensaje()})
             },
             viewComments(){
+                this.hayComentarios = true;
                 axios.get('/viewComments', {params: {zentroarenKodea: this.getParams()}})
                     .then((res)=>{
-                        if(res.data.exists == "true"){
-                            this.hayComentarios = true;
-                            return true;
-                        }else{
-                            this.hayComentarios = false;
-                            return false;
+                        for(let i = 0; i < res.data.length; i++){
+                            this.comentarios = res.data[i];
+                            // estos dos alerts devuelven los datos bien
+                            // alert(this.comentarios.mensaje);   
+                            // alert(this.comentarios.usuario[0].name);   
                         }
                     })
             },           
