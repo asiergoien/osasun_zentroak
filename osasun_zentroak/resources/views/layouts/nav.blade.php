@@ -18,27 +18,26 @@
                 <li class="nav-item">
                     <a class="nav-link active text-light" aria-current="page" href="/osasun-zentroak">Guztiak</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active text-light" aria-current="page"
-                        href="/osasun-zentroak?probintzia=Bizkaia">Bizkaia</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active text-light" aria-current="page"
-                        href="/osasun-zentroak?probintzia=Gipuzkoa">Gipuzkoa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active text-light" aria-current="page"
-                        href="/osasun-zentroak?probintzia=Araba">Araba</a>
-                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown link
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Probintziak
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="/osasun-zentroak?probintzia=Bizkaia">Bizkaia</a>
+                        <a class="dropdown-item" href="/osasun-zentroak?probintzia=Gipuzkoa">Gipuzkoa</a>
+                        <a class="dropdown-item" href="/osasun-zentroak?probintzia=Araba">Araba</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Zentro motak
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/osasun-zentroak?mota=Anbulatorioa">Anbulatorioa</a>
+                        <a class="dropdown-item" href="/osasun-zentroak?mota=Osasun-zentroa">Osasun zentroa</a>
+                        <a class="dropdown-item" href="/osasun-zentroak?mota=Osasun mentaleko zentroa">Osasun mentaleko zentroa</a>
+                        <a class="dropdown-item" href="/osasun-zentroak?mota=Ospitalea">Ospitalea</a>
+                        <a class="dropdown-item" href="/osasun-zentroak?mota=Beste batzuk">Beste batzuk</a>
                     </div>
                 </li>
             </ul>

@@ -104,6 +104,11 @@
 
 /* Index FIN */
 
+/* Nav INI*/
+.navbar-light .navbar-nav .nav-link {
+    color: white !important;
+}
+/* Nav FIN*/
 
 /* profila INI */
 

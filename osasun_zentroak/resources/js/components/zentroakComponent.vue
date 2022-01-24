@@ -75,6 +75,8 @@ export default {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get("probintzia"))
       this.provincia = urlParams.get("probintzia");
+    if (urlParams.get("mota"))
+      this.tipodecentro = urlParams.get("mota");
     this.getCentros();
   },
 
