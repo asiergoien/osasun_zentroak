@@ -44,18 +44,14 @@
                 
             </ul>
             <ul class="nav d-flex justify-content-end">
-                <li class="nav-item dropdown justify-content-end">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Mis huevos
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Morenos</a>
-                        <a class="dropdown-item" href="#">Blanco nuclear</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown justify-content-end">
+                <li class="nav-item dropdown justify-content-end d-flex">
                     <input class="form-control me-2" placeholder="Bilatu..." aria-label="Bilatu" id="txtBilatu">
-                    <button id="btnBilatuZentroa" class="btn btn-outline-light" onclick="window.location.href='/osasun-zentroak?izena='+txtBilatu.value">Bilatu</button>
+                    {{-- <button id="btnBilatuZentroa" class="btn btn-outline-light" onclick="window.location.href='/osasun-zentroak?izena='+txtBilatu.value">Bilatu</button> --}}
+                    <button id="btnBilatuZentroa" class="btn btn-outline-light" onclick="window.location.href='/osasun-zentroak?izena='+txtBilatu.value">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
                 </li>
               </ul>
             <div class="d-flex">
