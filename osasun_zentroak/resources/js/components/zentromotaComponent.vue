@@ -4,19 +4,19 @@
         <div class="div1">
             <h1>Bizkaia</h1>
             <a href="/osasun-zentroak?probintzia=Bizkaia">
-            <img src="img/zentroak-bizkaia.jpg" alt="Bizkaia" ></a>
+            <img class="desvanecer" src="img/zentroak-bizkaia.jpg" alt="Bizkaia" ></a>
         </div>
 
         <div class="div2">
             <h1>Araba</h1>
             <a href="/osasun-zentroak?probintzia=Araba">
-            <img src="img/zentroak-alaba.jpg" alt="Araba" ></a>
+            <img class="desvanecer" src="img/zentroak-alaba.jpg" alt="Araba" ></a>
         </div>
 
         <div class="div3">
             <h1>Gipuzkua</h1>
               <a href="/osasun-zentroak?probintzia=Gipuzkoa">
-            <img src="img/zentroak-gipuzkua.jpg" alt="Gipuzkua" ></a>
+            <img class="desvanecer" src="img/zentroak-gipuzkua.jpg" alt="Gipuzkua" ></a>
         </div>
 
     </div>

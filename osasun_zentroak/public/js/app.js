@@ -30023,6 +30023,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Bizkaia" } }, [
           _c("img", {
+            staticClass: "desvanecer",
             attrs: { src: "img/zentroak-bizkaia.jpg", alt: "Bizkaia" },
           }),
         ]),
@@ -30032,7 +30033,10 @@ var staticRenderFns = [
         _c("h1", [_vm._v("Araba")]),
         _vm._v(" "),
         _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Araba" } }, [
-          _c("img", { attrs: { src: "img/zentroak-alaba.jpg", alt: "Araba" } }),
+          _c("img", {
+            staticClass: "desvanecer",
+            attrs: { src: "img/zentroak-alaba.jpg", alt: "Araba" },
+          }),
         ]),
       ]),
       _vm._v(" "),
@@ -30041,6 +30045,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Gipuzkoa" } }, [
           _c("img", {
+            staticClass: "desvanecer",
             attrs: { src: "img/zentroak-gipuzkua.jpg", alt: "Gipuzkua" },
           }),
         ]),
