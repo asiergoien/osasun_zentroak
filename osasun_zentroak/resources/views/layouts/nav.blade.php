@@ -2,6 +2,7 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://getbootstrap.com/docs/4.0/dist/js/bootstrap.min.js"></script>
+    <link rel = "icon" href = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Osakidetza-Logo.svg/1200px-Osakidetza-Logo.svg.png" type = "image/x-icon">
 </head>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
