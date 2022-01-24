@@ -1,21 +1,24 @@
 <template>
     <div class="zentro-motak">
-    
+
         <div class="div1">
             <h1>Bizkaia</h1>
-            <img src="img/zentroak.jpg" alt="Bizkaia" >
+            <a href="/osasun-zentroak?probintzia=Bizkaia">
+            <img src="img/zentroak-bizkaia.jpg" alt="Bizkaia" ></a>
         </div>
 
         <div class="div2">
             <h1>Araba</h1>
-            <img src="img/zentroak.jpg" alt="Araba" >
+            <a href="/osasun-zentroak?probintzia=Araba">
+            <img src="img/zentroak-alaba.jpg" alt="Araba" ></a>
         </div>
-    
+
         <div class="div3">
             <h1>Gipuzkua</h1>
-            <img src="img/zentroak.jpg" alt="Gipuzkua" >
+              <a href="/osasun-zentroak?probintzia=Gipuzkoa">
+            <img src="img/zentroak-gipuzkua.jpg" alt="Gipuzkua" ></a>
         </div>
-    
+
     </div>
 </template>
 

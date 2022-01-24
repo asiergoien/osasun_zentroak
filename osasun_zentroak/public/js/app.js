@@ -5796,6 +5796,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     this.getCentros();
@@ -30018,19 +30021,29 @@ var staticRenderFns = [
       _c("div", { staticClass: "div1" }, [
         _c("h1", [_vm._v("Bizkaia")]),
         _vm._v(" "),
-        _c("img", { attrs: { src: "img/zentroak.jpg", alt: "Bizkaia" } }),
+        _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Bizkaia" } }, [
+          _c("img", {
+            attrs: { src: "img/zentroak-bizkaia.jpg", alt: "Bizkaia" },
+          }),
+        ]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "div2" }, [
         _c("h1", [_vm._v("Araba")]),
         _vm._v(" "),
-        _c("img", { attrs: { src: "img/zentroak.jpg", alt: "Araba" } }),
+        _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Araba" } }, [
+          _c("img", { attrs: { src: "img/zentroak-alaba.jpg", alt: "Araba" } }),
+        ]),
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "div3" }, [
         _c("h1", [_vm._v("Gipuzkua")]),
         _vm._v(" "),
-        _c("img", { attrs: { src: "img/zentroak.jpg", alt: "Gipuzkua" } }),
+        _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Gipuzkoa" } }, [
+          _c("img", {
+            attrs: { src: "img/zentroak-gipuzkua.jpg", alt: "Gipuzkua" },
+          }),
+        ]),
       ]),
     ])
   },

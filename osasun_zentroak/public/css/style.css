@@ -41,7 +41,6 @@
     min-height: 100vh;
 }
 
-
 .zentro-motak {
     display: grid;
     grid-template-columns: repeat(3, 0.5fr);
@@ -78,7 +77,9 @@
     background-color: #0d6efd;
 }
 
+
 /* Grafikoa Index  INI*/
+
 .grafikoa {
     /* margin-left: 37vw; */
     /* Arriba | Derecha | Abajo | Izquierda */
@@ -88,8 +89,8 @@
     height: 450px;
 }
 
-/* Grafikoa Index  FIN*/
 
+/* Grafikoa Index  FIN*/
 
 
 /* Index FIN */
@@ -237,7 +238,9 @@ Ordenagailua
 
 /* zentroak FIN */
 
+
 /*COMENTARIOS INICIO*/
+
 .card {
     border: none;
     box-shadow: 5px 6px 6px 2px #e9ecef;
@@ -247,4 +250,6 @@ Ordenagailua
 .user-img {
     margin-top: 4px
 }
+
+
 /*COMENTARIOS FIN*/
