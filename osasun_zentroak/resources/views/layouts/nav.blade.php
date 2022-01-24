@@ -41,7 +41,23 @@
                         <a class="dropdown-item" href="/osasun-zentroak?mota=Beste batzuk">Beste batzuk</a>
                     </div>
                 </li>
+                
             </ul>
+            <ul class="nav d-flex justify-content-end">
+                <li class="nav-item dropdown justify-content-end">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Mis huevos
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Morenos</a>
+                        <a class="dropdown-item" href="#">Blanco nuclear</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown justify-content-end">
+                    <input class="form-control me-2" placeholder="Bilatu..." aria-label="Bilatu" id="txtBilatu">
+                    <button id="btnBilatuZentroa" class="btn btn-outline-light" onclick="window.location.href='/osasun-zentroak?izena='+txtBilatu.value">Bilatu</button>
+                </li>
+              </ul>
             <div class="d-flex">
                 @guest
                     @if (Route::has('login'))
@@ -78,6 +94,10 @@
                         </ul>
                     </div>
                 @endguest
+
+                {{-- <script>
+                    btnBilatuZentroa.onc
+                </script> --}}
 
                 {{-- ANIMACION CORAZON --}}
                 <script src="https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js"></script>

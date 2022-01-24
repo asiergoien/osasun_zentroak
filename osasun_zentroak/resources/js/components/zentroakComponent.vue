@@ -77,6 +77,8 @@ export default {
       this.provincia = urlParams.get("probintzia");
     if (urlParams.get("mota"))
       this.tipodecentro = urlParams.get("mota");
+    if (urlParams.get("izena"))
+      this.sartutakoIzena = urlParams.get("izena");
     this.getCentros();
   },
 
