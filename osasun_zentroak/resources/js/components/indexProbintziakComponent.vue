@@ -16,7 +16,7 @@
         <div class="div3">
             <h1>Gipuzkua</h1>
               <a href="/osasun-zentroak?probintzia=Gipuzkoa">
-            <img class="desvanecer" src="img/zentroak-gipuzkua.jpg" alt="Gipuzkua" ></a>
+            <img class="desvanecer" src="img/zentroak-gipuzkua.jpg" alt="Gipuzkoa" ></a>
         </div>
 
     </div>

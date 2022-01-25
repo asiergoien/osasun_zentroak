@@ -29,8 +29,8 @@ Vue.component('centros-list', require('./components/zentroakComponent.vue').defa
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('info-component', require('./components/InformazioaComponent.vue').default);
 Vue.component('iruzkinak-component', require('./components/IruzkinakComponent.vue').default);
-Vue.component('zentroak-index', require('./components/zentroakIndex.vue').default);
-Vue.component('zentro-mota', require('./components/zentromotaComponent.vue').default);
+Vue.component('zentroak-index', require('./components/indexComponent.vue').default);
+Vue.component('zentro-mota', require('./components/indexProbintziakComponent.vue').default);
 Vue.component('zentroak-favs', require('./components/FavsComponent.vue').default);
 
 // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);

@@ -47,6 +47,7 @@ body {
     grid-template-rows: 1fr;
     grid-column-gap: 100px;
     grid-row-gap: 0px;
+    margin: 3rem;
 }
 
 .div1 {
@@ -63,7 +64,7 @@ body {
 
 .zentro-motak h1 {
     text-align: center;
-    color: white;
+    color: #0275d8;
 }
 
 .zentro-motak img {
@@ -74,7 +75,11 @@ body {
 }
 
 .zentro-motak div {
-    background-color: #0d6efd;
+    /* background-color: #0d6efd; */
+    /* border-radius: 1px;
+    border-width: 1px;
+    border-color: #0275d8; */
+    border: #0275d8 1px solid;
 }
 
 .desvanecer:hover {

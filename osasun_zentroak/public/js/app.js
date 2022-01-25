@@ -5251,6 +5251,140 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FavsComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FavsComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: ['favs'],
+  mounted: function mounted() {
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("probintzia")) this.provincia = urlParams.get("probintzia");
+    this.getCentros(); // const favoritos = (this.favs);
+    // console.log(favoritos);
+
+    this.getfavs();
+  },
+  data: function data() {
+    return {
+      title: "Zentro gustokoenak",
+      centros: [],
+      provincia: "",
+      tipodecentro: "",
+      sartutakoIzena: ""
+    };
+  },
+  computed: {
+    filteredCentros: function filteredCentros() {
+      var arrEmaitza = this.searchByName();
+
+      if (this.provincia.length > 0) {
+        arrEmaitza = this.searchByProbintzia(arrEmaitza);
+      }
+
+      if (this.tipodecentro.length > 0) {
+        arrEmaitza = this.searchByMota(arrEmaitza);
+      }
+
+      return arrEmaitza;
+    }
+  },
+  methods: {
+    getCentros: function getCentros() {
+      var _this = this;
+
+      delete axios.defaults.headers.common['X-Requested-With']; // const URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/centros-salud.json";
+
+      var URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/osasun-zentroak.json";
+      axios.get(URL).then(function (response) {
+        var data = new String(response.data).replace("jsonCallback(", "").replace(");", "");
+        _this.centros = JSON.parse(data);
+
+        for (var i = 0; i < _this.centros.length; i++) {
+          _this.centros[i].id = i;
+        }
+      });
+    },
+    searchByName: function searchByName() {
+      var _this2 = this;
+
+      if (this.sartutakoIzena.length > 0) {
+        return this.centros.filter(function (centro) {
+          return centro.Izena.toLowerCase().includes(_this2.sartutakoIzena.toLowerCase());
+        });
+      } else {
+        return this.centros;
+      }
+    },
+    searchByMota: function searchByMota(arrayDeResultadosRecibidos) {
+      var _this3 = this;
+
+      return arrayDeResultadosRecibidos.filter(function (centro) {
+        return centro.Zentromota.toLowerCase().includes(_this3.tipodecentro.toLowerCase());
+      }).concat(arrayDeResultadosRecibidos.filter(function (centro) {
+        return centro.Zentromota.includes("Osasun Zentroa");
+      })); // return arrayDeResultadosRecibidos.filter((centro) => centro.Zentromota.toLowerCase().includes(this.tipodecentro.toLowerCase()));
+    },
+    searchByProbintzia: function searchByProbintzia(arrayDeResultadosRecibidos) {
+      var _this4 = this;
+
+      return arrayDeResultadosRecibidos.filter(function (centro) {
+        return centro.Probintzia.toLowerCase().includes(_this4.provincia.toLowerCase());
+      });
+    },
+    getParams: function getParams() {
+      var parser = document.createElement('a');
+      parser.href = window.location.href;
+      var query = parser.search.substring(1);
+      var value = query.split('=');
+      return value[1];
+    },
+    getfavs: function getfavs() {
+      var favoritos = this.favs;
+      var arrayFavs = favoritos.split("/"); // console.log(arrayFavs);
+
+      var arrayLength = arrayFavs.length; // console.log(arrayLength);
+
+      for (var i = 0; i < arrayLength; i++) {
+        console.log(arrayFavs[i]);
+      }
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FooterComponent.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FooterComponent.vue?vue&type=script&lang=js& ***!
@@ -5539,6 +5673,135 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    this.getCentros();
+  },
+  data: function data() {
+    return {
+      title: "Euskadiko osasun zentroak",
+      centros: [],
+      provincia: "",
+      tipodecentro: "",
+      sartutakoIzena: ""
+    };
+  },
+  methods: {
+    getCentros: function getCentros() {
+      var _this = this;
+
+      delete axios.defaults.headers.common['X-Requested-With']; // const URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/centros-salud.json";
+
+      var URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/osasun-zentroak.json";
+      axios.get(URL).then(function (response) {
+        var data = new String(response.data).replace("jsonCallback(", "").replace(");", "");
+        _this.centros = JSON.parse(data);
+
+        for (var i = 0; i < _this.centros.length; i++) {
+          _this.centros[i].id = i;
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexProbintziakComponent.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexProbintziakComponent.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  mounted: function mounted() {
+    this.getCentros();
+  },
+  data: function data() {
+    return {
+      title: "Euskadiko osasun zentroak",
+      centros: [],
+      provincia: "",
+      tipodecentro: "",
+      sartutakoIzena: ""
+    };
+  },
+  methods: {
+    getCentros: function getCentros() {
+      var _this = this;
+
+      delete axios.defaults.headers.common['X-Requested-With']; // const URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/centros-salud.json";
+
+      var URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/osasun-zentroak.json";
+      axios.get(URL).then(function (response) {
+        var data = new String(response.data).replace("jsonCallback(", "").replace(");", "");
+        _this.centros = JSON.parse(data);
+
+        for (var i = 0; i < _this.centros.length; i++) {
+          _this.centros[i].id = i;
+        }
+      });
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakComponent.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakComponent.vue?vue&type=script&lang=js& ***!
@@ -5706,135 +5969,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakIndex.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakIndex.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    this.getCentros();
-  },
-  data: function data() {
-    return {
-      title: "Euskadiko osasun zentroak",
-      centros: [],
-      provincia: "",
-      tipodecentro: "",
-      sartutakoIzena: ""
-    };
-  },
-  methods: {
-    getCentros: function getCentros() {
-      var _this = this;
-
-      delete axios.defaults.headers.common['X-Requested-With']; // const URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/centros-salud.json";
-
-      var URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/osasun-zentroak.json";
-      axios.get(URL).then(function (response) {
-        var data = new String(response.data).replace("jsonCallback(", "").replace(");", "");
-        _this.centros = JSON.parse(data);
-
-        for (var i = 0; i < _this.centros.length; i++) {
-          _this.centros[i].id = i;
-        }
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentromotaComponent.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentromotaComponent.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    this.getCentros();
-  },
-  data: function data() {
-    return {
-      title: "Euskadiko osasun zentroak",
-      centros: [],
-      provincia: "",
-      tipodecentro: "",
-      sartutakoIzena: ""
-    };
-  },
-  methods: {
-    getCentros: function getCentros() {
-      var _this = this;
-
-      delete axios.defaults.headers.common['X-Requested-With']; // const URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/centros-salud.json";
-
-      var URL = "https://opendata.euskadi.eus/contenidos/ds_localizaciones/centros_salud_en_euskadi/opendata/osasun-zentroak.json";
-      axios.get(URL).then(function (response) {
-        var data = new String(response.data).replace("jsonCallback(", "").replace(");", "");
-        _this.centros = JSON.parse(data);
-
-        for (var i = 0; i < _this.centros.length; i++) {
-          _this.centros[i].id = i;
-        }
-      });
-    }
-  }
-});
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -5845,11 +5979,13 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap */ "./node_modules/bootstrap/dist/js/bootstrap.esm.js");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js");
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+
 
 
 
@@ -5868,13 +6004,13 @@ window.Vue = (__webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 // Vue.component('index-component', require('./components/IndexComponent.vue').default);
 
-Vue.component('centros-list', (__webpack_require__(/*! ./components/zentroakComponent.vue */ "./resources/js/components/zentroakComponent.vue")["default"])); // Vue.component('profila-component', require('./components/ProfilaComponent.vue').default);
-
-Vue.component('footer-component', (__webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]));
-Vue.component('info-component', (__webpack_require__(/*! ./components/InformazioaComponent.vue */ "./resources/js/components/InformazioaComponent.vue")["default"]));
-Vue.component('iruzkinak-component', (__webpack_require__(/*! ./components/IruzkinakComponent.vue */ "./resources/js/components/IruzkinakComponent.vue")["default"]));
-Vue.component('zentroak-index', (__webpack_require__(/*! ./components/zentroakIndex.vue */ "./resources/js/components/zentroakIndex.vue")["default"]));
-Vue.component('zentro-mota', (__webpack_require__(/*! ./components/zentromotaComponent.vue */ "./resources/js/components/zentromotaComponent.vue")["default"])); // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('centros-list', (__webpack_require__(/*! ./components/zentroakComponent.vue */ "./resources/js/components/zentroakComponent.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('footer-component', (__webpack_require__(/*! ./components/FooterComponent.vue */ "./resources/js/components/FooterComponent.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('info-component', (__webpack_require__(/*! ./components/InformazioaComponent.vue */ "./resources/js/components/InformazioaComponent.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('iruzkinak-component', (__webpack_require__(/*! ./components/IruzkinakComponent.vue */ "./resources/js/components/IruzkinakComponent.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('zentroak-index', (__webpack_require__(/*! ./components/indexComponent.vue */ "./resources/js/components/indexComponent.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('zentro-mota', (__webpack_require__(/*! ./components/indexProbintziakComponent.vue */ "./resources/js/components/indexProbintziakComponent.vue")["default"]));
+vue__WEBPACK_IMPORTED_MODULE_2__["default"].component('zentroak-favs', (__webpack_require__(/*! ./components/FavsComponent.vue */ "./resources/js/components/FavsComponent.vue")["default"])); // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -5882,10 +6018,10 @@ Vue.component('zentro-mota', (__webpack_require__(/*! ./components/zentromotaCom
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-var app = new Vue({
+var app = new vue__WEBPACK_IMPORTED_MODULE_2__["default"]({
   el: '#app'
 });
-var footer = new Vue({
+var footer = new vue__WEBPACK_IMPORTED_MODULE_2__["default"]({
   el: '#footer'
 });
 
@@ -28782,6 +28918,45 @@ module.exports = function (list, options) {
 
 /***/ }),
 
+/***/ "./resources/js/components/FavsComponent.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/components/FavsComponent.vue ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _FavsComponent_vue_vue_type_template_id_03b7b44a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FavsComponent.vue?vue&type=template&id=03b7b44a& */ "./resources/js/components/FavsComponent.vue?vue&type=template&id=03b7b44a&");
+/* harmony import */ var _FavsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FavsComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/FavsComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FavsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FavsComponent_vue_vue_type_template_id_03b7b44a___WEBPACK_IMPORTED_MODULE_0__.render,
+  _FavsComponent_vue_vue_type_template_id_03b7b44a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/FavsComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/FooterComponent.vue":
 /*!*****************************************************!*\
   !*** ./resources/js/components/FooterComponent.vue ***!
@@ -28899,6 +29074,84 @@ component.options.__file = "resources/js/components/IruzkinakComponent.vue"
 
 /***/ }),
 
+/***/ "./resources/js/components/indexComponent.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/indexComponent.vue ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./indexComponent.vue?vue&type=template&id=078771d6& */ "./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6&");
+/* harmony import */ var _indexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./indexComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/indexComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _indexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__.render,
+  _indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/indexComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/indexProbintziakComponent.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/indexProbintziakComponent.vue ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _indexProbintziakComponent_vue_vue_type_template_id_d046453e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./indexProbintziakComponent.vue?vue&type=template&id=d046453e& */ "./resources/js/components/indexProbintziakComponent.vue?vue&type=template&id=d046453e&");
+/* harmony import */ var _indexProbintziakComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./indexProbintziakComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/indexProbintziakComponent.vue?vue&type=script&lang=js&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+;
+var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _indexProbintziakComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _indexProbintziakComponent_vue_vue_type_template_id_d046453e___WEBPACK_IMPORTED_MODULE_0__.render,
+  _indexProbintziakComponent_vue_vue_type_template_id_d046453e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/indexProbintziakComponent.vue"
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/zentroakComponent.vue":
 /*!*******************************************************!*\
   !*** ./resources/js/components/zentroakComponent.vue ***!
@@ -28938,10 +29191,10 @@ component.options.__file = "resources/js/components/zentroakComponent.vue"
 
 /***/ }),
 
-/***/ "./resources/js/components/zentroakIndex.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/components/zentroakIndex.vue ***!
-  \***************************************************/
+/***/ "./resources/js/components/FavsComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/FavsComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -28949,70 +29202,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _zentroakIndex_vue_vue_type_template_id_79913cc2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./zentroakIndex.vue?vue&type=template&id=79913cc2& */ "./resources/js/components/zentroakIndex.vue?vue&type=template&id=79913cc2&");
-/* harmony import */ var _zentroakIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./zentroakIndex.vue?vue&type=script&lang=js& */ "./resources/js/components/zentroakIndex.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _zentroakIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _zentroakIndex_vue_vue_type_template_id_79913cc2___WEBPACK_IMPORTED_MODULE_0__.render,
-  _zentroakIndex_vue_vue_type_template_id_79913cc2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/zentroakIndex.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/zentromotaComponent.vue":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/zentromotaComponent.vue ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _zentromotaComponent_vue_vue_type_template_id_438e2ec5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./zentromotaComponent.vue?vue&type=template&id=438e2ec5& */ "./resources/js/components/zentromotaComponent.vue?vue&type=template&id=438e2ec5&");
-/* harmony import */ var _zentromotaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./zentromotaComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/zentromotaComponent.vue?vue&type=script&lang=js&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-;
-var component = (0,_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _zentromotaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _zentromotaComponent_vue_vue_type_template_id_438e2ec5___WEBPACK_IMPORTED_MODULE_0__.render,
-  _zentromotaComponent_vue_vue_type_template_id_438e2ec5___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns,
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/zentromotaComponent.vue"
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (component.exports);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FavsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FavsComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FavsComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FavsComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -29064,6 +29255,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/indexComponent.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/indexComponent.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_indexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./indexComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_indexComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/indexProbintziakComponent.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/indexProbintziakComponent.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_indexProbintziakComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./indexProbintziakComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexProbintziakComponent.vue?vue&type=script&lang=js&");
+ /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_indexProbintziakComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
 /***/ "./resources/js/components/zentroakComponent.vue?vue&type=script&lang=js&":
 /*!********************************************************************************!*\
   !*** ./resources/js/components/zentroakComponent.vue?vue&type=script&lang=js& ***!
@@ -29080,35 +29303,20 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/zentroakIndex.vue?vue&type=script&lang=js&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/zentroakIndex.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_zentroakIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./zentroakIndex.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakIndex.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_zentroakIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/zentromotaComponent.vue?vue&type=script&lang=js&":
+/***/ "./resources/js/components/FavsComponent.vue?vue&type=template&id=03b7b44a&":
 /*!**********************************************************************************!*\
-  !*** ./resources/js/components/zentromotaComponent.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/js/components/FavsComponent.vue?vue&type=template&id=03b7b44a& ***!
   \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FavsComponent_vue_vue_type_template_id_03b7b44a___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FavsComponent_vue_vue_type_template_id_03b7b44a___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_zentromotaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./zentromotaComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5[0].rules[0].use[0]!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentromotaComponent.vue?vue&type=script&lang=js&");
- /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_babel_loader_lib_index_js_clonedRuleSet_5_0_rules_0_use_0_node_modules_vue_loader_lib_index_js_vue_loader_options_zentromotaComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FavsComponent_vue_vue_type_template_id_03b7b44a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./FavsComponent.vue?vue&type=template&id=03b7b44a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FavsComponent.vue?vue&type=template&id=03b7b44a&");
+
 
 /***/ }),
 
@@ -29163,6 +29371,40 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6& ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_indexComponent_vue_vue_type_template_id_078771d6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./indexComponent.vue?vue&type=template&id=078771d6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6&");
+
+
+/***/ }),
+
+/***/ "./resources/js/components/indexProbintziakComponent.vue?vue&type=template&id=d046453e&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/indexProbintziakComponent.vue?vue&type=template&id=d046453e& ***!
+  \**********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_indexProbintziakComponent_vue_vue_type_template_id_d046453e___WEBPACK_IMPORTED_MODULE_0__.render),
+/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_indexProbintziakComponent_vue_vue_type_template_id_d046453e___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */ });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_indexProbintziakComponent_vue_vue_type_template_id_d046453e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./indexProbintziakComponent.vue?vue&type=template&id=d046453e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexProbintziakComponent.vue?vue&type=template&id=d046453e&");
+
+
+/***/ }),
+
 /***/ "./resources/js/components/zentroakComponent.vue?vue&type=template&id=0ec2a5ca&":
 /*!**************************************************************************************!*\
   !*** ./resources/js/components/zentroakComponent.vue?vue&type=template&id=0ec2a5ca& ***!
@@ -29180,36 +29422,133 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/zentroakIndex.vue?vue&type=template&id=79913cc2&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/zentroakIndex.vue?vue&type=template&id=79913cc2& ***!
-  \**********************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FavsComponent.vue?vue&type=template&id=03b7b44a&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/FavsComponent.vue?vue&type=template&id=03b7b44a& ***!
+  \*************************************************************************************************************************************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_zentroakIndex_vue_vue_type_template_id_79913cc2___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_zentroakIndex_vue_vue_type_template_id_79913cc2___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
 /* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_zentroakIndex_vue_vue_type_template_id_79913cc2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./zentroakIndex.vue?vue&type=template&id=79913cc2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakIndex.vue?vue&type=template&id=79913cc2&");
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "col-lg-9 col-md-8 d-flex flex-wrap rounded my-5 p-5",
+      attrs: { id: "centros" },
+    },
+    _vm._l(_vm.filteredCentros, function (centro, index) {
+      return _c("div", { key: index, staticClass: "centro" }, [
+        centro.Zentroarenkodea === ""
+          ? _c("div", [
+              _c(
+                "div",
+                { staticClass: "card", staticStyle: { width: "18rem" } },
+                [
+                  centro.Zentromota === "Anbulatorioa"
+                    ? _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: "ambulatorio.jpg",
+                          heigth: "100px",
+                          width: "100px",
+                        },
+                      })
+                    : centro.Zentromota === "Beste batzuk"
+                    ? _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: "otros2.jpg",
+                          heigth: "100px",
+                          width: "100px",
+                        },
+                      })
+                    : centro.Zentromota === "Kontsultategia"
+                    ? _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: "consultorio.jpg",
+                          heigth: "100px",
+                          width: "100px",
+                        },
+                      })
+                    : centro.Zentromota === "Osasun Zentroa" ||
+                      centro.Zentromota === "Osasun-zentroa"
+                    ? _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: "centro-de-salud.png",
+                          heigth: "100px",
+                          width: "100px",
+                        },
+                      })
+                    : centro.Zentromota === "Osasun mentaleko zentroa"
+                    ? _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: "centro-salud-mental.jpg",
+                          heigth: "100px",
+                          width: "100px",
+                        },
+                      })
+                    : centro.Zentromota === "Ospitalea"
+                    ? _c("img", {
+                        staticClass: "card-img-top",
+                        attrs: {
+                          src: "hospital.jpg",
+                          heigth: "100px",
+                          width: "100px",
+                        },
+                      })
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "card-body" }, [
+                    _c("h5", { staticClass: "card-title text-primary" }, [
+                      _vm._v(_vm._s(centro.Izena)),
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "card-text" }, [
+                      _c("b", [_vm._v(_vm._s(centro.Zentromota))]),
+                      _c("br"),
+                      _vm._v(
+                        _vm._s(centro.Udalerria) +
+                          ", " +
+                          _vm._s(centro.Probintzia)
+                      ),
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "btn btn-primary",
+                        attrs: {
+                          href:
+                            "http://127.0.0.1:8000/informazioa?zentroa=" +
+                            centro.Zentroarenkodea,
+                        },
+                      },
+                      [_vm._v("Ikusi")]
+                    ),
+                  ]),
+                ]
+              ),
+            ])
+          : _vm._e(),
+      ])
+    }),
+    0
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
-
-/***/ }),
-
-/***/ "./resources/js/components/zentromotaComponent.vue?vue&type=template&id=438e2ec5&":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/components/zentromotaComponent.vue?vue&type=template&id=438e2ec5& ***!
-  \****************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_zentromotaComponent_vue_vue_type_template_id_438e2ec5___WEBPACK_IMPORTED_MODULE_0__.render),
-/* harmony export */   "staticRenderFns": () => (/* reexport safe */ _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_zentromotaComponent_vue_vue_type_template_id_438e2ec5___WEBPACK_IMPORTED_MODULE_0__.staticRenderFns)
-/* harmony export */ });
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_zentromotaComponent_vue_vue_type_template_id_438e2ec5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib/index.js??vue-loader-options!./zentromotaComponent.vue?vue&type=template&id=438e2ec5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentromotaComponent.vue?vue&type=template&id=438e2ec5&");
 
 
 /***/ }),
@@ -29613,6 +29952,127 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexComponent.vue?vue&type=template&id=078771d6& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("table", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "tbody",
+      _vm._l(7, function (n) {
+        return _c("tr", [
+          _c("td", [
+            _c(
+              "a",
+              {
+                attrs: {
+                  href:
+                    "http://127.0.0.1:8000/informazioa?zentroa=" +
+                    _vm.centros[n].Zentroarenkodea,
+                },
+              },
+              [_vm._v(_vm._s(_vm.centros[n].Izena))]
+            ),
+          ]),
+        ])
+      }),
+      0
+    ),
+  ])
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [_c("tr", [_c("th", [_vm._v("Zentroak")])])])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexProbintziakComponent.vue?vue&type=template&id=d046453e&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/indexProbintziakComponent.vue?vue&type=template&id=d046453e& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render),
+/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
+/* harmony export */ });
+var render = function () {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function () {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "zentro-motak" }, [
+      _c("div", { staticClass: "div1" }, [
+        _c("h1", [_vm._v("Bizkaia")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Bizkaia" } }, [
+          _c("img", {
+            staticClass: "desvanecer",
+            attrs: { src: "img/zentroak-bizkaia.jpg", alt: "Bizkaia" },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "div2" }, [
+        _c("h1", [_vm._v("Araba")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Araba" } }, [
+          _c("img", {
+            staticClass: "desvanecer",
+            attrs: { src: "img/zentroak-alaba.jpg", alt: "Araba" },
+          }),
+        ]),
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "div3" }, [
+        _c("h1", [_vm._v("Gipuzkua")]),
+        _vm._v(" "),
+        _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Gipuzkoa" } }, [
+          _c("img", {
+            staticClass: "desvanecer",
+            attrs: { src: "img/zentroak-gipuzkua.jpg", alt: "Gipuzkoa" },
+          }),
+        ]),
+      ]),
+    ])
+  },
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakComponent.vue?vue&type=template&id=0ec2a5ca&":
 /*!*****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakComponent.vue?vue&type=template&id=0ec2a5ca& ***!
@@ -29948,127 +30408,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "visually-hidden" }, [_vm._v("Kargatzen...")])]
     )
-  },
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakIndex.vue?vue&type=template&id=79913cc2&":
-/*!*************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentroakIndex.vue?vue&type=template&id=79913cc2& ***!
-  \*************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("table", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "tbody",
-      _vm._l(7, function (n) {
-        return _c("tr", [
-          _c("td", [
-            _c(
-              "a",
-              {
-                attrs: {
-                  href:
-                    "http://127.0.0.1:8000/informazioa?zentroa=" +
-                    _vm.centros[n].Zentroarenkodea,
-                },
-              },
-              [_vm._v(_vm._s(_vm.centros[n].Izena))]
-            ),
-          ]),
-        ])
-      }),
-      0
-    ),
-  ])
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [_c("tr", [_c("th", [_vm._v("Zentroak")])])])
-  },
-]
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentromotaComponent.vue?vue&type=template&id=438e2ec5&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib/index.js??vue-loader-options!./resources/js/components/zentromotaComponent.vue?vue&type=template&id=438e2ec5& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "render": () => (/* binding */ render),
-/* harmony export */   "staticRenderFns": () => (/* binding */ staticRenderFns)
-/* harmony export */ });
-var render = function () {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "zentro-motak" }, [
-      _c("div", { staticClass: "div1" }, [
-        _c("h1", [_vm._v("Bizkaia")]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Bizkaia" } }, [
-          _c("img", {
-            staticClass: "desvanecer",
-            attrs: { src: "img/zentroak-bizkaia.jpg", alt: "Bizkaia" },
-          }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "div2" }, [
-        _c("h1", [_vm._v("Araba")]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Araba" } }, [
-          _c("img", {
-            staticClass: "desvanecer",
-            attrs: { src: "img/zentroak-alaba.jpg", alt: "Araba" },
-          }),
-        ]),
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "div3" }, [
-        _c("h1", [_vm._v("Gipuzkua")]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "/osasun-zentroak?probintzia=Gipuzkoa" } }, [
-          _c("img", {
-            staticClass: "desvanecer",
-            attrs: { src: "img/zentroak-gipuzkua.jpg", alt: "Gipuzkua" },
-          }),
-        ]),
-      ]),
-    ])
   },
 ]
 render._withStripped = true
