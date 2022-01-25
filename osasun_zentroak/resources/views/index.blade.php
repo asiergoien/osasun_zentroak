@@ -74,16 +74,10 @@
         </div>
     </section>
     <section id="about">
-        <h1> Sobre mi</h1>
+        <h1>Guri buruz</h1>
         <p>
-            Esto es una página de aterrizaje con video de fondo a pantalla completa.
-            Eres libre de usar esta página de aterrizaje en tus proyectos.
-            Añádele secciones, cambia el video, el contenido, etc...
+            Osasun Zentroak © Euskadiko osasun zentroen informazio guztia kontsultatzeko duzun tokia da. Adibidez, ubikazioa, ordutegia, telefono zenbakia... Horrez gain, beste erabiltzaile batzuen iritziak ikus ditzakezu zentro bakoitzaren iruzkinetan.
         </p>
-        <h2>Visita mi página web</h2>
-        <div class="social">
-            <a href="https://merchanseo.com" target="_blank"><i class="fas fa-globe fa-3x"></i></a>            I
-        </div>
     </section>
 </div>
 
