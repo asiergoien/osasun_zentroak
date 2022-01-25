@@ -37,7 +37,7 @@
     margin-right: 3vw;
 }
 
-#app {
+body {
     min-height: 100vh;
 }
 
@@ -101,6 +101,116 @@
 
 /* Grafikoa Index  FIN*/
 
+
+/* Video INI */
+@import url('https://fonts.googleapis.com/css2?f amily=Open+Sans:wght@300;400Rdisplay=swap');
+
+:root {
+    --primary-color: #373742;
+}
+
+.multi * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.multi {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5;
+}
+
+.multi a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.multi h1 {
+    font-weight: 300;
+    font-size: 60px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.multi .showcase {
+    position: relative;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    color: #fff;
+}
+
+.multi .video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--primary-color) url(./cover.jpg) no-repeat center center/cover;
+}
+
+.multi .video-container video {
+    min-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.multi .video-container:after {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.6);
+}
+
+.multi .content {
+    z-index: 0;
+}
+
+.multi .btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: var(--primary-color);
+    color: #fff;
+    border: 1px #fff solid;
+    border-radius: 5px;
+    margin-top: 25px;
+    opacity: 0.73;
+}
+
+.multi .btn:hover {
+    transform: scale(0.98);
+}
+
+.multi #about {
+    padding: 40px;
+    text-align: center;
+}
+.multi #about p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.multi #about h2 {
+    padding: 30px 0;
+    color: var(--primary-color);
+}
+.multi .social a {
+    margin: 0 5px;
+}
+/* Video FIN */
 
 /* Index FIN */
 

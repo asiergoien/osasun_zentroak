@@ -60,6 +60,34 @@
 </head>
 
 <body>
+
+<div class="multi">
+
+    <section class="showcase">
+        <div class="video-container">
+            <video src="video_index.mp4" autoplay muted loop></video>
+        </div>
+        <div class="content">
+            <h1>EUSKADIKO OSASUN ZENTROAK</h1>
+            <h3>Kontsula itzazu nahi dituzun zentroen ubikazioa eta ordutegiak</h3>
+            <a href="#about" class="btn">Ikusi</a>
+        </div>
+    </section>
+    <section id="about">
+        <h1> Sobre mi</h1>
+        <p>
+            Esto es una página de aterrizaje con video de fondo a pantalla completa.
+            Eres libre de usar esta página de aterrizaje en tus proyectos.
+            Añádele secciones, cambia el video, el contenido, etc...
+        </p>
+        <h2>Visita mi página web</h2>
+        <div class="social">
+            <a href="https://merchanseo.com" target="_blank"><i class="fas fa-globe fa-3x"></i></a>            I
+        </div>
+    </section>
+</div>
+
+
     <div id="app">
         <div id="carouselExampleControls" class="carousel home slide" data-bs-ride="carousel">
             <div class="carousel-inner">
