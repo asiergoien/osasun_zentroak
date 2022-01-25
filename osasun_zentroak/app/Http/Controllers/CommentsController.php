@@ -21,7 +21,7 @@ class CommentsController extends Controller
             $comments = Comments::select('mensaje', 'userId')->where('zentroarenKodea', '=', $request->zentroarenKodea)->select('mensaje', 'userId')->get();
             $commentBox = [];
             foreach ($comments as $comment){
-                $username = User::where('id', $comment['userId'])->get('name');
+                $username = User::where('id', $comment['userId'])->first()->name;
                 $comment=['mensaje' => $comment['mensaje'],'usuario' => $username];
                 array_push($commentBox, $comment);
             }       

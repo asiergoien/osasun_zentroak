@@ -5528,9 +5528,12 @@ __webpack_require__.r(__webpack_exports__);
         }
       }).then(function (res) {
         for (var i = 0; i < res.data.length; i++) {
-          _this.comentarios = res.data[i]; // estos dos alerts devuelven los datos bien
-          // alert(this.comentarios.mensaje);   
-          // alert(this.comentarios.usuario[0].name);   
+          var comentarioObj = {
+            usuario: res.data[i].usuario,
+            mensaje: res.data[i].mensaje
+          };
+
+          _this.comentarios.push(comentarioObj);
         }
       });
     }
@@ -29513,7 +29516,10 @@ var render = function () {
         _c("div", { staticClass: "d-flex flex-row add-comment-section" }, [
           _c("img", {
             staticClass: "img-fluid img-responsive rounded-circle mr-2",
-            attrs: { src: "https://i.imgur.com/KLeobJk.jpg", width: "38" },
+            attrs: {
+              src: "https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?ver=6",
+              width: "38",
+            },
           }),
           _vm._v(" "),
           _c("input", {
@@ -29542,11 +29548,11 @@ var render = function () {
           ? _c(
               "div",
               { staticClass: "card p-3" },
-              _vm._l(_vm.comentarios, function (comentario, index) {
+              _vm._l(_vm.comentarios, function (comentario, i) {
                 return _c(
                   "div",
                   {
-                    key: index,
+                    key: i,
                     staticClass:
                       "d-flex justify-content-between align-items-center",
                   },
@@ -29560,7 +29566,7 @@ var render = function () {
                         _c("img", {
                           staticClass: "user-img rounded-circle mr-2",
                           attrs: {
-                            src: "https://i.imgur.com/hczKIze.jpg",
+                            src: "https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?ver=6",
                             width: "30",
                           },
                         }),
@@ -29569,7 +29575,7 @@ var render = function () {
                           _c(
                             "small",
                             { staticClass: "font-weight-bold text-primary" },
-                            [_vm._v(_vm._s(comentario.name))]
+                            [_vm._v(_vm._s(comentario.usuario))]
                           ),
                           _vm._v(" "),
                           _c("small", { staticClass: "font-weight-bold" }, [
