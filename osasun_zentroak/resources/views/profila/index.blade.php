@@ -5,7 +5,7 @@
 <?php
 
 use Illuminate\Support\Facades\Auth;
-
+use Symfony\Component\VarDumper\Cloner\VarCloner;
 
 $zerbitzaria = "localhost";
 $erabiltzailea = "root";
@@ -20,9 +20,10 @@ try {
     $konexioa = new PDO("mysql:host=$zerbitzaria; dbname=osasun_zentroak_db", $erabiltzailea, $pasahitza);
     //Ezarri PDO exception modura
     $konexioa->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //sql
-    $sql = "SELECT name, email FROM users WHERE id=$id";
-    $emaitza = $konexioa->query($sql);
+
+    //sql update Email
+    $update = "SELECT name, email FROM users WHERE id=$id";
+    $emaitza = $konexioa->query($update);
     $datuak = $emaitza->fetchAll();
     //var_dump($datuak);
     echo "<br>";
@@ -30,9 +31,25 @@ try {
         $izena = $lerroa["name"];
         $emaila = $lerroa["email"];
     }
+
+    //sql read liked zentroak
+    $read = "SELECT zentroarenKodea FROM likes WHERE userId=$id";
+    $erantzuna = $konexioa->query($read);
+    $datos = $erantzuna->fetchAll();
+    echo "<br>";
+
+    foreach ($datos as $linea) {
+        $zentroak[] = $linea ["zentroarenKodea"];  //Array donde se guardan los códigos de centros likeados
+
+        $zentroakString = implode("/",$zentroak);
+    }
+
+    // $zentroak_as_JSON = json_encode($zentroak);  //Pasar el array a formato JSON
+
 } catch (PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+    echo $update . "<br>" . $e->getMessage();
 }
+
 ?>
 
 
@@ -48,6 +65,7 @@ try {
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <div class="container">
         <form method="POST" action="/profila/{{ $id }}">
             @csrf
@@ -67,8 +85,17 @@ try {
                 <input type="submit" id="aldatuEmaila" class="btn btn-primary btn-sm" value="Aldatu emaila" />
             </div>
         </form>
+        <div>
+        </div>
+        <div id="app">
+            <zentroak-favs v-bind:favs="'{{ $zentroakString }}'"></zentroak-favs>
+        </div>
+    </div>
+    <div id="footer">
+        <footer-component></footer-component>
     </div>
 </body>
+
 <script src="{{ mix('/js/app.js') }}"></script>
 
 </html>

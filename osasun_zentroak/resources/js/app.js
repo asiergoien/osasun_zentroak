@@ -6,6 +6,7 @@
 
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Vue from 'vue';
 
 require('./bootstrap');
 
@@ -25,12 +26,12 @@ window.Vue = require('vue').default;
 // Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 // Vue.component('index-component', require('./components/IndexComponent.vue').default);
 Vue.component('centros-list', require('./components/zentroakComponent.vue').default);
-// Vue.component('profila-component', require('./components/ProfilaComponent.vue').default);
 Vue.component('footer-component', require('./components/FooterComponent.vue').default);
 Vue.component('info-component', require('./components/InformazioaComponent.vue').default);
 Vue.component('iruzkinak-component', require('./components/IruzkinakComponent.vue').default);
 Vue.component('zentroak-index', require('./components/zentroakIndex.vue').default);
 Vue.component('zentro-mota', require('./components/zentromotaComponent.vue').default);
+Vue.component('zentroak-favs', require('./components/FavsComponent.vue').default);
 
 // Vue.component('info-button', require('./components/InformazioaComponent.vue').default);
 
