@@ -5591,6 +5591,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+//
+//
+//
+//
 //
 //
 //
@@ -5625,7 +5641,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['userIdC'],
+  props: ['userIdC', 'userName'],
   mounted: function mounted() {
     this.existenComentarios();
     this.viewComments();
@@ -5658,6 +5674,7 @@ __webpack_require__.r(__webpack_exports__);
         mensaje: this.getMensaje()
       });
       this.hayComentarios = true;
+      this.$refs.addComment_mensaje.value = "";
       this.viewComments();
     },
     viewComments: function viewComments() {
@@ -5671,11 +5688,16 @@ __webpack_require__.r(__webpack_exports__);
         for (var i = 0; i < res.data.length; i++) {
           var comentarioObj = {
             usuario: res.data[i].usuario,
-            mensaje: res.data[i].mensaje
+            mensaje: res.data[i].mensaje,
+            id: res.data[i].id
           };
 
-          _this.comentarios.push(comentarioObj);
+          _this.comentarios.unshift(comentarioObj);
         }
+
+        _this.comentarios = _this.uniqByKeepLast(_this.comentarios, function (it) {
+          return it.id;
+        });
       });
     },
     existenComentarios: function existenComentarios() {
@@ -5692,6 +5714,14 @@ __webpack_require__.r(__webpack_exports__);
           _this2.hayComentarios = false;
         }
       });
+    },
+    uniqByKeepLast: function uniqByKeepLast(data, key) {
+      return _toConsumableArray(new Map(data.map(function (x) {
+        return [key(x), x];
+      })).values());
+    },
+    echoLetraUser: function echoLetraUser(izena) {
+      return izena.substring(0, 1).toUpperCase();
     }
   }
 });
@@ -29876,13 +29906,13 @@ var render = function () {
         _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "d-flex flex-row add-comment-section" }, [
-          _c("img", {
-            staticClass: "img-fluid img-responsive rounded-circle mr-2",
-            attrs: {
-              src: "https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?ver=6",
-              width: "38",
-            },
-          }),
+          _c("div", { staticClass: "profile-icon" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.echoLetraUser(this.userName)) +
+                "\n                "
+            ),
+          ]),
           _vm._v(" "),
           _c("input", {
             ref: "addComment_mensaje",
@@ -29925,13 +29955,13 @@ var render = function () {
                         staticClass: "user d-flex flex-row align-items-center",
                       },
                       [
-                        _c("img", {
-                          staticClass: "user-img rounded-circle mr-2",
-                          attrs: {
-                            src: "https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?ver=6",
-                            width: "30",
-                          },
-                        }),
+                        _c("div", { staticClass: "profile-icon-comentario" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.echoLetraUser(comentario.usuario)) +
+                              "\n                        "
+                          ),
+                        ]),
                         _vm._v(" "),
                         _c("span", [
                           _c(

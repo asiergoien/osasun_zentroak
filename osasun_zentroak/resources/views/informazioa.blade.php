@@ -12,6 +12,7 @@
         <title>Informazioa</title>
         <!-- Icon -->
         <link rel = "icon" href = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Osakidetza-Logo.svg/1200px-Osakidetza-Logo.svg.png" type = "image/x-icon">
+        <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
     @if (Auth::check())
@@ -26,7 +27,8 @@
             <!-- Row para los comentarios -->
             <div class="row my-5">
                 <div id="app" class="col-md">
-                    <iruzkinak-component v-bind:user-id-c="'{{ \Auth::user()->id }}'"></iruzkinak-component>
+                    <!-- <iruzkinak-component v-bind:user-id-c="'{{ \Auth::user()->id }}'"></iruzkinak-component> -->
+                    <iruzkinak-component v-bind:user-id-c="'{{ \Auth::user()->id }}'" v-bind:user-name="'{{ \Auth::user()->name }}'"></iruzkinak-component>
                 </div>
             </div>
         </div>
