@@ -18,11 +18,11 @@ class CommentsController extends Controller
     }
     public function viewComments(Request $request){
         if (Comments::where('zentroarenKodea', '=', $request->zentroarenKodea)->count()>0) {
-            $comments = Comments::select('mensaje', 'userId')->where('zentroarenKodea', '=', $request->zentroarenKodea)->select('mensaje', 'userId')->get();
+            $comments = Comments::select('id','mensaje', 'userId')->where('zentroarenKodea', '=', $request->zentroarenKodea)->select('id','mensaje', 'userId')->get();
             $commentBox = [];
             foreach ($comments as $comment) {
                 $username = User::where('id', $comment['userId'])->first()->name;
-                $comment=['mensaje' => $comment['mensaje'],'usuario' => $username];
+                $comment=['mensaje' => $comment['mensaje'],'usuario' => $username, 'id' => $comment['id']];
                 array_push($commentBox, $comment);
             }
             return response()->json($commentBox);
