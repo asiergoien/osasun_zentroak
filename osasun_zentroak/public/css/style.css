@@ -1,7 +1,8 @@
 /* Index INI */
 
 .carousel {
-    height: 250px !important;
+    height: 300px !important;
+    width: 550px !important;
     object-fit: cover !important;
     overflow: hidden;
 }
@@ -11,8 +12,8 @@
 }
 
 .carousel-item img {
-    height: 297px !important;
-    width: 969px !important;
+    height: 300px !important;
+    width: 550px !important;
 }
 
 .carousel-control-prev-icon,
@@ -90,22 +91,6 @@ body {
     -ms-transition: opacity 500ms;
     transition: opacity 500ms;
 }
-
-
-/* Grafikoa Index  INI*/
-
-.grafikoa {
-    /* margin-left: 37vw; */
-    /* Arriba | Derecha | Abajo | Izquierda */
-    margin: 22px 37% 15px 37%;
-    font-size: large;
-    width: 500px;
-    height: 450px;
-}
-
-
-/* Grafikoa Index  FIN*/
-
 
 /* Video INI */
 @import url('https://fonts.googleapis.com/css2?f amily=Open+Sans:wght@300;400Rdisplay=swap');
@@ -216,6 +201,41 @@ body {
     margin: 0 5px;
 }
 /* Video FIN */
+
+/*Probintziak INI*/
+.contenedor{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.contenedor img{
+    filter: brightness(50%);
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin: auto auto 21px;
+}
+
+.contenedor:hover {
+    filter: brightness(120%);
+	transform: scale(1.025);
+}
+
+.contenedor .texto-encima{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+.contenedor .centrado{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+/*Probintziak FIN*/
 
 /* Index FIN */
 
