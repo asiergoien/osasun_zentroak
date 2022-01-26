@@ -5627,6 +5627,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['userIdC'],
   mounted: function mounted() {
+    this.existenComentarios();
     this.viewComments();
     this.hayComentarios = this.hayComentarios ? true : false;
   },
@@ -5656,11 +5657,12 @@ __webpack_require__.r(__webpack_exports__);
         zentroarenKodea: this.getParams(),
         mensaje: this.getMensaje()
       });
+      this.hayComentarios = true;
+      this.viewComments();
     },
     viewComments: function viewComments() {
       var _this = this;
 
-      this.hayComentarios = true;
       axios.get('/viewComments', {
         params: {
           zentroarenKodea: this.getParams()
@@ -5673,6 +5675,21 @@ __webpack_require__.r(__webpack_exports__);
           };
 
           _this.comentarios.push(comentarioObj);
+        }
+      });
+    },
+    existenComentarios: function existenComentarios() {
+      var _this2 = this;
+
+      axios.get('/hayComentario', {
+        params: {
+          zentroarenKodea: this.getParams()
+        }
+      }).then(function (res) {
+        if (res.data.exists == "true") {
+          _this2.hayComentarios = true;
+        } else {
+          _this2.hayComentarios = false;
         }
       });
     }
@@ -29773,6 +29790,7 @@ var render = function () {
                               xmlns: "http://www.w3.org/2000/svg",
                               width: "45",
                               height: "45",
+                              color: "red",
                               fill: "currentColor",
                               viewBox: "0 0 16 16",
                             },
@@ -29898,7 +29916,7 @@ var render = function () {
                   {
                     key: i,
                     staticClass:
-                      "d-flex justify-content-between align-items-center",
+                      "d-flex justify-content-between align-items-center mt-2",
                   },
                   [
                     _c(

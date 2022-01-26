@@ -17,15 +17,27 @@ class CommentsController extends Controller
         return response()->json('se ha creado el comentario');
     }
     public function viewComments(Request $request){
-        if(Comments::where('zentroarenKodea', '=', $request->zentroarenKodea)->count()>0){
+        if (Comments::where('zentroarenKodea', '=', $request->zentroarenKodea)->count()>0) {
             $comments = Comments::select('mensaje', 'userId')->where('zentroarenKodea', '=', $request->zentroarenKodea)->select('mensaje', 'userId')->get();
             $commentBox = [];
-            foreach ($comments as $comment){
+            foreach ($comments as $comment) {
                 $username = User::where('id', $comment['userId'])->first()->name;
                 $comment=['mensaje' => $comment['mensaje'],'usuario' => $username];
                 array_push($commentBox, $comment);
-            }       
-            return response()->json($commentBox);           
+            }
+            return response()->json($commentBox);
+        }
+    }
+    public function hayComentario(Request $request){
+        if(Comments::where('zentroarenKodea', '=', $request->zentroarenKodea)->count()>0){
+            return response()->json([
+                'exists'=>'true'
+            ], 200);
+        }else{
+            return response()->json([
+                'exists'=>'false'
+            ], 200);
+        }
     }
 }
     // public function __construct()
@@ -34,4 +46,3 @@ class CommentsController extends Controller
 
     //     view()->share('user', $user);
     // }
-}

@@ -14,6 +14,7 @@
         <link rel = "icon" href = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Osakidetza-Logo.svg/1200px-Osakidetza-Logo.svg.png" type = "image/x-icon">
     </head>
     <body>
+    @if (Auth::check())
         <div class="container containerDeta shadow border rounded p-5 my-5">
             <!-- Row para la información sobre el centro, la foto y el botón de fav -->
             <div class="row">
@@ -36,6 +37,11 @@
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <script src="{{ mix('/js/app.js') }}"></script>
+    @else
+        <div class="alert alert-danger">
+            Hemen sartzeko erabiltzaile bat behar duzu. <a href="/login">Sartu</a> zaitez.
+        </div>
+    @endif  
     </body>
 </html>
 @endsection

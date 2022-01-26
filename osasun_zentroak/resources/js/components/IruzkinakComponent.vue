@@ -14,7 +14,7 @@
                 </div>
                 <!-- CADA COMENTARIO TIENE ESTE FORMATO O SEA QUE AQUI VA EL FOR -->
                 <div v-if="hayComentarios" class="card p-3">
-                    <div v-for="(comentario,i) in comentarios" :key="i" class="d-flex justify-content-between align-items-center">
+                    <div v-for="(comentario,i) in comentarios" :key="i" class="d-flex justify-content-between align-items-center mt-2">
                         <div class="user d-flex flex-row align-items-center"> 
                             <img src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?ver=6" width="30" class="user-img rounded-circle mr-2"> 
                             <span><small class="font-weight-bold text-primary">{{comentario.usuario}}</small> <small class="font-weight-bold">{{comentario.mensaje}}</small></span> 
@@ -35,6 +35,7 @@
     export default {
         props: ['userIdC'],
         mounted() {
+            this.existenComentarios();
             this.viewComments();            
             this.hayComentarios = this.hayComentarios ? true : false;
         },
@@ -58,10 +59,10 @@
             },
             addComment(){
                 axios.post('/addComment', {userId: this.userIdC, zentroarenKodea: this.getParams(), mensaje: this.getMensaje()})
-            },
-            viewComments(){
                 this.hayComentarios = true;
-                
+                this.viewComments();
+            },
+            viewComments(){                
                 axios.get('/viewComments', {params: {zentroarenKodea: this.getParams()}})
                     .then((res)=>{
                         for(let i = 0; i < res.data.length; i++){
@@ -69,7 +70,17 @@
                             this.comentarios.push(comentarioObj);
                         }
                     })
-            },           
+            },
+            existenComentarios(){
+                axios.get('/hayComentario', {params: {zentroarenKodea: this.getParams()}})
+                    .then((res)=>{
+                        if(res.data.exists == "true"){
+                            this.hayComentarios = true;
+                        }else{
+                            this.hayComentarios = false;
+                        }
+                    })
+            }           
         }
     }
     
