@@ -45,6 +45,7 @@ Route::get('viewLike', [LikesController::class, 'isLiked']);
 // RUTAS PARA LOS COMENTARIOS
 Route::post('addComment', [CommentsController::class, 'addComment']);
 Route::get('viewComments', [CommentsController::class, 'viewComments']);
+Route::get('hayComentario', [CommentsController::class, 'hayComentario']);
 
 
 

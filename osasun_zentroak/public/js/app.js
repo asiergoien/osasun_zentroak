@@ -5291,10 +5291,9 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get("probintzia")) this.provincia = urlParams.get("probintzia");
-    this.getCentros(); // const favoritos = (this.favs);
-    // console.log(favoritos);
-
+    this.getCentros();
     this.getfavs();
+    this.getArrayfavs();
   },
   data: function data() {
     return {
@@ -5370,14 +5369,20 @@ __webpack_require__.r(__webpack_exports__);
       var value = query.split('=');
       return value[1];
     },
+    getArrayfavs: function getArrayfavs() {
+      var favoritos = this.favs;
+      var arrayFavs = favoritos.split("/");
+      return arrayFavs;
+    },
     getfavs: function getfavs() {
       var favoritos = this.favs;
-      var arrayFavs = favoritos.split("/"); // console.log(arrayFavs);
-
+      var arrayFavs = favoritos.split("/");
       var arrayLength = arrayFavs.length; // console.log(arrayLength);
 
       for (var i = 0; i < arrayLength; i++) {
-        console.log(arrayFavs[i]);
+        // console.log(arrayFavs);
+        // console.log(arrayLength);
+        return arrayFavs;
       }
     }
   }
@@ -5622,6 +5627,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['userIdC'],
   mounted: function mounted() {
+    this.existenComentarios();
     this.viewComments();
     this.hayComentarios = this.hayComentarios ? true : false;
   },
@@ -5651,11 +5657,12 @@ __webpack_require__.r(__webpack_exports__);
         zentroarenKodea: this.getParams(),
         mensaje: this.getMensaje()
       });
+      this.hayComentarios = true;
+      this.viewComments();
     },
     viewComments: function viewComments() {
       var _this = this;
 
-      this.hayComentarios = true;
       axios.get('/viewComments', {
         params: {
           zentroarenKodea: this.getParams()
@@ -5668,6 +5675,21 @@ __webpack_require__.r(__webpack_exports__);
           };
 
           _this.comentarios.push(comentarioObj);
+        }
+      });
+    },
+    existenComentarios: function existenComentarios() {
+      var _this2 = this;
+
+      axios.get('/hayComentario', {
+        params: {
+          zentroarenKodea: this.getParams()
+        }
+      }).then(function (res) {
+        if (res.data.exists == "true") {
+          _this2.hayComentarios = true;
+        } else {
+          _this2.hayComentarios = false;
         }
       });
     }
@@ -29449,7 +29471,7 @@ var render = function () {
     },
     _vm._l(_vm.filteredCentros, function (centro, index) {
       return _c("div", { key: index, staticClass: "centro" }, [
-        centro.Zentroarenkodea === ""
+        _vm.getfavs().includes(centro.Zentroarenkodea) == true
           ? _c("div", [
               _c(
                 "div",
@@ -29768,6 +29790,7 @@ var render = function () {
                               xmlns: "http://www.w3.org/2000/svg",
                               width: "45",
                               height: "45",
+                              color: "red",
                               fill: "currentColor",
                               viewBox: "0 0 16 16",
                             },
@@ -29893,7 +29916,7 @@ var render = function () {
                   {
                     key: i,
                     staticClass:
-                      "d-flex justify-content-between align-items-center",
+                      "d-flex justify-content-between align-items-center mt-2",
                   },
                   [
                     _c(
