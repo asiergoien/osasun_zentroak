@@ -5624,6 +5624,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['userIdC'],
   mounted: function mounted() {
@@ -5692,6 +5694,10 @@ __webpack_require__.r(__webpack_exports__);
           _this2.hayComentarios = false;
         }
       });
+    },
+    echoLetraUser: function echoLetraUser() {
+      console.log(this.userIdC.substring(0, 1).toUpperCase());
+      return this.userIdC.substring(0, 1).toUpperCase();
     }
   }
 });
@@ -29876,13 +29882,13 @@ var render = function () {
         _vm._m(0),
         _vm._v(" "),
         _c("div", { staticClass: "d-flex flex-row add-comment-section" }, [
-          _c("img", {
-            staticClass: "img-fluid img-responsive rounded-circle mr-2",
-            attrs: {
-              src: "https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?ver=6",
-              width: "38",
-            },
-          }),
+          _c("div", { staticClass: "profile-icon" }, [
+            _vm._v(
+              "\n                " +
+                _vm._s(_vm.echoLetraUser()) +
+                "\n                "
+            ),
+          ]),
           _vm._v(" "),
           _c("input", {
             ref: "addComment_mensaje",
