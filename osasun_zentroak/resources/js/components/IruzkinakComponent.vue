@@ -42,7 +42,7 @@
         data: () => ({
             mensaje:'',
             hayComentarios:'',
-            comentarios: []
+            comentarios: [],
             }),
         methods:{
             //url-an gordetako parametroa (zentroaren kodea) jasotzeko funtzioa
@@ -60,15 +60,18 @@
             addComment(){
                 axios.post('/addComment', {userId: this.userIdC, zentroarenKodea: this.getParams(), mensaje: this.getMensaje()})
                 this.hayComentarios = true;
+                this.$refs.addComment_mensaje.value = "";
                 this.viewComments();
             },
             viewComments(){                
                 axios.get('/viewComments', {params: {zentroarenKodea: this.getParams()}})
                     .then((res)=>{
                         for(let i = 0; i < res.data.length; i++){
-                            let comentarioObj = {usuario: res.data[i].usuario, mensaje: res.data[i].mensaje}
-                            this.comentarios.push(comentarioObj);
+                            let comentarioObj = {usuario: res.data[i].usuario, mensaje: res.data[i].mensaje, id: res.data[i].id}
+                            this.comentarios.unshift(comentarioObj);
                         }
+                        this.comentarios = this.uniqByKeepLast(this.comentarios, it=>it.id);
+                        
                     })
             },
             existenComentarios(){
@@ -80,6 +83,9 @@
                             this.hayComentarios = false;
                         }
                     })
+            },
+            uniqByKeepLast(data, key) {
+                return [...new Map(data.map(x => [key(x), x])).values()]
             }           
         }
     }
