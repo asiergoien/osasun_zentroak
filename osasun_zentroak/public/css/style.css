@@ -1,26 +1,64 @@
 /* Index INI */
 
-.carousel {
-    height: 300px !important;
-    width: 550px !important;
-    object-fit: cover !important;
+
+/* Slider prueba INI */
+
+.contenedor-slider {
+    margin: auto;
+    width: 85%;
+    max-width: 900px;
+    position: relative;
     overflow: hidden;
+    box-shadow: 0 0 0 10px #fff, 0 15px 50px;
 }
 
-.carousel.home .carousel-item {
-    max-height: 250px;
+.slider {
+    display: flex;
+    width: 400%;
 }
 
-.carousel-item img {
-    height: 300px !important;
-    width: 550px !important;
+.slider__section {
+    width: 100%;
 }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(128, 128, 128, 0.507) !important;
-    border-radius: 10px;
+.slider__img {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
+
+.btn-prev,
+.btn-next {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.7);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 50%;
+    font-family: monospace;
+    cursor: pointer;
+}
+
+.btn-prev:hover,
+.btn-next:hover {
+    background: white;
+}
+
+.btn-prev {
+    left: 10px;
+}
+
+.btn-next {
+    right: 10px;
+}
+
+
+/* Slider prueba FUIN */
 
 #desc {
     margin-top: 25px;
@@ -92,9 +130,10 @@ body {
     transition: opacity 500ms;
 }
 
-/* Video INI */
-@import url('https://fonts.googleapis.com/css2?f amily=Open+Sans:wght@300;400Rdisplay=swap');
 
+/* Video INI */
+
+@import url('https://fonts.googleapis.com/css2?f amily=Open+Sans:wght@300;400Rdisplay=swap');
 :root {
     --primary-color: #373742;
 }
@@ -155,13 +194,13 @@ body {
 }
 
 .multi .video-container:after {
-   content: '';
-   position: absolute;
-   top: 0;
-   left: 0;
-   width: 100%;
-   height: 100%;
-   background: rgba(0, 0, 0, 0.6);
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .multi .content {
@@ -187,6 +226,7 @@ body {
     padding: 40px;
     text-align: center;
 }
+
 .multi #about p {
     font-size: 1.2rem;
     max-width: 600px;
@@ -197,19 +237,24 @@ body {
     padding: 30px 0;
     color: var(--primary-color);
 }
+
 .multi .social a {
     margin: 0 5px;
 }
+
+
 /* Video FIN */
 
+
 /*Probintziak INI*/
-.contenedor{
+
+.contenedor {
     position: relative;
     display: inline-block;
     text-align: center;
 }
 
-.contenedor img{
+.contenedor img {
     filter: brightness(50%);
     height: 300px;
     width: 300px;
@@ -219,31 +264,40 @@ body {
 
 .contenedor:hover {
     filter: brightness(120%);
-	transform: scale(1.025);
+    transform: scale(1.025);
 }
 
-.contenedor .texto-encima{
+.contenedor .texto-encima {
     position: absolute;
     top: 10px;
     left: 10px;
     color: white;
 }
-.contenedor .centrado{
+
+.contenedor .centrado {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
 }
+
+
 /*Probintziak FIN*/
+
 
 /* Index FIN */
 
+
 /* Nav INI*/
+
 .navbar-light .navbar-nav .nav-link {
     color: white !important;
 }
+
+
 /* Nav FIN*/
+
 
 /* profila INI */
 
