@@ -2,7 +2,7 @@
 
     <div id="centros" class="col-lg-9 col-md-8 d-flex flex-wrap rounded my-5 p-5">
         <div v-for="(centro, index) in filteredCentros" v-bind:key="index" class="centro">
-            <div v-if="centro.Zentroarenkodea === ''">
+            <div v-if="getfavs().includes(centro.Zentroarenkodea) == true">
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" v-if="centro.Zentromota === 'Anbulatorioa'" src="ambulatorio.jpg" heigth="100px" width="100px">
                     <img class="card-img-top" v-else-if="centro.Zentromota === 'Beste batzuk'" src="otros2.jpg" heigth="100px" width="100px">
@@ -24,7 +24,6 @@
 
  <script>
 
-
 export default {
 
   props: ['favs'],
@@ -33,9 +32,8 @@ export default {
     if (urlParams.get("probintzia"))
       this.provincia = urlParams.get("probintzia");
     this.getCentros();
-    // const favoritos = (this.favs);
-    // console.log(favoritos);
     this.getfavs();
+    this.getArrayfavs();
   },
 
   data: () => ({
@@ -43,7 +41,7 @@ export default {
     centros: [],
     provincia: "",    
     tipodecentro: "",
-    sartutakoIzena: ""
+    sartutakoIzena: "",
   }),
 
   computed: {
@@ -100,19 +98,24 @@ export default {
       var value = query.split('=');
       return value[1];
     },
-
+    getArrayfavs() {
+      let favoritos = (this.favs);
+      const arrayFavs = favoritos.split("/");
+      return arrayFavs;
+    },
     getfavs() {
       let favoritos = (this.favs);
       const arrayFavs = favoritos.split("/");
-      // console.log(arrayFavs);
       let arrayLength = arrayFavs.length;
       // console.log(arrayLength);
 
       for (var i = 0; i < arrayLength; i++) {
-        console.log(arrayFavs[i]);
+        // console.log(arrayFavs);
+        // console.log(arrayLength);
+        return arrayFavs;
+      }
       }
     }
   }
-};
 
 </script>

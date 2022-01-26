@@ -5291,10 +5291,9 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get("probintzia")) this.provincia = urlParams.get("probintzia");
-    this.getCentros(); // const favoritos = (this.favs);
-    // console.log(favoritos);
-
+    this.getCentros();
     this.getfavs();
+    this.getArrayfavs();
   },
   data: function data() {
     return {
@@ -5370,14 +5369,20 @@ __webpack_require__.r(__webpack_exports__);
       var value = query.split('=');
       return value[1];
     },
+    getArrayfavs: function getArrayfavs() {
+      var favoritos = this.favs;
+      var arrayFavs = favoritos.split("/");
+      return arrayFavs;
+    },
     getfavs: function getfavs() {
       var favoritos = this.favs;
-      var arrayFavs = favoritos.split("/"); // console.log(arrayFavs);
-
+      var arrayFavs = favoritos.split("/");
       var arrayLength = arrayFavs.length; // console.log(arrayLength);
 
       for (var i = 0; i < arrayLength; i++) {
-        console.log(arrayFavs[i]);
+        // console.log(arrayFavs);
+        // console.log(arrayLength);
+        return arrayFavs;
       }
     }
   }
@@ -29449,7 +29454,7 @@ var render = function () {
     },
     _vm._l(_vm.filteredCentros, function (centro, index) {
       return _c("div", { key: index, staticClass: "centro" }, [
-        centro.Zentroarenkodea === ""
+        _vm.getfavs().includes(centro.Zentroarenkodea) == true
           ? _c("div", [
               _c(
                 "div",

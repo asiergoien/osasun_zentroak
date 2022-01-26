@@ -39,9 +39,9 @@ try {
     echo "<br>";
 
     foreach ($datos as $linea) {
-        $zentroak[] = $linea ["zentroarenKodea"];  //Array donde se guardan los códigos de centros likeados
+        $zentroak[] = $linea["zentroarenKodea"];  //Array donde se guardan los códigos de centros likeados
 
-        $zentroakString = implode("/",$zentroak);
+        $zentroakString = implode("/", $zentroak);
     }
 
     // $zentroak_as_JSON = json_encode($zentroak);  //Pasar el array a formato JSON
@@ -75,7 +75,7 @@ try {
             </div>
             <div class="izena-gustokoenak">
                 <h2 class="izena"><?php echo $izena ?></h2>
-                <input type="button" class="btn btn-warning btn-lg" value="Gustokoenak" />
+                <input type="button" class="btn btn-warning btn-lg" value="Gustokoenak"/>
             </div>
             <div class="email-container">
                 <h3 class="email-text">Email:</h3>
