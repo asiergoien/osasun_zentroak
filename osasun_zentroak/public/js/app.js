@@ -5638,8 +5638,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  props: ['userIdC'],
+  props: ['userIdC', 'userName'],
   mounted: function mounted() {
     this.existenComentarios();
     this.viewComments();
@@ -5717,6 +5719,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       return _toConsumableArray(new Map(data.map(function (x) {
         return [key(x), x];
       })).values());
+    },
+    echoLetraUser: function echoLetraUser(izena) {
+      return izena.substring(0, 1).toUpperCase();
     }
   }
 });
@@ -29904,7 +29909,7 @@ var render = function () {
           _c("div", { staticClass: "profile-icon" }, [
             _vm._v(
               "\n                " +
-                _vm._s(_vm.echoLetraUser()) +
+                _vm._s(_vm.echoLetraUser(this.userName)) +
                 "\n                "
             ),
           ]),
@@ -29950,13 +29955,13 @@ var render = function () {
                         staticClass: "user d-flex flex-row align-items-center",
                       },
                       [
-                        _c("img", {
-                          staticClass: "user-img rounded-circle mr-2",
-                          attrs: {
-                            src: "https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?ver=6",
-                            width: "30",
-                          },
-                        }),
+                        _c("div", { staticClass: "profile-icon-comentario" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.echoLetraUser(comentario.usuario)) +
+                              "\n                        "
+                          ),
+                        ]),
                         _vm._v(" "),
                         _c("span", [
                           _c(

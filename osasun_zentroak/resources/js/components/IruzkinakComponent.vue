@@ -8,7 +8,9 @@
                 </div>
                 <!-- SECCION PARA ESCRIBIR NUEVO COMENTARIO -->
                 <div class="d-flex flex-row add-comment-section">
-                    <img class="img-fluid img-responsive rounded-circle mr-2" src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?ver=6" width="38">
+                    <div class="profile-icon">
+                    {{echoLetraUser(this.userName)}}
+                    </div>
                     <input type="text" class="form-control mr-3" ref="addComment_mensaje" placeholder="Idatzi iruzkin bat...">
                     <button class="btn btn-primary" type="button" @click.prevent="addComment()">Bidali</button>
                 </div>
@@ -16,7 +18,9 @@
                 <div v-if="hayComentarios" class="card p-3">
                     <div v-for="(comentario,i) in comentarios" :key="i" class="d-flex justify-content-between align-items-center mt-2">
                         <div class="user d-flex flex-row align-items-center"> 
-                            <img src="https://us.123rf.com/450wm/thesomeday123/thesomeday1231709/thesomeday123170900021/85622928-icono-de-perfil-de-avatar-predeterminado-marcador-de-posici%C3%B3n-de-foto-gris-vectores-de-ilustraciones.jpg?ver=6" width="30" class="user-img rounded-circle mr-2"> 
+                            <div class="profile-icon-comentario">
+                                {{echoLetraUser(comentario.usuario)}}
+                            </div>
                             <span><small class="font-weight-bold text-primary">{{comentario.usuario}}</small> <small class="font-weight-bold">{{comentario.mensaje}}</small></span> 
                         </div>
                          <!--por ahora sin fecha jeje q hay q meter una columna en la bbdd y m da pereza ahora mismo pero si no aqui iria la fecha o desde hace cuanto se ha hecho el comment cn un if dependiendo de hace cuanto es  -->
@@ -33,7 +37,7 @@
 
 <script>
     export default {
-        props: ['userIdC'],
+        props: ['userIdC', 'userName'],
         mounted() {
             this.existenComentarios();
             this.viewComments();            
@@ -86,6 +90,9 @@
             },
             uniqByKeepLast(data, key) {
                 return [...new Map(data.map(x => [key(x), x])).values()]
+            },
+            echoLetraUser(izena){
+                return izena.substring(0,1).toUpperCase();
             }           
         }
     }

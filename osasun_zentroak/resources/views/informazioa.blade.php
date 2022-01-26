@@ -27,7 +27,8 @@
             <!-- Row para los comentarios -->
             <div class="row my-5">
                 <div id="app" class="col-md">
-                    <iruzkinak-component v-bind:user-id-c="'{{ \Auth::user()->id }}'"></iruzkinak-component>
+                    <!-- <iruzkinak-component v-bind:user-id-c="'{{ \Auth::user()->id }}'"></iruzkinak-component> -->
+                    <iruzkinak-component v-bind:user-id-c="'{{ \Auth::user()->id }}'" v-bind:user-name="'{{ \Auth::user()->name }}'"></iruzkinak-component>
                 </div>
             </div>
         </div>
