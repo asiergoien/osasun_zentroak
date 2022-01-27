@@ -29967,7 +29967,7 @@ var render = function () {
                           _c(
                             "small",
                             { staticClass: "font-weight-bold text-primary" },
-                            [_vm._v(_vm._s(comentario.usuario))]
+                            [_c("b", [_vm._v(_vm._s(comentario.usuario))])]
                           ),
                           _vm._v(" "),
                           _c("small", { staticClass: "font-weight-bold" }, [

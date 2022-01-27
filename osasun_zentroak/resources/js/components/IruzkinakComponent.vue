@@ -21,7 +21,7 @@
                             <div class="profile-icon-comentario">
                                 {{echoLetraUser(comentario.usuario)}}
                             </div>
-                            <span><small class="font-weight-bold text-primary">{{comentario.usuario}}</small> <small class="font-weight-bold">{{comentario.mensaje}}</small></span> 
+                            <span><small class="font-weight-bold text-primary"><b>{{comentario.usuario}}</b></small> <small class="font-weight-bold">{{comentario.mensaje}}</small></span> 
                         </div>
                          <!--por ahora sin fecha jeje q hay q meter una columna en la bbdd y m da pereza ahora mismo pero si no aqui iria la fecha o desde hace cuanto se ha hecho el comment cn un if dependiendo de hace cuanto es  -->
                         <!-- <small>AQUI VA LA FECHA</small> -->
