@@ -16,8 +16,6 @@
             type="image/x-icon">
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-        <script type="text/javascript" src="{{URL::asset('js/slider.js')}}"></script>
-        {{-- <script type="text/javascript" src="./js/components/slider.js"></script> --}}
     </head>
 
     <body>
@@ -36,15 +34,15 @@
             </section>
             <section id="about" class="d-flex justify-content-around">
                 <div class="info1">
-                    <div id="contenedor-slider" class="contenedor-slider">
-                        <div id="slider" class="slider">
-                           <section class="slider__section"><img src="img/slider1.jpg" class="slider__img"></section>
-                           <section class="slider__section"><img src="img/slider2.jpg" class="slider__img"></section>
-                           <section class="slider__section"><img src="img/slider3.jpg" class="slider__img"></section>
+                    <div id="c-slider">
+                        <div id="slider">
+                            <section><img src="img/slider1.jpg" alt=""></section>
+                            <section><img src="img/slider2.jpg" alt=""></section>
+                            <section><img src="img/slider3.jpg" alt=""></section>
+                            <div id="btn-prev">&#60;</div>
+                            <div id="btn-next">&#62;</div>
                         </div>
-                         <div id="btn-prev" class="btn-prev">&#60;</div>
-                         <div id="btn-next" class="btn-next">&#62;</div>
-                        </div>
+                    </div>
                 </div>
                 <div class="info2">
                     <h1>Guri buruz</h1>
@@ -78,6 +76,7 @@
         <div id="footer">
             <footer-component></footer-component>
         </div>
+        <script type="text/javascript" src="{{URL::asset('js/slider.js')}}"></script>
         <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 
