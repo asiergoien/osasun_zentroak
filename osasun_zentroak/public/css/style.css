@@ -459,6 +459,11 @@ Ordenagailua
 
 
 /*COMENTARIOS FIN*/
+.container{
+    /* min-height: auto; */
+    min-height: 100vh !important;
+
+}
 
 
 /* --------------------------PROFILE ICON  INI--------------------------*/
