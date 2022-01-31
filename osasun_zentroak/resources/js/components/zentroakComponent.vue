@@ -12,34 +12,37 @@
         <div class="col-lg-10 col-md-5 rounded mt-5 shadow-lg p-3">
           <br>
 
-          <div class="d-flex text-muted">
+          <div id="filtrosTitulo" class="d-flex text-muted">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
               <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
             </svg>
             <h5>&nbsp;&nbsp;IRAGAZKIAK</h5>
           </div>
-          <hr>
-          <h5 class="text-primary">&nbsp;&nbsp;IZENA</h5>
-          <input v-model="sartutakoIzena" type="text" id="txtBusqueda" name="txtBusqueda" placeholder="Zentroaren izena..." title="Izen bat idatzi" class="form-control mb-3">
-          <hr>
-          <h5 class="text-primary">&nbsp;&nbsp;ZENTRO MOTA</h5>
-          <select v-model="tipodecentro" id="filtro-tipo" class="form-select">
-            <option default selected value=""> -- Aukeratu mota -- </option>
-            <option value="Anbulatorioa">Anbulatorioa</option>
-            <option value="Osasun-zentroa">Osasun zentroa</option>
-            <option value="Osasun mentaleko zentroa">Osasun mentaleko zentroa</option>
-            <option value="Ospitalea">Ospitalea</option>
-            <option value="Beste batzuk">Beste batzuk</option>
-          </select>
-          <hr>
-          <h5 class="text-primary">&nbsp;&nbsp;PROBINTZIA</h5>
-          <select v-model="provincia" id="filtro-provincia" class="form-select">
-            <option default selected value=""> -- Aukeratu probintzia -- </option>
-            <option value="Bizkaia">Bizkaia</option>
-            <option value="Gipuzkoa">Gipuzkoa</option>
-            <option value="Araba">Araba</option>
-          </select>
+          <div id="filtrosBuenos">
+            <hr>
+            <h5 class="text-primary">&nbsp;&nbsp;IZENA</h5>
+            <input v-model="sartutakoIzena" type="text" id="txtBusqueda" name="txtBusqueda" placeholder="Zentroaren izena..." title="Izen bat idatzi" class="form-control mb-3">
+            <hr>
+            <h5 class="text-primary">&nbsp;&nbsp;ZENTRO MOTA</h5>
+            <select v-model="tipodecentro" id="filtro-tipo" class="form-select">
+              <option default selected value=""> -- Aukeratu mota -- </option>
+              <option value="Anbulatorioa">Anbulatorioa</option>
+              <option value="Osasun-zentroa">Osasun zentroa</option>
+              <option value="Osasun mentaleko zentroa">Osasun mentaleko zentroa</option>
+              <option value="Ospitalea">Ospitalea</option>
+              <option value="Beste batzuk">Beste batzuk</option>
+            </select>
+            <hr>
+            <h5 class="text-primary">&nbsp;&nbsp;PROBINTZIA</h5>
+            <select v-model="provincia" id="filtro-provincia" class="form-select">
+              <option default selected value=""> -- Aukeratu probintzia -- </option>
+              <option value="Bizkaia">Bizkaia</option>
+              <option value="Gipuzkoa">Gipuzkoa</option>
+              <option value="Araba">Araba</option>
+            </select>
+          </div>
       </div>
+          <img id="mifoto" src="arrow-up-circle.svg" alt="Araba" style="color: #0275d8">
     </div>
   </div>
       
