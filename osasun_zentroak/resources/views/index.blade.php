@@ -39,8 +39,8 @@
                             <section><img src="img/slider1.jpg" alt=""></section>
                             <section><img src="img/slider2.jpg" alt=""></section>
                             <section><img src="img/slider3.jpg" alt=""></section>
-                            <div id="btn-prev">&#60;</div>
-                            <div id="btn-next">&#62;</div>
+                            {{-- <div id="btn-prev">&#60;</div>
+                            <div id="btn-next">&#62;</div> --}}
                         </div>
                     </div>
                 </div>

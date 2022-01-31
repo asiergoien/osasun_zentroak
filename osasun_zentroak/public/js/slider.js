@@ -1,8 +1,8 @@
 //almacenar slider en una variable
 var slider = $('#slider');
 //almacenar botones
-var siguiente = $('#btn-next');
-var anterior = $('#btn-prev');
+//var siguiente = $('#btn-next');
+//var anterior = $('#btn-prev');
 
 // $('#slider section:last').insertBefore('#slider section:first');
 $('#slider section:last').insertBefore('#slider section:first');
@@ -23,19 +23,23 @@ function moverI() {
             slider.css('margin-left', '-' + 100 + '%');
         });
 }
+// window.onload = function() {
+//     var siguiente = $('#btn-next');
+//     var anterior = $('#btn-prev');
+//     siguiente.on('click', function() {
+//         console.log("sig");
+//         moverD();
 
-siguiente.on('click', function() {
-    moverD();
+//     });
+//     anterior.on('click', function() {
+//         moverI();
+//     });
+// }
 
-});
-anterior.on('click', function() {
-    moverI();
-});
 
 function autoPlay() {
     interval = setInterval(function() {
         moverD();
     }, 5000);
-
 }
 autoPlay();
