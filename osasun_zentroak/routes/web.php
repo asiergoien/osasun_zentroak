@@ -44,6 +44,7 @@ Route::delete('disLike', [LikesController::class, 'disLike']);
 Route::get('viewLike', [LikesController::class, 'isLiked']);
 // RUTAS PARA LOS COMENTARIOS
 Route::post('addComment', [CommentsController::class, 'addComment']);
+Route::delete('deleteComment', [CommentsController::class, 'deleteComment']);
 Route::get('viewComments', [CommentsController::class, 'viewComments']);
 Route::get('hayComentario', [CommentsController::class, 'hayComentario']);
 

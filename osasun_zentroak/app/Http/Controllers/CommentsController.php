@@ -39,6 +39,10 @@ class CommentsController extends Controller
             ], 200);
         }
     }
+    public function deleteComment(Request $request){
+        Comments::where('id', '=', $request->id)->delete();
+        return response()->json('se ha borrado el comentario');
+        }
 }
     // public function __construct()
     // {
