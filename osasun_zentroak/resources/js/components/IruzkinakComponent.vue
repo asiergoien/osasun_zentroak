@@ -95,8 +95,21 @@
             },
             deleteComment(id){
                 axios.delete('/deleteComment', { data: {id: id}});
-                this.viewComments();
+                axios.get('/viewComments', {params: {zentroarenKodea: this.getParams()}})
+                    .then((res)=>{
+                        for(let i = 0; i < res.data.length; i++){
+                            let comentarioObj = {usuario: res.data[i].usuario, mensaje: res.data[i].mensaje, id: res.data[i].id}
+                            //esto cambia el orden del array (el primero es el último)
+                            this.comentarios.unshift(comentarioObj);
+                        }
+                        this.comentarios = this.uniqByKeepLast(this.comentarios, it=>it.id);
+                        //esto borra el último elemento del array
+                        this.comentarios.pop();
+                    })
             },
+            // updateComment(id){
+            //     axios.put('/updateComment', {id:id});
+            // },
             uniqByKeepLast(data, key) {
                 return [...new Map(data.map(x => [key(x), x])).values()]
             },

@@ -5699,11 +5699,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           };
 
           _this.comentarios.unshift(comentarioObj);
-
-          _this.comentarios = _this.uniqByKeepLast(_this.comentarios, function (it) {
-            return it.id;
-          });
         }
+
+        _this.comentarios = _this.uniqByKeepLast(_this.comentarios, function (it) {
+          return it.id;
+        });
       });
     },
     existenComentarios: function existenComentarios() {
@@ -5722,12 +5722,34 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       });
     },
     deleteComment: function deleteComment(id) {
+      var _this3 = this;
+
       axios["delete"]('/deleteComment', {
         data: {
           id: id
         }
       });
-      this.viewComments();
+      axios.get('/viewComments', {
+        params: {
+          zentroarenKodea: this.getParams()
+        }
+      }).then(function (res) {
+        for (var i = 0; i < res.data.length; i++) {
+          var comentarioObj = {
+            usuario: res.data[i].usuario,
+            mensaje: res.data[i].mensaje,
+            id: res.data[i].id
+          };
+
+          _this3.comentarios.unshift(comentarioObj);
+        }
+
+        _this3.comentarios = _this3.uniqByKeepLast(_this3.comentarios, function (it) {
+          return it.id;
+        });
+
+        _this3.comentarios.pop();
+      });
     },
     uniqByKeepLast: function uniqByKeepLast(data, key) {
       return _toConsumableArray(new Map(data.map(function (x) {
