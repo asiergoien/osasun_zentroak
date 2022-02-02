@@ -20,14 +20,16 @@
         <script>
             $(function() {
                /* CUANDO CARGUE LA PAGINA SE EJECUTA */
-            });
+               console.log("entra");
 
-            $(document).ready(hasiera);
-
-            function hasiera() {
-
-                $("#mifoto").click(function() {
-                    // alert("aaaaa");
+               $("#parrafo").click(function() {
+                   console.log("parrafo");
+               })
+               $("#parrafo2").click(function() {
+                   console.log("parrafo2");
+               })
+                $("#flecha").click(function() {
+                    alert("aaaaa");
                     if ($("#mifoto").attr('src') == 'arrow-down-circle.svg') {
                         $('#mifoto').attr('src','arrow-up-circle.svg');
                     }else{
@@ -39,8 +41,7 @@
                         height: 'toggle'
                     });
                 });
-
-            }
+            });
         </script>
 
     </head>
@@ -49,7 +50,7 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
         {{-- <img id="mifoto" src="img/osakidetza.jpg"> --}}
-        <img id="mifoto" href="#" src="arrow-up-circle.svg" fill="currentColor" style="color: #0275d8" width="50px" height="50px">
+        {{-- <img id="mifoto" href="#" src="arrow-up-circle.svg" fill="currentColor" style="color: #0275d8" width="50px" height="50px"> --}}
 
         <div id="app">
             <centros-list></centros-list>

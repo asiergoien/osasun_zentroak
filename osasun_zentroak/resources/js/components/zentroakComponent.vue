@@ -42,7 +42,9 @@
             </select>
           </div>
       </div>
-          <img id="mifoto" src="arrow-up-circle.svg" alt="Araba" style="color: #0275d8">
+          <div id="flecha"><img id="mifoto" src="arrow-up-circle.svg"></div>
+          <p id="parrafo">Parrafo</p>
+          <p id="parrafo2">Parrafo2</p>
     </div>
   </div>
       
