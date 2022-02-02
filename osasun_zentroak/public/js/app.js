@@ -5645,7 +5645,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['userIdC', 'userName'],
   mounted: function mounted() {
@@ -5739,18 +5738,24 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             usuario: res.data[i].usuario,
             mensaje: res.data[i].mensaje,
             id: res.data[i].id
-          };
+          }; //esto cambia el orden del array (el primero es el último)
 
           _this3.comentarios.unshift(comentarioObj);
         }
 
         _this3.comentarios = _this3.uniqByKeepLast(_this3.comentarios, function (it) {
           return it.id;
-        });
+        }); //esto borra el último elemento del array
 
         _this3.comentarios.pop();
       });
     },
+    getLoggedUserName: function getLoggedUserName() {
+      return this.userName;
+    },
+    // updateComment(id){
+    //     axios.put('/updateComment', {id:id});
+    // },
     uniqByKeepLast: function uniqByKeepLast(data, key) {
       return _toConsumableArray(new Map(data.map(function (x) {
         return [key(x), x];
@@ -5904,6 +5909,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+//
+//
+//
 //
 //
 //
@@ -30011,42 +30019,47 @@ var render = function () {
                           ]),
                         ]),
                         _vm._v(" "),
-                        comentario.usuario == "jon"
-                          ? _c("div", [
-                              _c(
-                                "svg",
-                                {
-                                  staticClass: "bi bi-trash",
-                                  attrs: {
-                                    xmlns: "http://www.w3.org/2000/svg",
-                                    width: "16",
-                                    height: "16",
-                                    fill: "currentColor",
-                                    viewBox: "0 0 16 16",
-                                  },
-                                  on: {
-                                    click: function ($event) {
-                                      $event.preventDefault()
-                                      return _vm.deleteComment(comentario.id)
-                                    },
-                                  },
-                                },
-                                [
-                                  _c("path", {
+                        comentario.usuario == _vm.getLoggedUserName()
+                          ? _c(
+                              "div",
+                              { staticClass: "d-flex justify-content-end" },
+                              [
+                                _c(
+                                  "svg",
+                                  {
+                                    staticClass: "bi bi-trash",
                                     attrs: {
-                                      d: "M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z",
+                                      xmlns: "http://www.w3.org/2000/svg",
+                                      width: "16",
+                                      height: "16",
+                                      fill: "currentColor",
+                                      id: "trashIcon",
+                                      viewBox: "0 0 16 16",
                                     },
-                                  }),
-                                  _vm._v(" "),
-                                  _c("path", {
-                                    attrs: {
-                                      "fill-rule": "evenodd",
-                                      d: "M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z",
+                                    on: {
+                                      click: function ($event) {
+                                        $event.preventDefault()
+                                        return _vm.deleteComment(comentario.id)
+                                      },
                                     },
-                                  }),
-                                ]
-                              ),
-                            ])
+                                  },
+                                  [
+                                    _c("path", {
+                                      attrs: {
+                                        d: "M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z",
+                                      },
+                                    }),
+                                    _vm._v(" "),
+                                    _c("path", {
+                                      attrs: {
+                                        "fill-rule": "evenodd",
+                                        d: "M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z",
+                                      },
+                                    }),
+                                  ]
+                                ),
+                              ]
+                            )
                           : _vm._e(),
                       ]
                     ),
@@ -30249,186 +30262,202 @@ var render = function () {
               [
                 _c("br"),
                 _vm._v(" "),
-                _c("div", { staticClass: "d-flex text-muted" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "d-flex text-muted",
+                    attrs: { id: "filtrosTitulo" },
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        staticClass: "bi bi-search",
+                        attrs: {
+                          xmlns: "http://www.w3.org/2000/svg",
+                          width: "20",
+                          height: "20",
+                          fill: "currentColor",
+                          viewBox: "0 0 16 16",
+                        },
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            d: "M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z",
+                          },
+                        }),
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("h5", [_vm._v("  IRAGAZKIAK")]),
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { attrs: { id: "filtrosBuenos" } }, [
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "text-primary" }, [
+                    _vm._v("  IZENA"),
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.sartutakoIzena,
+                        expression: "sartutakoIzena",
+                      },
+                    ],
+                    staticClass: "form-control mb-3",
+                    attrs: {
+                      type: "text",
+                      id: "txtBusqueda",
+                      name: "txtBusqueda",
+                      placeholder: "Zentroaren izena...",
+                      title: "Izen bat idatzi",
+                    },
+                    domProps: { value: _vm.sartutakoIzena },
+                    on: {
+                      input: function ($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.sartutakoIzena = $event.target.value
+                      },
+                    },
+                  }),
+                  _vm._v(" "),
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "text-primary" }, [
+                    _vm._v("  ZENTRO MOTA"),
+                  ]),
+                  _vm._v(" "),
                   _c(
-                    "svg",
+                    "select",
                     {
-                      staticClass: "bi bi-search",
-                      attrs: {
-                        xmlns: "http://www.w3.org/2000/svg",
-                        width: "20",
-                        height: "20",
-                        fill: "currentColor",
-                        viewBox: "0 0 16 16",
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.tipodecentro,
+                          expression: "tipodecentro",
+                        },
+                      ],
+                      staticClass: "form-select",
+                      attrs: { id: "filtro-tipo" },
+                      on: {
+                        change: function ($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function (o) {
+                              return o.selected
+                            })
+                            .map(function (o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.tipodecentro = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        },
                       },
                     },
                     [
-                      _c("path", {
-                        attrs: {
-                          d: "M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z",
-                        },
-                      }),
+                      _c(
+                        "option",
+                        { attrs: { default: "", selected: "", value: "" } },
+                        [_vm._v(" -- Aukeratu mota -- ")]
+                      ),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "Anbulatorioa" } }, [
+                        _vm._v("Anbulatorioa"),
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "Osasun-zentroa" } }, [
+                        _vm._v("Osasun zentroa"),
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "option",
+                        { attrs: { value: "Osasun mentaleko zentroa" } },
+                        [_vm._v("Osasun mentaleko zentroa")]
+                      ),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "Ospitalea" } }, [
+                        _vm._v("Ospitalea"),
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "Beste batzuk" } }, [
+                        _vm._v("Beste batzuk"),
+                      ]),
                     ]
                   ),
                   _vm._v(" "),
-                  _c("h5", [_vm._v("  IRAGAZKIAK")]),
-                ]),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("h5", { staticClass: "text-primary" }, [_vm._v("  IZENA")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
+                  _c("hr"),
+                  _vm._v(" "),
+                  _c("h5", { staticClass: "text-primary" }, [
+                    _vm._v("  PROBINTZIA"),
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
                     {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.sartutakoIzena,
-                      expression: "sartutakoIzena",
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.provincia,
+                          expression: "provincia",
+                        },
+                      ],
+                      staticClass: "form-select",
+                      attrs: { id: "filtro-provincia" },
+                      on: {
+                        change: function ($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function (o) {
+                              return o.selected
+                            })
+                            .map(function (o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.provincia = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        },
+                      },
                     },
-                  ],
-                  staticClass: "form-control mb-3",
-                  attrs: {
-                    type: "text",
-                    id: "txtBusqueda",
-                    name: "txtBusqueda",
-                    placeholder: "Zentroaren izena...",
-                    title: "Izen bat idatzi",
-                  },
-                  domProps: { value: _vm.sartutakoIzena },
-                  on: {
-                    input: function ($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.sartutakoIzena = $event.target.value
-                    },
-                  },
-                }),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("h5", { staticClass: "text-primary" }, [
-                  _vm._v("  ZENTRO MOTA"),
+                    [
+                      _c(
+                        "option",
+                        { attrs: { default: "", selected: "", value: "" } },
+                        [_vm._v(" -- Aukeratu probintzia -- ")]
+                      ),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "Bizkaia" } }, [
+                        _vm._v("Bizkaia"),
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "Gipuzkoa" } }, [
+                        _vm._v("Gipuzkoa"),
+                      ]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "Araba" } }, [
+                        _vm._v("Araba"),
+                      ]),
+                    ]
+                  ),
                 ]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.tipodecentro,
-                        expression: "tipodecentro",
-                      },
-                    ],
-                    staticClass: "form-select",
-                    attrs: { id: "filtro-tipo" },
-                    on: {
-                      change: function ($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function (o) {
-                            return o.selected
-                          })
-                          .map(function (o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.tipodecentro = $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      },
-                    },
-                  },
-                  [
-                    _c(
-                      "option",
-                      { attrs: { default: "", selected: "", value: "" } },
-                      [_vm._v(" -- Aukeratu mota -- ")]
-                    ),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "Anbulatorioa" } }, [
-                      _vm._v("Anbulatorioa"),
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "Osasun-zentroa" } }, [
-                      _vm._v("Osasun zentroa"),
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "option",
-                      { attrs: { value: "Osasun mentaleko zentroa" } },
-                      [_vm._v("Osasun mentaleko zentroa")]
-                    ),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "Ospitalea" } }, [
-                      _vm._v("Ospitalea"),
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "Beste batzuk" } }, [
-                      _vm._v("Beste batzuk"),
-                    ]),
-                  ]
-                ),
-                _vm._v(" "),
-                _c("hr"),
-                _vm._v(" "),
-                _c("h5", { staticClass: "text-primary" }, [
-                  _vm._v("  PROBINTZIA"),
-                ]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.provincia,
-                        expression: "provincia",
-                      },
-                    ],
-                    staticClass: "form-select",
-                    attrs: { id: "filtro-provincia" },
-                    on: {
-                      change: function ($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function (o) {
-                            return o.selected
-                          })
-                          .map(function (o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.provincia = $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      },
-                    },
-                  },
-                  [
-                    _c(
-                      "option",
-                      { attrs: { default: "", selected: "", value: "" } },
-                      [_vm._v(" -- Aukeratu probintzia -- ")]
-                    ),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "Bizkaia" } }, [
-                      _vm._v("Bizkaia"),
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "Gipuzkoa" } }, [
-                      _vm._v("Gipuzkoa"),
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "Araba" } }, [
-                      _vm._v("Araba"),
-                    ]),
-                  ]
-                ),
               ]
             ),
+            _vm._v(" "),
+            _c("img", {
+              staticStyle: { color: "#0275d8" },
+              attrs: { id: "mifoto", src: "arrow-up-circle.svg", alt: "Araba" },
+            }),
           ])
         : _vm._e(),
     ]),
