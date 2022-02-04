@@ -11293,7 +11293,7 @@ textarea.form-control-lg {
 }
 /* profila INI */
 /*Mugikorra*/
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   .izena-gustokoenak {
     display: flex;
     flex-direction: row;
@@ -11329,9 +11329,9 @@ textarea.form-control-lg {
   .irudia img {
     width: 50%;
   }
-}
+} */
 /*Tablet*/
-@media (min-width: 400px) {
+/* @media (min-width: 400px) {
   .izena-gustokoenak {
     display: flex;
     flex-direction: row;
@@ -11362,9 +11362,9 @@ textarea.form-control-lg {
     margin-top: 1rem;
     padding-right: 25%;
   }
-}
+} */
 /* Ordenagailua */
-@media (min-width: 950px) {
+/* @media (min-width: 950px) {
   .izena-gustokoenak {
     display: flex;
     flex-direction: row;
@@ -11405,5 +11405,5 @@ textarea.form-control-lg {
   .izena {
     font-size: xx-large;
   }
-}
+} */
 /* profila FIN */

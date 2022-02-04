@@ -299,142 +299,12 @@ body {
 /* Nav FIN*/
 
 
-/* profila INI */
-
-
-/*Mugikorra
-
-@media (max-width: 400px) {
-    .izena-gustokoenak {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-left: 8%;
-        padding-right: 8%;
-        margin-top: 1rem;
-    }
-
-    .email-container {
-        display: flex;
-        flex-direction: column;
-        margin-top: 2rem;
-        padding-left: 8%;
-        padding-right: 8%;
-    }
-
-    .email {
-        border: lightgray solid 2px;
-        border-radius: 2px;
-        height: 40%;
-        width: auto;
-    }
-
-    .aldatu {
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        margin-top: 1rem;
-        padding-right: 8%;
-    }
-
-    .irudia img {
-        width: 50%;
-    }
-}
-
-
-Tablet
-
-@media (min-width: 400px) {
-    .izena-gustokoenak {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-left: 8%;
-        padding-right: 8%;
-        margin-top: 1rem;
-    }
-
-    .email-container {
-        display: flex;
-        flex-direction: column;
-        margin-top: 2rem;
-        padding-left: 8%;
-        padding-right: 8%;
-    }
-
-    .email {
-        border: lightgray solid 2px;
-        border-radius: 2px;
-        width: 80%;
-    }
-
-    .aldatu {
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        margin-top: 1rem;
-        padding-right: 25%;
-    }
-}
-
-
-Ordenagailua
-
-@media (min-width: 950px) {
-    .izena-gustokoenak {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        padding-left: 30.5%;
-        padding-right: 8%;
-        margin-top: -13rem;
-    }
-
-    .email-container {
-        display: flex;
-        flex-direction: column;
-        margin-top: 1rem;
-        padding-left: 30.5%;
-        padding-right: 8%;
-    }
-
-    .email {
-        border: lightgray solid 2px;
-        border-radius: 2px;
-        height: 40%;
-        width: 60%;
-    }
-
-    .aldatu {
-        display: flex;
-        align-items: center;
-        justify-content: right;
-        margin-top: 1rem;
-        padding-right: 35%;
-    }
-
-    .irudia img {
-        width: 30%;
-        padding-left: 5%;
-    }
-
-    .izena {
-        font-size: xx-large;
-    }
-} */
-
-
-/* profila FIN */
-
-
 /* zentroak FIN */
 
 #centros {
     padding: 0 !important;
     display: inline-grid;
-    column-gap: 1em;
-    row-gap: 1em;
+    row-gap: 1.5em;
     grid-template-columns: auto auto auto auto;
 }
 
@@ -463,6 +333,15 @@ Ordenagailua
     /* min-height: auto; */
     min-height: 100vh !important;
 
+}
+
+
+#zentroak {
+    width: 100%;
+    padding: 0 !important;
+    display: inline-grid;
+    row-gap: 1.5em;
+    grid-template-columns: auto auto auto auto;
 }
 
 
@@ -505,7 +384,127 @@ Ordenagailua
 
 /* --------------------------PROFILE ICON  FIN--------------------------*/
 
+
 /*IRUZKINAKCOMPONENT*/
 #trashIcon{
 }
 /*IRUZKINAKCOMPONENT FIN/
+
+
+/* profila INI */
+/*Mugikorra*/
+@media (max-width: 400px) {
+    .izena-gustokoenak {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 8%;
+      padding-right: 8%;
+      margin-top: 1rem;
+    }
+  
+    .email-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+  
+    .email {
+      border: lightgray solid 2px;
+      border-radius: 2px;
+      height: 40%;
+      width: auto;
+    }
+  
+    .aldatu {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-top: 1rem;
+      padding-right: 8%;
+    }
+  
+    .irudia img {
+      width: 50%;
+    }
+  }
+  /*Tablet*/
+  @media (min-width: 400px) {
+    .izena-gustokoenak {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 8%;
+      padding-right: 8%;
+      margin-top: 1rem;
+    }
+  
+    .email-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 2rem;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+  
+    .email {
+      border: lightgray solid 2px;
+      border-radius: 2px;
+      width: 80%;
+    }
+  
+    .aldatu {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-top: 1rem;
+      padding-right: 25%;
+    }
+  }
+  /* Ordenagailua */
+  @media (min-width: 950px) {
+    .izena-gustokoenak {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding-left: 30.5%;
+      padding-right: 8%;
+      margin-top: -13rem;
+    }
+  
+    .email-container {
+      display: flex;
+      flex-direction: column;
+      margin-top: 1rem;
+      padding-left: 30.5%;
+      padding-right: 8%;
+    }
+  
+    .email {
+      border: lightgray solid 2px;
+      border-radius: 2px;
+      height: 40%;
+      width: 60%;
+    }
+  
+    .aldatu {
+      display: flex;
+      align-items: center;
+      justify-content: right;
+      margin-top: 1rem;
+      padding-right: 35%;
+    }
+  
+    .irudia img {
+      width: 30%;
+      padding-left: 5%;
+    }
+  
+    .izena {
+      font-size: xx-large;
+    }
+  }
+  /* profila FIN */
+>>>>>>> Stashed changes

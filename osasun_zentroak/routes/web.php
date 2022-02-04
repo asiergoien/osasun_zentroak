@@ -35,6 +35,7 @@ Route::get('/informazioa', function () {
 
 Route::get('/profila', [ProfilaController::class, 'index'])->middleware('auth');
 Route::put('/profila/{id}', [ProfilaController::class, 'update'])->middleware('auth');
+// Route::delete('/profila/ezabatu/{id}', [ProfilaController::class, 'ezabatu']);
 
 Route::resource('likes', LikesController::class);
 Route::resource('comments', CommentsController::class);

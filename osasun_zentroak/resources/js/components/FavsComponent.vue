@@ -1,6 +1,5 @@
 <template>
-
-    <div id="centros" class="col-lg-9 col-md-8 d-flex flex-wrap rounded my-5 p-5">
+    <div id="zentroak" class="col-lg-9 col-md-8 d-flex flex-wrap rounded my-5 p-5">
         <div v-for="(centro, index) in filteredCentros" v-bind:key="index" class="centro">
             <div v-if="getfavs().includes(centro.Zentroarenkodea) == true">
                 <div class="card" style="width: 18rem;">
@@ -107,11 +106,8 @@ export default {
       let favoritos = (this.favs);
       const arrayFavs = favoritos.split("/");
       let arrayLength = arrayFavs.length;
-      // console.log(arrayLength);
 
       for (var i = 0; i < arrayLength; i++) {
-        // console.log(arrayFavs);
-        // console.log(arrayLength);
         return arrayFavs;
       }
       }
