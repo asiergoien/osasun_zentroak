@@ -21,13 +21,7 @@
             $(function() {
                /* CUANDO CARGUE LA PAGINA SE EJECUTA */
                console.log("entra");
-
-               $("#parrafo").click(function() {
-                   console.log("parrafo");
-               })
-               $("#parrafo2").click(function() {
-                   console.log("parrafo2");
-               })
+        
                 $("#flecha").click(function() {
                     alert("aaaaa");
                     if ($("#mifoto").attr('src') == 'arrow-down-circle.svg') {

@@ -42,9 +42,6 @@
             </select>
           </div>
       </div>
-          <div id="flecha"><img id="mifoto" src="arrow-up-circle.svg"></div>
-          <p id="parrafo">Parrafo</p>
-          <p id="parrafo2">Parrafo2</p>
     </div>
   </div>
       

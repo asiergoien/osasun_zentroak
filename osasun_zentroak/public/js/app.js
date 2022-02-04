@@ -5980,7 +5980,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     var urlParams = new URLSearchParams(window.location.search);
@@ -30453,11 +30452,6 @@ var render = function () {
                 ]),
               ]
             ),
-            _vm._v(" "),
-            _c("img", {
-              staticStyle: { color: "#0275d8" },
-              attrs: { id: "mifoto", src: "arrow-up-circle.svg", alt: "Araba" },
-            }),
           ])
         : _vm._e(),
     ]),
